@@ -1,0 +1,90 @@
+<ion-header no-border>
+
+  <ion-navbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="story-outer">
+  <div class="story-cont">
+    <h1>Let's start</h1>
+  </div>
+  <form [formGroup]="lifeStoryForm">
+    <ion-list>
+
+      <ion-item class="item-input">
+        <ion-label stacked>Date of birth</ion-label>
+        <ion-icon class="icon icon-ic-calander" item-right></ion-icon>
+
+        <ion-input style="display:none" [formControl]="lifeStoryForm.controls['dob']" class="hotfix"></ion-input>
+        <ion-datetime class="dobCal" displayFormat="DD-MM-YYYY" pickerFormat="DD MMM YYYY" [formControl]="lifeStoryForm.controls['dob']"
+          [class.invalid]="!lifeStoryForm.controls.dob.valid && (lifeStoryForm.controls.dob.dirty)" required></ion-datetime>
+      </ion-item>
+       <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!lifeStoryForm.controls['dob'].valid"> Date of birth is required!</div> -->
+        <div class="error-box" *ngIf="isValidDate"> Please select valid date of birth!</div>
+      </div> 
+
+      <!--<ion-item class="search-input">
+        <div class="search-label">Place of birth</div>
+        <ion-icon class="icon icon-ic-location search-icon" item-right ></ion-icon>
+        <ion-searchbar class="story-searchbox" #searchbar placeholder="" [formControl]="lifeStoryForm.controls['pob']"></ion-searchbar>
+        <div *ngIf="isValid">
+          <div *ngIf="!lifeStoryForm.controls['pob'].valid && lifeStoryForm.controls['pob'].hasError('required')"> Place of birth is required!</div>
+        </div>
+      </ion-item>-->
+
+      <!--<ion-item>
+        <ion-label stacked>Place of birth</ion-label>
+        <ion-icon class="icon icon-ic-location search-icon" item-right></ion-icon>
+        <ion-input type="text" [formControl]="lifeStoryForm.controls['pob']"></ion-input>
+      </ion-item>-->
+
+
+      <ion-item>
+        <ion-label stacked>Place of birth</ion-label>
+        <button ion-button clear type="button" item-right><ion-icon class="icon icon-ic-location icon-location" item-right ></ion-icon></button>
+        <ion-input type="text" [formControl]="lifeStoryForm.controls['pob']" [ngClass]="{'error-border':!lifeStoryForm.controls['pob'].valid}" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+          <div class="error-box"  *ngIf="lifeStoryForm.controls['pob'].hasError('pattern')">Please enter valid text.</div>
+
+        <!-- <div class="error-box" *ngIf="!lifeStoryForm.controls['pob'].valid && lifeStoryForm.controls['pob'].hasError('required')">
+        Place of birth is required!</div> -->
+      </div> 
+
+      <ion-item>
+        <ion-label stacked>Current location</ion-label>
+        <button ion-button clear type="button" item-right><ion-icon class="icon icon-ic-gps icon-location" item-right ></ion-icon></button>
+        <ion-input type="text" [formControl]="lifeStoryForm.controls['currLoc']" [ngClass]="{'error-border':!lifeStoryForm.controls['currLoc'].valid}" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <!-- <div *ngIf="isValid">
+        <div class="error-box" *ngIf="!lifeStoryForm.controls['currLoc'].valid && lifeStoryForm.controls['currLoc'].hasError('required')">
+        Current location is required!</div>
+        <div class="error-box"  *ngIf="lifeStoryForm.controls['currLoc'].hasError('pattern')">Please enter valid text.</div>
+      </div> -->
+
+      <!-- <div *ngIf="lifeStoryForm.controls['currLoc'].errors && (lifeStoryForm.controls['currLoc'].dirty || lifeStoryForm.controls['currLoc'].touched)">
+          <div class="error-box" *ngIf="lifeStoryForm.controls['currLoc'].errors.required">
+          Current location is required!</div>
+          <div class="error-box"  *ngIf="lifeStoryForm.controls['currLoc'].errors.pattern">Please enter valid text.</div>
+        </div> -->
+
+        <div *ngIf="isValid">
+            <div class="error-box" *ngIf="!lifeStoryForm.controls['currLoc'].valid && lifeStoryForm.controls['currLoc'].hasError('required')">
+            Current location is required!</div>
+            <div class="error-box"  *ngIf="lifeStoryForm.controls['currLoc'].hasError('pattern')">Please enter valid text.</div>
+          </div>
+
+    </ion-list>
+    <button ion-button class="mr-t80 button_color" full color="dark" (click)="openStoryPage5(lifeStoryForm.value)">NEXT</button>
+
+  </form>
+</ion-content>
+<div class="progressbar">
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:75%">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<ion-header no-border>
+  <ion-navbar>
+
+    <ion-buttons left (click)="closeAddImages()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <ion-icon class="icon icon-cross" item-right></ion-icon>
+        <!--<img src="assets/img/icCross@3x.png" />-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="story-outer">
+  <div padding class="story-cont">
+    <h1  class="{{urnType == 1 ? 'human-follow':'pet-follow'}}">Add an image</h1>
+  </div>
+
+  <div class="image-outer" tappable (click)="addPicture('1')">
+    <div *ngIf="chosenPicture1==''" class="img-icon">
+      <ion-icon class="{{urnType == 1 ? 'icon icon-imag':'icon icon-imag pet-clr'}}"  item-right></ion-icon>
+      <p>Click to add an image</p>
+    </div>
+    <div *ngIf="chosenPicture1 !=''" style="overflow: hidden;" class="add-image-wrapper">
+      <!-- <img class="add-img-center" src="{{chosenPicture1}}" alt=""> -->
+      <bg-image-with-loader [image]="chosenPicture1"></bg-image-with-loader>
+    </div>
+  </div>
+  <div *ngIf="isSubmit && chosenPicture1==''">
+    <div padding class="error-box">
+      Image is required!</div>
+  </div>
+
+  <form padding [formGroup]="addImgForm">
+
+    <ion-list class="image-form-list">
+
+      <ion-item class="image-form">
+        <ion-label stacked>Image title</ion-label>
+        <ion-input type="text" [formControl]="addImgForm.controls['title']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isSubmit">
+        <div class="error-box" *ngIf="!addImgForm.controls['title'].valid && addImgForm.controls['title'].hasError('required')">
+          Image title is required!</div>
+        <div class="error-box" *ngIf="addImgForm.controls['title'].hasError('pattern')">Please enter valid title.</div>
+      </div>
+
+    </ion-list>
+
+    <button ion-button class="mr-t50 button_color" full color="dark" (click)="addImage(addImgForm.value)">ADD</button>
+
+  </form>
+
+</ion-content>

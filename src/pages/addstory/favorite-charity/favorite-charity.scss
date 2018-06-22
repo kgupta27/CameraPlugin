@@ -1,0 +1,35 @@
+page-favorite-charity {
+    .cross-icn .icon-cross{
+        font-size: 14px
+    }
+    ion-header ion-icon.back-button-icon.icon, 
+    ion-header span.back-button-text.back-button-text-ios , .bar-button{
+        color: #636263;
+        margin-left: 10px !important;
+    }
+    .bar-button-ios{
+        margin-left: 16px !important;
+    }
+    
+    .links-outer{
+          margin: 20px 0 10px;
+          width:100%;
+          .link-lft{
+                display: inline-block;
+                width: 90%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              p{margin: 0 0 3px;width:90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+              .icon{font-size: 12px;width: 14px;}
+              span{color: rgba(18, 18, 18,.5);width:90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+            }
+          }
+          .icon-ic-three-dots{float: right; font-size: 13px; color:#111;}
+      }
+   .link-title{
+        font-size: 14px;
+        font-family: 'Conv_Gotham Medium Regular';
+   }
+}

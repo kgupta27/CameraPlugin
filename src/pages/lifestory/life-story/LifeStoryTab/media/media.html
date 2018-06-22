@@ -1,0 +1,48 @@
+<ion-content>
+  <div text-center *ngIf="!isAlbum && !isLinks">
+    <ion-grid class="life-story-content">
+      No Media Found
+    </ion-grid>
+  </div>
+  <div *ngIf="isAlbum" class="media-image-wrapper">
+
+    <!-- <ion-col col-6 class="album-container">
+          <div class="album-center">IMAGES</div>
+        </ion-col> -->
+
+    <h4 class="link-title">Images</h4>
+
+    <div class='userCol image-column media-image' *ngFor="let pic of mediaData.imageModel">
+      <!-- Old Solution -->
+      <!-- <img class="galleryImg" src="{{pic.mediaImage500}}" (click)="openMediaGallery($index)"> -->
+
+      <!-- New Solution -->
+      <!-- <div class="profile-image">  -->
+          <bg-image-with-loader [image]="pic.mediaImage" (click)="openMediaGallery($index)"></bg-image-with-loader>
+      <!-- </div>   -->
+
+    </div>
+    <!-- <ion-col col-6 class="album-container"> -->
+    <div class="userCol image-column album" *ngIf="album_length > 5" (click)="openMediaGallery($index)">
+      <div class="album-text">+{{count}}</div>
+    </div>
+    <!-- </ion-col> -->
+  </div>
+  <div *ngIf="isLinks" padding class="link-class">
+    <h4 class="link-title">Links</h4>
+    <div class="links-outer" *ngFor="let link of linkModul; let i=index">
+      <div class="link-lft">
+        <!-- <p>{{link.linkTitle}} id= {{link.linkId}}  index= {{i}}</p> -->
+        <p>{{link.linkTitle}}</p>
+        <ion-icon class="icon icon-ic-attachment" item-start></ion-icon>
+        <!-- <div>{{link.linkUrl}}</div> -->
+        <div>
+          <a (click)="inAppBrowserOpen(link.linkUrl)">{{link.linkUrl}}</a>
+        </div>
+      </div>
+      <ion-icon class="icon icon-ic-three-dots" *ngIf="role == 1 || role == 2" (click)="presentActionSheet(link, i)"></ion-icon>
+
+    </div>
+  </div>
+
+</ion-content>

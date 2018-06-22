@@ -1,0 +1,93 @@
+page-new-life-storie1 {
+    // .content-md .scroll-content{margin-top:56px !important}
+    .progressbar{width: 100%;}
+       .item-inner {
+    background: #f9f9f9;
+    margin-bottom: 0px;
+    padding: 0 20px!important;
+    background-image: none!important;
+    border: 0!important;
+        .label{
+            color: #636263; 
+    font-size: 15px;
+        }
+    }
+}
+
+// life story cont css //
+
+.story-outer{
+.story-cont{
+    padding-top: 24px;
+    h1{
+        font-size: 24px;
+        position: relative;
+        color: #636263;
+        padding-bottom: 12px;
+        &:before{
+            background-color: #ffa0a0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 50px;
+        }
+    }
+    p{
+        font-size: 14px;
+    color: #1c1b1b;
+    font-weight: normal;
+    margin-top: 26px;
+        margin-bottom: 0px;
+    font-family: 'Conv_Gotham Light';
+    }
+
+    }
+    li{
+        margin: 0 -16px;
+        margin-bottom: 10px;
+        button{padding-left: 0;}
+    }
+
+    .story-inner-cont{margin-top: 50px!important;}
+    .icon {
+    color: #ffa0a0;
+        font-size: 24px;
+}
+}
+.progressbar{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+}
+.progress {
+    height: 12px;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    .progress-bar {
+    float: left;
+    width: 0;
+    height: 70%;
+        margin-top: 2px;
+    text-align: center;
+    background-color: #ffa0a0;
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+    .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+
+}

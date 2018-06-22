@@ -1,0 +1,82 @@
+<ion-content fullscreen class="storyContent">
+  <ion-header no-border>
+    <ion-navbar transparent>
+      <ion-buttons left (click)="closeExperienceDetails()">
+        <button class="btnColor cross-icn" ion-button icon-only>
+            <ion-icon class="icon icon-ic-back-arrow" item-right></ion-icon>
+          </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+  <div class="exp-bg" *ngIf="!isAlbum"[ngStyle]="{'background-image': 'url(' + bgColor +')'}"></div>
+  <div class="exp-bg" *ngIf="isAlbum">
+  <ion-slides #slides>
+    <ion-slide *ngFor="let img of expData.experienceGallery;">
+      <div class="swiper-zoom-container exp-detail-header">
+        <!-- <img [src]="img.imageMediumUrl500"> -->
+        <bg-image-with-loader type="exp" [image]="img.imageUrl"></bg-image-with-loader>
+      </div>
+    </ion-slide>
+  </ion-slides>
+  </div>
+  <div class="exp-det-padding" style="padding-bottom:  0px;">
+    <div class="health-outer-first">
+      <div class="helth-title">Experience</div>
+      <div class="p_content-first">
+        {{expData.title}}
+      </div>
+    </div>
+    <div class="exp-outer">
+      <div class="helth-title">Where did this happen?</div>
+      <div class="p_content">
+        {{expData.experiencePlace}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="expData.experienceDate">
+      <div class="helth-title">When did this happen?</div>
+      <div class="p_content">
+        {{expData.experienceDate}}
+      </div>
+    </div>
+    <div class="health-outer">
+      <div class="helth-title">Who was with you?</div>
+      <div class="p_content">
+        {{expData.personWithYou}}
+      </div>
+    </div>
+
+    <div class="health-outer">
+      <div class="exp-details">Experience details</div>
+      <div class="helth-title-exp">
+        {{expData.despcription}}
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isAlbum">
+    <ion-grid class="life-story-content">
+      <ion-row>
+        <!-- <ion-col col-6 class="album-container">
+          <div class="album-center">ALBUM</div>
+        </ion-col> -->
+        <div class="clearfix">
+        <!-- <div class="health-outer-first"> -->
+          <div class="helth-title">Album</div>
+        <!-- </div> -->
+      </div>
+        <ion-col col-6 class='userCol' *ngFor="let pic of expData.experienceGallery" (click)="openExperienceGallary()">
+          <!-- <img class="galleryImg" src="{{pic.imageThumbUrl200}}"> -->
+          <div class="experienceDetail">
+          <bg-image-with-loader [image]="pic.imageUrl"></bg-image-with-loader>
+        </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <!-- roleId : {{expData.roleId}} -->
+  <div padding *ngIf="expData.status == 'Pending' && expData.roleId != 3">
+    <button ion-button class="mr-t34 button_color" full color="dark" (click)="experienceStatus(true)">APPROVE THE EXPERIENCE</button>
+    <button ion-button clear full class="color4a4a4a" (click)="experienceStatus(false)">REJECT THE EXPERIENCE</button>
+  </div>
+</ion-content>

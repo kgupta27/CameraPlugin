@@ -1,0 +1,86 @@
+<ion-header no-border>
+
+  <ion-navbar  hideBackButton="true">
+      <ion-buttons left (click)="closeEditForm()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+      <ion-icon class="icon icon-cross" item-right></ion-icon>  
+      </button> 
+      </ion-buttons>
+</ion-navbar>
+
+</ion-header>
+<ion-content padding class="story-outer">
+  <div class="story-cont">
+    <h1>Edit profile</h1>
+  </div>
+
+  <form [formGroup]="editProfileForm" (ngSubmit)="submitForm(editProfileForm.value)">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 tappable (click)="changePicture()">
+        <div class="edit-img">
+        <!-- Old Solution -->
+        <!-- <img src="{{profileImg?profileImg:'assets/img/human.png'}}" class="setting-img" /> -->
+        
+
+        <!-- New Solution -->
+        <div class="profile-image"> 
+            <bg-image-with-loader [image]="profileImg"></bg-image-with-loader>
+        </div>  
+
+        <div class="dot-cont camera">
+            <ion-icon class="icon1 icon-camera my-icon" item-right></ion-icon>
+        </div>
+      </div>
+        <!--<img src="assets/img/thumbnail-puppy-1.jpg" />-->
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+
+  
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked>Full name</ion-label>
+        <ion-input type="text" name="name" value="" [formControl]="editProfileForm.controls['name']" [ngClass]="{'error-border':!editProfileForm.controls['name'].valid  && editProfileForm.controls['name'].touched}"></ion-input>
+      </ion-item>
+
+      <div *ngIf="isSubmit">
+        <div class="error-box" *ngIf="!editProfileForm.controls['name'].valid && editProfileForm.controls['name'].hasError('required') ">* Full Name is required!</div>
+        <div style="color: #b40000;font: 12px 'Conv_Gotham Light';" *ngIf="editProfileForm.controls['name'].hasError('pattern')">* Please enter valid characters.</div>
+        <div class="error-box" *ngIf="editProfileForm.controls['name'].hasError('maxlength') && editProfileForm.controls['name'].touched && !editProfileForm.controls['name'].hasError('pattern')">* Maximum length is 30!</div>
+        <!--<div style="color: #b40000;font: 12px 'Conv_Gotham Light';" class="error-box2" *ngIf="spaceErreor && !signupForm.controls['fullname'].hasError('pattern') && !signupForm.controls['fullname'].hasError('required')">* Please enter valid characters.</div>-->
+        </div>
+      
+
+
+      <ion-item>
+        <ion-label stacked>Nickname</ion-label>
+        <ion-input type="text" name="nickName" [formControl]="editProfileForm.controls['nickName']" [ngClass]="{'error-border':!editProfileForm.controls['nickName'].valid  && editProfileForm.controls['nickName'].touched}"></ion-input>
+      </ion-item>
+
+      <div *ngIf="isSubmit">
+        <div class="error-box" *ngIf="!editProfileForm.controls['nickName'].valid && editProfileForm.controls['nickName'].hasError('required')">* Nickname is required!</div>
+        <div style="color: #b40000;font: 12px 'Conv_Gotham Light';" *ngIf="editProfileForm.controls['nickName'].hasError('pattern')">* Please enter valid characters.</div>
+        <div class="error-box" *ngIf="editProfileForm.controls['nickName'].hasError('maxlength') && editProfileForm.controls['nickName'].touched && !signupForm.controls['nickName'].hasError('pattern')">* Maximum length is 30!</div>
+        <!--<div style="color: #b40000;font: 12px 'Conv_Gotham Light';" class="error-box2" *ngIf="spaceErreor && !signupForm.controls['nicename'].hasError('pattern') && !signupForm.controls['nicename'].hasError('required')">* Please enter valid characters.</div>-->
+      </div>
+
+      <ion-item>
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="text" name="email" [formControl]="editProfileForm.controls['email']"></ion-input>
+      </ion-item>
+      <div *ngIf="isSubmit">
+      <!-- <div class="error-box" *ngIf="!editProfileForm.controls['email'].valid && editProfileForm.controls['nickName'].hasError('required')">* Nickname is required!</div> -->
+      <div *ngIf="editProfileForm.controls['email'].hasError('required') && editProfileForm.controls['email'].touched" class="error-box"> *Email is required.</div>
+      <div *ngIf="editProfileForm.controls['email'].hasError('pattern') && !editProfileForm.controls['email'].valid" class="error-box"> *Enter valid Email.</div>
+      </div>
+
+    </ion-list>
+
+    <button ion-button class="mr-t80 button_color" full color="dark" type="submit">SAVE</button>
+
+    </form>
+
+</ion-content>

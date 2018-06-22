@@ -1,0 +1,81 @@
+<ion-header no-border>
+
+  <ion-navbar class="home-nav">
+    <ion-title>Add</ion-title>
+
+    <ion-buttons left (click)="closeAddStory()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <ion-icon class="icon icon-cross" item-right></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="story-outer">
+  
+  <ion-list class="story-inner-cont">
+    <!-- roleId: {{roleId}} -->
+    <li (click)="addExp()">
+      <button ion-item>
+          <ion-icon class="{{urnType == 1 ? 'icon icon-pink-arrow':'icon icon-pink-arrow pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon  class="icon icon-pink-arrow" item-right></ion-icon> -->
+        Add experiences
+      </button>
+    </li>
+    <li (click)="addCareerAcademics()" *ngIf="urnType == 1 && roleId != 3">
+      <button ion-item>
+        <ion-icon class="icon icon-pink-arrow" item-right></ion-icon>
+        Add academics & career
+      </button>
+    </li>
+    <li *ngIf="urnType == 2 && roleId != 3">
+      <button ion-item (click)="addCompetitionTraining()">
+        <ion-icon class="icon icon-pink-arrow pet-clr" item-right></ion-icon>
+        Add competitions or training
+      </button>
+    </li>
+    <li (click)="addInterestPassion(urnType)" *ngIf="roleId != 3">
+      <button ion-item>
+        <ion-icon class=" {{urnType == 1 ? 'icon icon-pink-arrow':'icon icon-pink-arrow pet-clr'}}" item-right></ion-icon>
+        {{urnType == 1 ? 'Add an interest & passion':'Add an interest'}}
+      </button>
+    </li>
+    <li (click)="addHealthJourney()" *ngIf="roleId != 3">
+      <button ion-item>
+        <ion-icon class=" {{urnType == 1 ? 'icon icon-pink-arrow':'icon icon-pink-arrow pet-clr'}}" item-right></ion-icon>
+        Add a health journey
+      </button>
+    </li>
+    <li (click)="addFavCharityURL()" *ngIf="urnType == 1 && roleId != 3">
+      <button ion-item>
+        <ion-icon class="icon icon-pink-arrow" item-right></ion-icon>
+        Add a favourite charity URL
+      </button>
+    </li>
+    <li (click)="addImages()" *ngIf="roleId != 3">
+      <button ion-item>
+        <ion-icon class=" {{urnType == 1 ? 'icon icon-pink-arrow':'icon icon-pink-arrow pet-clr'}}" item-right></ion-icon>
+        Add an image
+      </button>
+    </li>
+    <li (click)="addLink()" *ngIf="roleId != 3">
+      <button ion-item>
+        <ion-icon class=" {{urnType == 1 ? 'icon icon-pink-arrow':'icon icon-pink-arrow pet-clr'}}" item-right></ion-icon>
+        Add a link
+      </button>
+    </li>
+    <li (click)="addDocument()" *ngIf="roleId != 4 && roleId != 3">
+      <button ion-item>
+        <ion-icon class=" {{urnType == 1 ? 'icon icon-pink-arrow':'icon icon-pink-arrow pet-clr'}}" item-right></ion-icon>
+        Add a document
+      </button>
+    </li>
+    <li (click)="addFriendFamily()" *ngIf="roleId != 3 && beaconPaired != false">
+      <button ion-item>
+        <ion-icon class=" {{urnType == 1 ? 'icon icon-pink-arrow':'icon icon-pink-arrow pet-clr'}}" item-right></ion-icon>
+        Add friends & family
+      </button>
+    </li>
+  </ion-list>
+
+</ion-content>

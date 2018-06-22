@@ -1,0 +1,54 @@
+<ion-header no-border>
+  <ion-navbar>
+
+    <ion-buttons left (click)="closeAddDocument()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <ion-icon class="icon icon-cross" item-right></ion-icon>
+        <!--<img src="assets/img/icCross@3x.png" />-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="story-outer">
+  <div padding class="story-cont">
+    <h1 class="{{urnType == 1 ? 'human-follow':'pet-follow'}}">Add a document</h1>
+  </div>
+
+  <div *ngIf="fileUpload == ''" class="image-outer" tappable (click)="uploadPdf()">
+    <div class="img-icon">
+      <img src="{{(urnType == 1) ? 'assets/img/file.png':'assets/img/file1.png' }}" class="icon" alt="File">
+      <p>Click to add a document</p>
+    </div>
+  </div>
+  <div *ngIf="fileUpload != ''" class="image-outer" tappable (click)="uploadPdf()">
+    <div style="overflow: hidden;" class="img-icon">
+      <img src="{{(urnType == 1) ? 'assets/img/file-upload.png':'assets/img/file-upload1.png' }}" class="icon" alt="File">
+      <p>{{fileUpload}}</p>
+    </div>
+  </div>
+  <div *ngIf="isSubmit && file==undefined">
+    <div padding class="error-box">
+      Document is required!</div>
+  </div>
+
+  <form padding [formGroup]="addDocumentForm">
+
+    <ion-list class="image-form-list">
+
+      <ion-item class="image-form">
+        <ion-label stacked>Document title</ion-label>
+        <ion-input type="text" [formControl]="addDocumentForm.controls['title']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box" *ngIf="!addDocumentForm.controls['title'].valid && addDocumentForm.controls['title'].hasError('required')">
+          Document title is required!</div>
+        <div class="error-box" *ngIf="addDocumentForm.controls['title'].hasError('pattern')">Please enter valid title.</div>
+      </div>
+
+    </ion-list>
+
+    <button ion-button class="mr-t50 button_color" full color="dark" (click)="addDocument(addDocumentForm.value)">ADD</button>
+
+  </form>
+
+</ion-content>

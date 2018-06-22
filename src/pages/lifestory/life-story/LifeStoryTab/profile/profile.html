@@ -1,0 +1,75 @@
+<ion-content padding class="story-outer">
+
+  <div class="health-outer">
+    <div class="helth-title">Current location</div>
+    <div class="p_content">
+      {{lifeStoryData.currentLocation}}
+    </div>
+
+  </div>
+
+
+  <ion-list *ngIf="urnType == 1" class="story-inner-cont">
+
+    <li (click)="interestspassion()">
+      <button ion-item>
+         <ion-icon class="icon icon-pink-arrow" item-right></ion-icon>
+         Interests & passions
+       </button>
+    </li>
+    <li (click)="careeracademics()">
+      <button ion-item>
+         <ion-icon class="icon icon-pink-arrow" item-right></ion-icon>
+         Academics & career
+       </button>
+    </li>
+    <li>
+      <button ion-item (click)="healthJourney()">
+         <ion-icon class="icon icon-pink-arrow" item-right></ion-icon>
+         Health journey
+       </button>
+    </li>
+    <li (click)="charityUrl()">
+      <button ion-item>
+         <ion-icon class="icon icon-pink-arrow" item-right></ion-icon>
+         Favourite charity URL
+       </button>
+    </li>
+    <li (click)="document()">
+      <button ion-item>
+         <ion-icon class="icon icon-pink-arrow" item-right></ion-icon>
+         Documents
+       </button>
+    </li>
+
+  </ion-list>
+
+
+  <ion-list *ngIf="urnType == 2" class="story-inner-cont">
+    <li (click)="interestspassion()">
+      <button ion-item>
+        <ion-icon class="icon icon-pink-arrow pet-clr" item-right></ion-icon>
+        Interests 
+      </button>
+    </li>
+    <li (click)="petTraining()">
+      <button ion-item>
+        <ion-icon class="icon icon-pink-arrow pet-clr" item-right></ion-icon>
+        Training
+      </button>
+    </li>
+    <li (click)="healthJourney()">
+      <button ion-item>
+        <ion-icon class="icon icon-pink-arrow pet-clr" item-right></ion-icon>
+        Health journey
+      </button>
+    </li>
+    <li (click)="document()">
+      <button ion-item>
+         <ion-icon class="icon icon-pink-arrow pet-clr" item-right></ion-icon>
+         Documents
+       </button>
+    </li>
+  </ion-list>
+
+</ion-content>

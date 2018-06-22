@@ -1,0 +1,226 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "modurn";
+  src:url("fonts/modurn.eot");
+  src:url("fonts/modurn.eot?#iefix") format("embedded-opentype"),
+    url("fonts/modurn.woff") format("woff"),
+    url("fonts/modurn.ttf") format("truetype"),
+    url("fonts/modurn.svg#modurn") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "modurn" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "modurn" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cross:before {
+  content: "\62";
+}
+.icon-ic-animal-paw:before {
+  content: "\63";
+}
+.icon-ic-arrow:before {
+  content: "\64";
+}
+.icon-ic-attachment:before {
+  content: "\65";
+}
+.icon-ic-back-arrow:before {
+  content: "\66";
+}
+.icon-ic-three-dots:before {
+  content: "\67";
+}
+.icon-ic-gps:before {
+  content: "\77";
+}
+.icon-ic-heart:before {
+  content: "\78";
+}
+.icon-ic-accolades:before {
+  content: "\61";
+}
+.icon-ic-sports-record:before {
+  content: "\68";
+}
+.icon-ic-sports-playeds:before {
+  content: "\69";
+}
+.icon-a:before {
+  content: "\6a";
+}
+.icon-achievement:before {
+  content: "\6b";
+}
+.icon-body-line:before {
+  content: "\6c";
+}
+.icon-camera:before {
+  content: "\6d";
+}
+.icon-car:before {
+  content: "\6e";
+}
+.icon-combined-shape:before {
+  content: "\6f";
+}
+.icon-competition:before {
+  content: "\70";
+}
+.icon-hat:before {
+  content: "\71";
+}
+.icon-ic-angel:before {
+  content: "\72";
+}
+.icon-heart-filled:before {
+  content: "\73";
+}
+.icon-ic-business:before {
+  content: "\74";
+}
+.icon-ic-calander:before {
+  content: "\75";
+}
+.icon-ic-clock:before {
+  content: "\76";
+}
+.icon-ic-color:before {
+  content: "\79";
+}
+.icon-ic-concert:before {
+  content: "\7a";
+}
+.icon-ic-employemnt:before {
+  content: "\41";
+}
+.icon-ic-food:before {
+  content: "\42";
+}
+.icon-ic-guitar:before {
+  content: "\43";
+}
+.icon-ic-relationship:before {
+  content: "\44";
+}
+.icon-ic-publications:before {
+  content: "\45";
+}
+.icon-ic-profile:before {
+  content: "\46";
+}
+.icon-ic-plus-add-top:before {
+  content: "\47";
+}
+.icon-ic-people:before {
+  content: "\48";
+}
+.icon-ic-past-times:before {
+  content: "\49";
+}
+.icon-ic-name:before {
+  content: "\4a";
+}
+.icon-ic-music:before {
+  content: "\4b";
+}
+.icon-ic-mantra:before {
+  content: "\4c";
+}
+.icon-ic-lookalike:before {
+  content: "\4d";
+}
+.icon-ic-location-small:before {
+  content: "\4e";
+}
+.icon-ic-hobbies:before {
+  content: "\50";
+}
+.icon-ic-relax:before {
+  content: "\4f";
+}
+.icon-ic-saying:before {
+  content: "\51";
+}
+.icon-ic-settings:before {
+  content: "\52";
+}
+.icon-ic-spirituality:before {
+  content: "\53";
+}
+.icon-ic-sports-played:before {
+  content: "\54";
+}
+.icon-ic-tick:before {
+  content: "\55";
+}
+.icon-ic-tie:before {
+  content: "\56";
+}
+.icon-ic-videos:before {
+  content: "\57";
+}
+.icon-ic-words-wisdom:before {
+  content: "\58";
+}
+/*.icon-whislte:before {
+  content: "\59";
+}*/
+.icon-trainer:before {
+  content: "\5a";
+}
+.icon-share:before {
+  content: "\30";
+}
+.icon-resting:before {
+  content: "\31";
+}
+.icon-pet-icon:before {
+  content: "\33";
+}
+.icon-person:before {
+  content: "\34";
+}
+.icon-imag:before {
+  content: "\35";
+}
+.icon-icon:before {
+  content: "\36";
+}
+.icon-pink-arrow:before {
+  content: "\32";
+}
+.icon-ic-school:before {
+  content: "\37";
+}
+.icon-ic-location:before {
+  content: "\38";
+}
+.icon-whistle:before {
+  content: "\59";
+}

@@ -1,0 +1,32 @@
+<ion-header no-border>
+
+  <ion-navbar>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="story-outer">
+ <div class="story-cont">
+  <h1>Hi, {{userName}}</h1>
+  <p>Let's create a life story</p>
+  </div>
+  <ion-list class="story-inner-cont">
+    <li>
+      <button ion-item (click)="openStoryPage2('1')">
+        <ion-icon class="icon icon-pink-arrow" item-right></ion-icon>
+        Human
+      </button>
+    </li>
+    <li>
+      <button ion-item (click)="openPetStory('2')">
+       <ion-icon class="icon icon-pink-arrow pet-clr" item-right></ion-icon>
+        Pet
+      </button>
+    </li>
+  </ion-list>
+  
+  
+</ion-content>
+<!--<ion-footer>
+  <progress max="100" [value]="progress" class="progressbar"></progress>
+</ion-footer>-->

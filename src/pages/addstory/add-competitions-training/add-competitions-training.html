@@ -1,0 +1,111 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons left (click)="closeCompetitionsTraining()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <ion-icon class="icon icon-cross" item-right></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="story-outer">
+  <div class="story-cont">
+    <h1 class="pet-follow">Competitions or training</h1>
+  </div>
+
+  <form [formGroup]="competitionsTrainingForm" >
+    
+    <ion-list>
+
+      <ion-item class="item1">
+        <ion-label stacked>Breeder</ion-label>
+        <ion-icon class="icon icon-trainer pet-clr" item-right></ion-icon>
+        <ion-input type="text" [formControl]="competitionsTrainingForm.controls['breeder']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!competitionsTrainingForm.controls['breeder'].valid && competitionsTrainingForm.controls['breeder'].hasError('required')">
+        Breeder is required!</div> -->
+        <div class="error-box" *ngIf="competitionsTrainingForm.controls['breeder'].hasError('pattern')">Please enter valid text.</div>
+        
+      </div>
+
+      <ion-item>
+        <ion-label stacked class="desc">Blood line/pedigree</ion-label>
+        <ion-icon class="icon icon-body-line pet-clr" item-right></ion-icon>
+        <ion-input type="text" [formControl]="competitionsTrainingForm.controls['bloodLine']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!competitionsTrainingForm.controls['bloodLine'].valid && competitionsTrainingForm.controls['bloodLine'].hasError('required')">
+        Blood line / pedigree is required!</div> -->
+        <div class="error-box" *ngIf="competitionsTrainingForm.controls['bloodLine'].hasError('pattern')">Please enter valid text.</div>
+        
+
+      </div>
+
+      <ion-item>
+        <ion-label stacked>Training</ion-label>
+        <ion-icon class="icon icon-whistle pet-clr" item-right></ion-icon>
+        <ion-input type="text" [formControl]="competitionsTrainingForm.controls['training']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!competitionsTrainingForm.controls['training'].valid && competitionsTrainingForm.controls['training'].hasError('required')">
+        Training is required!</div> -->
+        <div class="error-box" *ngIf="competitionsTrainingForm.controls['training'].hasError('pattern')">Please enter valid text.</div>
+        
+      </div>
+
+      <ion-item>
+        <ion-label stacked class="desc">Competitions</ion-label>
+        <ion-icon class="icon icon-achievement pet-clr" item-right></ion-icon>
+        <ion-input type="text" [formControl]="competitionsTrainingForm.controls['competitions']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!competitionsTrainingForm.controls['competitions'].valid && competitionsTrainingForm.controls['competitions'].hasError('required')">
+        Competitions is required!</div> -->
+        <div class="error-box" *ngIf="competitionsTrainingForm.controls['competitions'].hasError('pattern')">Please enter valid text.</div>
+        
+      </div>
+
+      <ion-item>
+        <ion-label stacked>Publications</ion-label>
+        <ion-icon class="icon icon-ic-publications pet-clr" item-right></ion-icon>
+        <ion-input type="text" [formControl]="competitionsTrainingForm.controls['publications']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!competitionsTrainingForm.controls['publications'].valid && competitionsTrainingForm.controls['publications'].hasError('required')">
+        Publications is required!</div> -->
+        <div class="error-box" *ngIf="competitionsTrainingForm.controls['publications'].hasError('pattern')">Please enter valid text.</div>
+      </div>
+
+      <ion-item>
+        <ion-label stacked class="desc">Achievements</ion-label>
+        <ion-icon class="icon icon-competition pet-clr" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-achievement pet-clr" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="competitionsTrainingForm.controls['achievements']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!competitionsTrainingForm.controls['achievements'].valid && competitionsTrainingForm.controls['achievements'].hasError('required')">
+        Achievements is required!</div> -->
+        <div class="error-box" *ngIf="competitionsTrainingForm.controls['achievements'].hasError('pattern')">Please enter valid text.</div>
+      </div>
+
+      <ion-item>
+        <ion-label stacked>Accolades</ion-label>
+        <ion-icon class="icon icon-ic-accolades pet-clr" item-right></ion-icon>
+        <ion-input type="text" [formControl]="competitionsTrainingForm.controls['accolades']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!competitionsTrainingForm.controls['accolades'].valid && competitionsTrainingForm.controls['accolades'].hasError('required')">
+        Accolades is required!</div> -->
+        <div class="error-box" *ngIf="competitionsTrainingForm.controls['accolades'].hasError('pattern')">Please enter valid text.</div>
+      </div>
+      
+    </ion-list>
+
+    <button ion-button class="mr-t80 button_color" full color="dark" (click)="addCompetitionsTraining(competitionsTrainingForm.value)">
+      {{isNotEmpty ? 'UPDATE':'ADD'}}
+
+    </button>
+    
+  </form>
+</ion-content>

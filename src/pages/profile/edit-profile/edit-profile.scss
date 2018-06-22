@@ -1,0 +1,225 @@
+page-edit-profile {
+
+    // .btnColor .bar-button .bar-button-md .bar-button-default .bar-button-default-md
+    // {
+    //     // font-size: 16pt;
+    //     // color: rgb(99,98,99);
+    //     // margin-right: 15px;
+    //     // font-family: 'Conv_Gotham Book Regular';
+    // }
+
+
+    ion-header ion-icon.back-button-icon.icon, 
+    ion-header span.back-button-text.back-button-text-ios , .bar-button{
+        color: #636263;
+        margin-left: 10px !important;
+    }
+     .bar-button-ios{
+        margin-left: 16px !important;
+    }
+    .Txtcolor{
+        color: #636263;
+    }
+    .cross-icn .icon-cross{
+        font-size: 14px
+    }
+
+    .grid
+    {
+        margin-left: -7pt;
+    }
+
+   .icon1 {
+        color: white !important;
+        font-size: 16px !important; 
+        text-align: center;
+        /* width: 14.8pt; */
+        // height: 11.7pt;
+        margin-left: 6px;
+        margin-top: 6px;
+
+    }
+
+    .list .item-input:first-child {
+        padding-top: 22px;
+        border-top: 0;
+       
+    }
+  
+    
+
+    .camera
+    {
+        background-color: #636263 !important;
+        height: 31px;
+        width: 31px;
+        border-radius: 4px;
+        z-index: 99999;
+        position: absolute;
+        bottom: -4px;
+        right: -4px;
+        border: 1px solid #fff;
+    }
+
+    .toolbar-ios{
+        padding-top: 0px !important;
+    }
+
+    .profile-image {
+        height: 160px;
+        width: 160px;
+        border-radius: 2px;
+        display: inline-block;
+        vertical-align: middle;
+        overflow: hidden;
+        position: relative;
+    }
+    
+        }
+//alert box
+//    .alert-wrapper
+//    {
+//     width: 335pt;
+//    // height: 238pt;
+//     border-radius: 10pt;
+//    }     
+
+//    .alert-title {
+//     font-size: 18px;
+//     text-align: center;
+//     font-weight: 500;
+//     font-family: 'Conv_Gotham Book Regular';
+//     }
+
+    .setting-img
+    {
+        height: 160px;
+        max-width: initial !important;
+    }
+
+.edit-img{
+    position: relative;
+    display: inline-block;
+}
+    
+
+
+.confirm-alert .alert-wrapper
+{
+//  width: 335pt;
+//  //height: 238pt;
+//  border-radius: 10pt !important;
+
+ max-width: 335px;
+ border-radius: 10pt !important;
+ width: 100%;
+//  text-align: center;
+}
+   
+
+
+
+.confirm-alert .alert-title {
+    font-size: 18px !important;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Conv_Gotham Book Regular';
+    letter-spacing: -0.4pt;
+    color: rgb(3,3,3);
+
+    //border-bottom: solid rgb(255, 160, 160);
+    }
+
+.confirm-alert .alert-message
+{
+    font-size: 12px !important;
+    margin-top: 20px;
+    line-height: 16px;
+    text-align: center;
+    font-family: 'Conv_Gotham Light';
+    color: rgb(28,27,27) !important;
+    padding: 0 12% 24px;
+}    
+
+.confirm-alert .alert-button-group
+{
+    // background-color: rgb(74,74,74);
+    // width:  252px;
+    // height: 45px;
+    // margin: 15px 15px 15px 15px;
+    // border-radius: 4pt;
+    // color: white !important;
+
+
+    background-color: #4a4a4a;
+    width: 305px;
+    height: 45px;
+    margin: 15px auto 15px;
+    border-radius: 4pt;
+    color: white !important;
+}
+.confirm-alert .alert-md .alert-button {
+    text-align: center;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white !important;
+    background-color: transparent;
+     margin: 0;
+     padding: 0px; 
+}
+
+
+.confirm-alert .alert-button
+{
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0px; 
+}
+
+
+// .confirm-alert .button-inner
+// {
+//     justify-content: center; 
+// }
+.alert-md .alert-button .button-inner {
+    justify-content: center; 
+}
+
+// .confirm-alert h2:before {
+//     background-color: #ffa0a0;
+//     bottom: 0;
+//     content: "";
+//     height: 2px;
+//     left: 0;
+//     position: absolute;
+//     width: 50px;
+// }
+
+.confirm-alert .alert-title{
+
+    position: relative;
+        &:before{
+            background-color: #ffa0a0;
+            bottom: -7px;
+            content: "";
+            height: 2px;
+            left: 0;
+            position: absolute;
+            right: 0;
+            width: 50px;
+            margin: auto;
+            
+                }
+    }
+
+    ion-alert.alert-top {
+        padding-top: inherit !important;
+        align-items:center !important;
+        -webkit-box-align: initial !important;
+        -webkit-align-items: center !important;
+    }

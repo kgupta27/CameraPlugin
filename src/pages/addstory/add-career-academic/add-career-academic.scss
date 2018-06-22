@@ -1,0 +1,25 @@
+page-add-career-academic {
+    .cross-icn .icon-cross{
+        font-size: 14px
+    }
+    ion-header ion-icon.back-button-icon.icon, 
+    ion-header span.back-button-text.back-button-text-ios , .bar-button{
+        color: #636263;
+        margin-left: 16px !important;
+    }
+    .item1{
+        margin-top: 20px;
+    }
+    ion-item ion-icon {
+        margin-bottom: -16px !important;
+    }
+
+    .icon-hat{
+        color: rgba(255, 160, 160, 0.65) !important;
+    }
+
+    .icon-ic-business{
+        margin-bottom: -22px !important;
+        font-size: 22px !important;
+    }
+}

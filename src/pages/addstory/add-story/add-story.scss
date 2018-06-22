@@ -1,0 +1,43 @@
+page-add-story {
+    ion-header ion-icon.back-button-icon.icon, 
+    ion-header span.back-button-text.back-button-text-ios , .bar-button{
+    color: #636263;
+    margin-left: 16px !important;
+    }
+    .Txtcolor{
+        color: #636263;
+    }
+    .cross-icn .icon-cross{
+        font-size: 14px
+    }
+    .toolbar {
+        &.toolbar-md { //material design only
+            &.home-nav {
+                position: relative;
+                .title-md { //material design only
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .item-inner {
+    background: #f9f9f9;
+    margin-bottom: 0px;
+    padding: 0 20px!important;
+    background-image: none!important;
+    border: 0!important;
+        .label{
+            color: #636263; 
+    font-size: 15px;
+        }
+    }
+    .story-outer .story-inner-cont {
+        margin-top: 10px !important;
+    }
+}

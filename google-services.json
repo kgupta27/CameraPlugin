@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "626098536179",
+    "firebase_url": "https://modurn-1e246.firebaseio.com",
+    "project_id": "modurn-1e246",
+    "storage_bucket": "modurn-1e246.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:626098536179:android:9382b95f199054a4",
+        "android_client_info": {
+          "package_name": "com.android.modurn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "626098536179-tqg9ldogkcg6e47fvlffaoa5e4fehd7s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpSliCiWTeXwuyZ9fJW4MJDusqOyl3ZyE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

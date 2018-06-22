@@ -1,0 +1,56 @@
+page-competitions-training {
+    ion-header ion-icon.back-button-icon.icon, 
+    ion-header span.back-button-text.back-button-text-ios , .bar-button{
+        color: #636263;
+        margin-left: 10px !important;
+    }
+     .bar-button-ios{
+        margin-left: 16px !important;
+    }
+    .cross-icn .icon-cross{
+        font-size: 14px
+    }
+    .my-icon{
+        position: absolute;
+        right: -9px;
+        top: 0px;
+        font-size: 21px;
+    }
+    .health-outer{
+        position: relative;
+        margin-top: 60px;
+    }
+    .helth-title{
+        font-family: 'Conv_Gotham Light';
+        font-size: 13px;
+        color: #111;
+        display: inline-block;
+        position: relative;
+        padding-bottom: 8px;
+        &:before{
+            background-color: #080e2f;
+            bottom: 0;
+            content: "";
+            height: 1px;
+            left: 0;
+            position: absolute;
+            width: 40px;
+
+        }
+    }
+    .dot-cont{
+       .icon{
+            color: #ffa0a0;
+            font-size: 24px;
+            right: 4px;
+        }
+    }
+    .p_content{
+        color: #121212;
+        line-height: 23px;
+        font-size: 18px;
+        font-family: 'Conv_Gotham Medium Regular';
+        padding: 10px 0;
+        width: 90%;
+    }
+}

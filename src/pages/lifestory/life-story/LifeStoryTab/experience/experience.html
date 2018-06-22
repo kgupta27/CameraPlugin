@@ -1,0 +1,161 @@
+<ion-content>
+
+  <ion-segment [(ngModel)]="expStatus" class="tabSegment" *ngIf="lifeStoryData.roleId != 4">
+    <ion-segment-button value="livetabs" (click)="livePending(true)">Live</ion-segment-button>
+    <ion-segment-button value="pendingtabs" (click)="livePending(false)">Pending</ion-segment-button>
+  </ion-segment>
+
+  <!--{{items | json}}-->
+  <div [ngSwitch]="expStatus">
+    <div *ngSwitchCase="'livetabs'">
+      <div *ngIf="items.length>0">
+        <ion-card class="exp-card" *ngFor="let item of items; let i=index">
+          <!-- <ion-card class="exp-card" *virtualItem="let item; let i=index"> -->
+
+          <ion-item>
+            <h2 class="namewithoverflow">{{item.title}}</h2>
+            <ion-note item-end *ngIf="lifeStoryData.roleId == 1 || lifeStoryData.roleId == 2 || item.self" (click)="actionExperience(item.experienceId,i)">
+              <ion-icon class="icon icon-ic-three-dots"></ion-icon>
+            </ion-note>
+          </ion-item>
+          <div class="coachmark">  
+          <!-- <img src="{{item.imageMediumUrl500}}" class="exp-img" (click)="openLifeStoryDetails(item.experienceId, i)"> -->
+          
+          <div class="exp-img experience_wrapper">
+          <bg-image-with-loader type="exp" [image]="item.imageUrl" (click)="openLifeStoryDetails(item.experienceId, i)"></bg-image-with-loader>
+          <!-- <ion-img width="100%" height="251px" cache="true" src="{{item.imageUrl}}" ></ion-img> -->
+
+          <div class="info-content"  *ngIf="coachMark">
+              <div class="arrow" (click)="dismiss()">
+                  <div class="tooltip-header" ><img src="assets/img/gestureTap.png"> </div>
+                  <div class="tooltip-content">
+                      Tap on the Image to view Experience in full detail.
+                  </div>
+                  <div class="button" (click)="dismiss()">GOT IT</div>
+                </div>
+              </div>
+
+              <div class="tap_icon"  *ngIf="!coachMark" (click)="openLifeStoryDetails(item.experienceId, i)">
+                  <img src="assets/img/tap_icon.png" alt="Tap Icon">
+                </div>
+              </div>
+            </div>
+
+            
+          <ion-row>
+            <ion-col>
+              <div class="life-tab">
+                <ion-icon class="icon icon-ic-profile"></ion-icon>
+                <p class="withuoverflow">{{item.personWithYou}}</p>
+              </div>
+            </ion-col>
+            <ion-col text-right *ngIf="item.selfLike && lifeStoryData.roleId != 4">
+              <div class="life-tab f-right">
+                <p class="col-red">{{item.count}} </p>
+                <ion-icon class="icon icon-heart-filled"></ion-icon>
+              </div>
+            </ion-col>
+            <ion-col text-right *ngIf="!item.selfLike && lifeStoryData.roleId != 4">
+              <div class="life-tab f-right" (click)="likeExp(item.experienceId,i)">
+                <p class="col-red">{{item.count}}</p>
+                <ion-icon class="icon icon-ic-heart"></ion-icon>
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <div class="life-tab">
+                <ion-icon class="icon icon-ic-location"></ion-icon>
+                <p class="withuoverflow">{{item.experiencePlace}}</p>
+              </div>
+            </ion-col>
+            <ion-col>
+
+              <div class="life-tab f-right">
+                <ion-icon class="icon icon-ic-calander"></ion-icon>
+                <p>{{item.experienceDate}}</p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+      <div text-center class="mr-t10" *ngIf="items.length == 0">
+        No Experiences
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'pendingtabs'">
+      <ion-card class="exp-card" *ngFor="let item of items;let i=index">
+
+        <ion-item>
+          <h2>{{item.title}}</h2>
+          <ion-note item-end *ngIf="isChangePermission || item.self" (click)="actionExperience(item.experienceId, i)">
+            <ion-icon class="icon icon-ic-three-dots"></ion-icon>
+          </ion-note>
+        </ion-item>
+
+        <div class="coachmark">  
+        <!-- <img src="{{item.imageMediumUrl500}}" class="exp-img" (click)="openLifeStoryDetails(item.experienceId, i)"> -->
+        <div class="exp-img experience_wrapper">
+            <bg-image-with-loader type="exp" [image]="item.imageUrl" (click)="openLifeStoryDetails(item.experienceId, i)"></bg-image-with-loader>
+     
+        <div class="info-content"  *ngIf="coachMark">
+            <div class="arrow" (click)="dismiss()">
+                <div class="tooltip-header" ><img src="assets/img/gestureTap.png"> </div>
+                <div class="tooltip-content">
+                    Tap on the Image to view Experience in full detail.
+                </div>
+                <div class="button" (click)="dismiss()">GOT IT</div>
+              </div>
+            </div>
+
+            <div class="tap_icon"  *ngIf="!coachMark">
+                <img src="assets/img/tap_icon.png" alt="Tap Icon">
+              </div>
+              </div>
+          </div>
+
+        <ion-row>
+          <ion-col>
+            <div class="life-tab">
+              <ion-icon class="icon icon-ic-profile"></ion-icon>
+              <p>{{item.personWithYou}}</p>
+            </div>
+          </ion-col>
+          <ion-col text-right>
+            <!-- <div class="life-tab f-right">
+              <p class="col-red">5 </p>
+              <ion-icon class="icon icon-heart-filled"></ion-icon>
+            </div> -->
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <div class="life-tab">
+              <ion-icon class="icon icon-ic-location"></ion-icon>
+              <p>{{item.experiencePlace}}</p>
+            </div>
+          </ion-col>
+          <ion-col>
+
+            <div class="life-tab f-right">
+              <ion-icon class="icon icon-ic-calander"></ion-icon>
+              <p>{{item.experienceDate}}</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+      <div text-center class="mr-t10" *ngIf="items.length == 0">
+        No Experiences
+      </div>
+    </div>
+
+  </div>
+
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

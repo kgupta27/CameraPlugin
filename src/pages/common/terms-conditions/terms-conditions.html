@@ -1,0 +1,23 @@
+<ion-header no-border>
+  <ion-navbar>
+    <!--<ion-title text-center>Terms & Conditions</ion-title>-->
+    
+    <ion-buttons left (click)="closeTermsConditions()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <!--<ion-icon name='md-close'></ion-icon>-->
+        <ion-icon class="icon icon-cross" item-right></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <div class="page-content padd-content">
+    <div class="page-heading">
+      <h2 class="content-head2">Terms & conditions</h2>
+    </div>
+
+<p #dataContainer text-center class="terms-data">  <ion-spinner name="bubbles"></ion-spinner>
+</p>
+  </div>
+</ion-content>

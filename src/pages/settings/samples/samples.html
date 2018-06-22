@@ -1,0 +1,15 @@
+<ion-content no-bounce>
+  <ion-slides pager (ionSlideDidChange)="slideChanged()">
+    <ion-slide *ngFor="let slide of samples" [ngStyle]="{'background' : 'url(' + slide.image + ') center center no-repeat'}" class="introslides">
+      <div class="slide-title" [innerHTML]="slide.title" [ngClass]="slide.cssClass"></div>
+      <p [innerHTML]="slide.description" [ngClass]="{'description0':(currentIndex==0),'description1':(currentIndex==1),'description2':(currentIndex==2),'description3':(currentIndex==3),'description4':(currentIndex==4) }"></p>
+      <!-- <img [src]="slide.image" class="slide-image"/> -->
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+<ion-footer text-center (click)="getStarted()">
+  <ion-toolbar class="intro-toolbar">
+    <ion-title class="intro-footer">{{(currentIndex!=4)?'NEXT':'DONE'}}</ion-title>
+  </ion-toolbar>
+</ion-footer>

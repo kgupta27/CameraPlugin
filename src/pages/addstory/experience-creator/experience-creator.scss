@@ -1,0 +1,33 @@
+page-experience-creator {
+    ion-content {
+    background: linear-gradient(0deg, #eeeef1 0%, white 80%, white 100%);
+  }
+  button,
+  ion-button,
+  .button-md,
+  .button-ios {
+    text-transform: none !important;
+  }
+  p {
+    color: #444;
+  }
+  // Cover image
+  #profile-bg {
+    /* position: absolute; */
+    left: 0;
+    width: 100%;
+    margin-top: 0px;
+    height: 160px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+  }
+  .expContent{
+    // font-family: 'Conv_Gotham Book';
+    font-size: 12px;
+    line-height: 19px;
+    text-align: left
+  }
+  
+}

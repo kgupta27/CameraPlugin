@@ -1,0 +1,35 @@
+<ion-header no-border>
+
+  <ion-navbar>
+    <title></title>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="story-outer">
+  <div class="story-cont">
+    <h1>Who is the owner of this <br/>life story?</h1>
+  </div>
+  <ion-list class="story-inner-cont">
+    <li>
+      <button ion-item (click)="openMyselfStory()">
+       <ion-icon class="icon icon-pink-arrow" item-right></ion-icon>
+        Myself
+      </button>
+    </li>
+    <li>
+      <button ion-item (click)="openSomeoneElseStory()">
+        <ion-icon class="icon icon-pink-arrow" item-right></ion-icon>
+        Someone else
+      </button>
+    </li>
+  </ion-list>
+</ion-content>
+<div class="progressbar">
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+    </div>
+  </div>
+</div>

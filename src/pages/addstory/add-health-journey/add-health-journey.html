@@ -1,0 +1,60 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons left (click)="closeHealthJourney()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <ion-icon class="icon icon-cross" item-right></ion-icon>
+        <!--<img src="assets/img/icCross@3x.png" />-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="story-outer">
+  <div padding class="story-cont">
+      <!-- urnType {{urnType}} -->
+    <h1 class="{{urnType == 1 ? 'human-follow':'pet-follow'}}">Add a health journey</h1>
+    <p>A health journey is a story from your {{urnType == 2 ? "pet's":""}} life relating to any injuries or medical issues you may want to share.</p>
+  </div>
+
+  <form padding [formGroup]="healthForm">
+
+    <ion-list>
+      <!-- {{helthData | json}} -->
+      <ion-item>
+        <ion-label stacked>Health journey title</ion-label>
+        <ion-input type="text" [formControl]="healthForm.controls['title']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box" *ngIf="!healthForm.controls['title'].valid && healthForm.controls['title'].hasError('required')">
+          Health journey is required!</div>
+        <div class="error-box" *ngIf="healthForm.controls['title'].hasError('pattern')">Please enter valid health journey.</div>
+      </div>
+
+      <ion-item>
+        <ion-label stacked class="age">Age</ion-label>
+        <ion-input type="number" min="1" max="120" [formControl]="healthForm.controls['age']"></ion-input>
+      </ion-item>
+      
+      <div *ngIf="isValid">
+        <div class="error-box" *ngIf="!healthForm.controls['age'].valid && healthForm.controls['age'].hasError('required')">
+          Age is required!</div>
+        <div class="error-box" *ngIf="healthForm.controls['age'].hasError('pattern') && !healthForm.controls['age'].valid && !healthForm.controls['age'].hasError('required')">
+        Please enter valid age!</div>
+      </div>
+
+      <ion-item>
+        <ion-label stacked class="desc">Description</ion-label>
+        <ion-input type="text" [formControl]="healthForm.controls['desc']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box" *ngIf="!healthForm.controls['desc'].valid && healthForm.controls['desc'].hasError('required')">
+          Description is required!</div>
+        <div class="error-box" *ngIf="healthForm.controls['desc'].hasError('pattern')">Please enter valid description.</div>
+      </div>
+
+    </ion-list>
+
+    <button ion-button class="mr-t80 button_color" full color="dark" (click)="addHealthJourney(healthForm.value)">{{isNotEmpty?'UPDATE':'ADD'}}</button>
+
+  </form>
+</ion-content>

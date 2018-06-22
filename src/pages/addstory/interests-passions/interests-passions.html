@@ -1,0 +1,545 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons left (click)="closeInterestPassion()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <ion-icon class="icon icon-cross" item-right></ion-icon>
+        <!--<img src="assets/img/icCross@3x.png" />-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="story-outer">
+
+  <div *ngIf="!isDataFound">
+    <div class="story-cont">
+      <h1 class="{{urnType == 1 ? 'human-follow':'pet-follow'}}">{{urnType == 1 ? 'Interests & passions':'Interests'}}</h1>
+    </div>
+    <!--urnType = {{urnType | json }} -->
+    <!-- {{interestData | json}} -->
+    <div class="health-outer" *ngIf="urnType == 1  && interestData.colour != null">
+      <div class="helth-title">Favourite colour</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-color my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.colour}}
+      </div>
+
+    </div>
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.book != null">
+      <div class="helth-title">Favourite book</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-icon my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.book}}
+      </div>
+
+    </div>
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.favouriteMusicBandSong != null">
+      <div class="helth-title">Favourite Music, Band, Song</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-music my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.favouriteMusicBandSong}}
+      </div>
+    </div>
+    <!-- <div class="health-outer" *ngIf="urnType == 1">
+      <div class="helth-title">Favourite band</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-guitar my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.band}}
+      </div>
+
+    </div> -->
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.firstConcert != null">
+      <div class="helth-title">Favourite concert</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-concert my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.firstConcert}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="interestData.food != null">
+      <div class="helth-title">Favourite food</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-food my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.food}}
+      </div>
+
+    </div>
+    <div class="health-outer" *ngIf="urnType == 2 && interestData.person != null">
+      <div class="helth-title">Favourite person</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-person my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.person}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.favouritePetAnimal != null">
+      <div class="helth-title">Favourite pet or animal</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-a my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.favouritePetAnimal}}
+      </div>
+
+    </div>
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.spirituality != null">
+      <div class="helth-title">Spirituality</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-spirituality my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.spirituality}}
+      </div>
+
+    </div>
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.car != null">
+      <div class="helth-title">Favourite car</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-car my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.car}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="interestData.placeVisited != null">
+      <div class="helth-title">Place's visited</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-combined-shape my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.placeVisited}}
+      </div>
+
+    </div>
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.sportsPlayed != null">
+      <div class="helth-title">Sports played/enjoyed</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-sports-played my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.sportsPlayed}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.movie != null">
+      <div class="helth-title">Favourite movies</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-videos my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.movie}}
+      </div>
+
+    </div>
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.sayings != null">
+      <div class="helth-title">Saying</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-saying my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        <!-- You were born an original. Don’t die a copy.” borrowed from 
+        <br>- John Mason -->
+        {{interestData.sayings}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="interestData.waysToRelax != null">
+      <div class="helth-title">Happiness means</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-relax my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.waysToRelax}}
+      </div>
+
+    </div>
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.hobbies != null">
+      <div class="helth-title">Hobbies</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-hobbies my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.hobbies}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="interestData.pastTimes != null">
+      <div class="helth-title">Past times</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-past-times my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.pastTimes}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="interestData.influencer != null">
+      <div class="helth-title">People who were an influence</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-people my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.influencer}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.lookalike != null">
+      <div class="helth-title">Lookalike</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-lookalike my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.lookalike}}
+      </div>
+
+    </div>
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.wordsOfWisdom != null">
+      <div class="helth-title">Words of wisdom</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-words-wisdom my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.wordsOfWisdom}}
+      </div>
+
+    </div>
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.mantra != null">
+      <div class="helth-title">Mantra</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-mantra my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.mantra}}
+      </div>
+    </div>
+
+    <!-- <div class="health-outer" *ngIf="urnType == 1">
+      <div class="helth-title">Sports played/enjoyed</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-sports-played my-icon" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{careerData.sportsPlayed}}
+      </div>
+    </div>-->
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.sportsRecord != null">
+      <div class="helth-title">Sports records & achievements</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-sports-record my-icon" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.sportsRecord}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.howManyChildren != null">
+      <div class="helth-title">How many Children</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-color my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.howManyChildren}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.pets != null">
+      <div class="helth-title">Pets</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-icon my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.pets}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.bestFriends != null">
+      <div class="helth-title">Best friend/s </div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-music my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.bestFriends}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.whoDoYouMiss != null">
+      <div class="helth-title">Who do you miss </div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-concert my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.whoDoYouMiss}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1  && interestData.worstEnemy != null">
+      <div class="helth-title">Worst enemy </div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-food my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.worstEnemy}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.aspireToBeLike != null">
+      <div class="helth-title">Aspire to be like </div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-person my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.aspireToBeLike}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.ultimateDinnerPartyGuests != null">
+      <div class="helth-title">Ultimate dinner party guests </div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-a my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.ultimateDinnerPartyGuests}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.greatestFear != null">
+      <div class="helth-title">Greatest fear </div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-spirituality my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.greatestFear}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.greatestAchievement != null">
+      <div class="helth-title">Greatest achievement </div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-car my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.greatestAchievement}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.mostProudOf != null">
+      <div class="helth-title">Most proud of </div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-combined-shape my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.mostProudOf}}
+      </div>
+    </div>
+
+    <!-- <div class="health-outer" *ngIf="urnType == 1">
+      <div class="helth-title">6 degrees of separation</div>
+      <div class="dot-cont">
+      </div>
+      <div class="p_content">
+        {{interestData.degreesOfSeparation}}
+      </div>
+    </div> -->
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.bestTimeInLife != null">
+      <div class="helth-title">Best time in life</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-sports-played my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.bestTimeInLife}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.worstTimeInLife != null">
+      <div class="helth-title">Worst time in life </div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-videos my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.worstTimeInLife}}
+      </div>
+    </div>
+
+    <!-- <div class="health-outer" *ngIf="urnType == 1">
+      <div class="helth-title">Struggles encountered</div>
+      <div class="dot-cont">
+      </div>
+      <div class="p_content">
+        {{interestData.strugglesEncountered}}
+      </div>
+    </div> -->
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.ifYouCouldDoItOverAgain != null">
+      <div class="helth-title">If you could do it over again </div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-saying my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.ifYouCouldDoItOverAgain}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.bestAdviseYouReceived != null">
+      <div class="helth-title">Best advise you received</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-relax my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.bestAdviseYouReceived}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1  && interestData.firstJob != null">
+      <div class="helth-title">First job</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-hobbies my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.firstJob}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.worstJob != null">
+      <div class="helth-title">Worst job</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-past-times my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.worstJob}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.bestJob != null">
+      <div class="helth-title">Best job </div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-people my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.bestJob}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.bestHoliday != null">
+      <div class="helth-title">Best holiday</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-lookalike my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.bestHoliday}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.bestJokeIKnow != null">
+      <div class="helth-title">Best joke I know </div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-words-wisdom my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.bestJokeIKnow}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.whoMakesYouLaugh != null">
+      <div class="helth-title">Who makes you laugh </div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-mantra my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.whoMakesYouLaugh}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.whatMakesYouCry != null">
+      <div class="helth-title">What makes you cry</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-sports-record my-icon" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.whatMakesYouCry}}
+      </div>
+    </div>
+
+    <!-- <div class="health-outer" *ngIf="urnType == 1">
+      <div class="helth-title">Deserted island companion</div>
+      <div class="dot-cont">
+      </div>
+      <div class="p_content">
+        {{interestData.desertedIslandCompanion}}
+      </div>
+    </div> -->
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.whatWouldYouChangeAboutTheWorld != null">
+      <div class="helth-title">What would you change about the world</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-color my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.whatWouldYouChangeAboutTheWorld}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.ifYouCouldWhatWouldYouComeBackAs != null">
+      <div class="helth-title">If you could who/what would you come back as</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-icon my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.ifYouCouldWhatWouldYouComeBackAs}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 1 && interestData.bestTheatrePerformance != null">
+      <div class="helth-title">Best show/theatre performance</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-music my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.bestTheatrePerformance}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 2 && interestData.furBestFriend != null">
+      <div class="helth-title">Fur best friend </div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-concert my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{interestData.furBestFriend}}
+      </div>
+    </div>
+
+    <div class="health-outer" *ngIf="urnType == 2 && interestData.favouritePark != null">
+      <div class="helth-title">Favourite Park </div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-food my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+      </div>
+    </div>
+    <div class="p_content">
+      {{interestData.favouritePark}}
+    </div>
+  
+
+  <div class="health-outer" *ngIf="urnType == 2 && interestData.owners != null">
+    <div class="helth-title">Owners </div>
+    <div class="dot-cont">
+      <ion-icon class="icon icon-person my-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+    </div>
+    <div class="p_content">
+      {{interestData.owners}}
+    </div>
+  </div>
+
+</div>
+ 
+  <div *ngIf="isDataFound" class="Nodatafound">
+    <h1 text-center>No data found</h1>
+  </div>
+</ion-content>

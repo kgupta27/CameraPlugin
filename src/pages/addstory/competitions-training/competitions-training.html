@@ -1,0 +1,87 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons left (click)="closeCompetitionsTraining()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <ion-icon class="icon icon-cross" item-right></ion-icon>
+        <!--<img src="assets/img/icCross@3x.png" />-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="story-outer">
+  <div *ngIf="!isDataFound">
+    <div class="story-cont">
+      <h1 class="pet-follow">Competitions or training</h1>
+    </div>
+    <!-- {{trainingData | json }} -->
+    <div class="health-outer" *ngIf="trainingData.breeder != null">
+      <div class="helth-title">Breeder</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-trainer my-icon pet-clr" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{trainingData.breeder}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="trainingData.bloodLine != null">
+      <div class="helth-title">Blood line/pedigree</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-body-line my-icon pet-clr" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{trainingData.bloodLine}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="trainingData.training != null">
+      <div class="helth-title">Training</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-whistle my-icon pet-clr" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{trainingData.training}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="trainingData.competitions != null">
+      <div class="helth-title">Competitions</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-competition my-icon pet-clr" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{trainingData.competitions}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="trainingData.publications != null">
+      <div class="helth-title">Publications</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-publications my-icon pet-clr" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{trainingData.publications}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="trainingData.achievements != null">
+      <div class="helth-title">Achievements</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-achievement my-icon pet-clr" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{trainingData.achievements}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="trainingData.accolades != null">
+      <div class="helth-title">Accolades</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-accolades my-icon pet-clr" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{trainingData.accolades}}
+      </div>
+    </div>
+
+  </div>
+  <div *ngIf="isDataFound" class="Nodatafound">
+    <h1 text-center>No data found</h1>
+  </div>
+
+</ion-content>

@@ -1,0 +1,75 @@
+page-authentication {
+	.scroll-content {
+		padding: 80px 20px !important;
+		.btnClass {
+			text-align: center;
+			font-size: 32px;
+			color: rgba(0, 0, 0, .2);
+			.authHr {
+				background-color: transparent;
+				height: 2px;
+				width: 50px;
+				margin: 13px auto;
+			}
+			&.activeClass {
+				color: rgb(99, 98, 99);
+				.authHr {
+					background-color: rgb(255, 160, 160);
+				}
+			}
+			label {
+				cursor: pointer;
+			}
+		}
+		.list{
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+		
+	}
+	.auth-link-ctn{
+		text-align: center;
+		margin: 50px 0 100px;
+		color: rgb(28, 27, 27);
+		font-size: 1.2rem;
+			 font-family: 'Conv_Gotham Light';
+		.label{
+			line-height: 25px;
+			@include respond-to(small-screens) { width: 185px ; white-space: normal;margin: 0 auto;
+			}
+		}
+		a {
+			color: inherit;
+			position: relative;
+			&:before{
+				content: '';
+				position: absolute;
+				bottom:-5px;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background-color: rgba(0, 0, 0, .2); 
+			}
+		}
+	}
+    .login-error{
+        color: rgb(182, 0, 0);
+        background-color: rgb(233, 178, 178);
+        text-align: center;
+        padding: 5px;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+
+    .error-border {
+            border-bottom-color: #f53d3d;
+	}
+	
+	.item-label-stacked .text-input-md, .item-label-floating .text-input-md {
+		margin-top: 6px !important;
+	}
+	.label-ios[stacked]{
+		margin-bottom: 0px !important;
+	}
+}

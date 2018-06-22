@@ -1,0 +1,52 @@
+
+
+page-familynfriends {
+    .userCard img {
+        height: 182px;
+    }
+    .userCard {
+      margin: 0px 0 10px 0 !important;
+      width: calc(100% - 0px) !important;
+      box-shadow: none; }
+      .life-story-subtitle {
+        color: #111;
+        font-size: 11px;
+        opacity: 0.5; 
+        font-family: 'Conv_Gotham Light';}
+        .card-title-md{
+            color:#222 !important;
+        }
+        .userCardTitle{
+            color:#222 !important;
+            width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+        }
+
+        // .NodataFound
+        // {
+        //     width: 100%;
+        //     margin-top: 68px;
+        // }
+
+        .life-story-content1 {
+            margin-top: 68px;
+            padding-top: 67px;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+        }
+        .friends_wrapper{
+            height: 182px;
+            // width: 182px;
+            width: 100%;
+            border-radius: 2px;
+            display: inline-block;
+            vertical-align: middle;
+            overflow: hidden;
+            position: relative;
+        }
+    }
+
+

@@ -1,0 +1,42 @@
+page-profile-picture {
+    .pic-upload{border: 1px solid; padding: 15%; font-size: 50px; margin-bottom: 10%;}
+    .addpic{padding-bottom:100%; background-color: rgb(243, 243, 243); position:relative;overflow:hidden}
+    .addpic img{
+        top:0;
+        left: 0;
+        margin:auto;
+        position:absolute;
+        right: 0;
+        bottom:0;
+    }
+    ion-header ion-icon.back-button-icon.icon, 
+    ion-header span.back-button-text.back-button-text-ios {
+    color: #636263;
+    }
+   .profilePic-content {
+    padding: 20px 20px;
+    .page-heading{
+		h2{
+			font-size: 24px;
+			color: rgb(99,98,99);
+			position:relative;
+			&:before{
+				content: '';
+				position: absolute;
+				bottom:-8px;
+				left: 0;
+				width: 50px;
+				height: 2pt;
+				background-color: rgb(255, 160, 160)
+			}
+		}
+		p{
+			font-size: 14px;
+			color: rgb(99,98,99);
+			margin: 20px 0 40px;
+
+		}
+
+	}
+}
+}

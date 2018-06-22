@@ -1,0 +1,40 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons left (click)="dismiss()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <ion-icon class="icon icon-cross" item-right></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="story-outer">
+  <div *ngIf="!isDataFound">
+    <div class="story-cont">
+      <h1 class="{{urnType == 1 ? 'human-follow':'pet-follow'}}">Documents</h1>
+    </div>
+  
+    <div class="health-outer" *ngFor="let item of items; let i=index">
+
+      <h1 class="helth-title">{{item.title}}</h1>
+
+      <div (click)="presentActionSheet(item, i)" class="dot-cont">
+        <ion-icon class="icon icon-ic-three-dots my-icon" item-right></ion-icon>
+      </div>
+
+      <!-- <div class="p_content">
+        {{item.description}}
+      </div> -->
+
+    </div>
+
+    <!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll> -->
+
+  </div>
+  <div *ngIf="isDataFound" class="Nodatafound">
+    <h1 text-center>No data found</h1>
+  </div>
+</ion-content>

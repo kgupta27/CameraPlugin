@@ -1,0 +1,65 @@
+<ion-header no-border>
+  
+    <ion-navbar>
+        <ion-buttons right class="mar-header-icon">
+            <button class="btnColor edit_btn" ion-button icon-only (click)="editProfile()">
+          EDIT
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content padding class="story-outer">
+    <div class="story-cont">
+      <h1>My profile</h1>
+    </div>
+  
+  
+  <!-- <ion-content padding>
+    <h1>My Profile</h1>
+    <hr align="left" width="30%"> -->
+  
+    <ion-grid class="photo">
+      <ion-row>
+        <ion-col col-6>
+          <!-- Old Solution -->
+          <!-- <img src="{{profilepic?profilepic:'assets/img/human.png'}}"  class="setting-img"/> -->
+        
+          <!-- <div class="setting-img"  [ngStyle]="{'background-image':'url(' + profilepic + ')'}"></div> -->
+        
+          <!-- New Solution -->
+          <div class="profile-image"> 
+              <bg-image-with-loader [image]="profilepic"></bg-image-with-loader>
+          </div>  
+
+        </ion-col>
+      </ion-row>
+      
+    </ion-grid>
+
+ 
+      <div class="health-outer fname">
+          <div class="helth-title">Full name</div>
+          <div class="p_content">
+            {{userName}}
+          </div>
+      </div>
+
+
+      <div class="health-outer">
+          <div class="helth-title">Nickname</div>
+          <div class="p_content">
+            {{nickName}}
+          </div>
+      </div>
+
+      <div class="health-outer">
+          <div class="helth-title">Email</div>
+          <div class="p_content">
+            {{email}}
+          </div>
+      </div>
+    
+      
+  </ion-content>

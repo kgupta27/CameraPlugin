@@ -1,0 +1,95 @@
+page-my-profile {
+
+    .photo
+    {
+        margin-left: -9px;
+    }
+
+    .edit_btn
+    {
+        font-size: 16px;
+        margin-right: 14px;
+        //margin-right: 20px;
+        font-family: 'Conv_Gotham Book Regular';
+        color: rgb(99,98,99);
+        font-weight: 500;
+        height: 16pt;
+    }
+  
+   
+    // .item-md {
+    // padding-left: 0;
+    // }     
+    
+    // img
+    // {
+    //     border-radius: 2pt;
+    // }
+
+    .fname
+    {
+        margin-top: 42px !important;
+    }
+
+    .health-outer{
+        position: relative;
+        margin-top: 62px;
+    }
+    .helth-title{
+        font-family: 'Conv_Gotham Light';
+        font-size: 13px;
+        color: #1c1b1b;
+        display: inline-block;
+        // position: relative;
+        padding-bottom: 8px;
+        &:before{
+            background-color: #dedede;
+            bottom: 0;
+            content: "";
+            height: 1px;
+            left: 0;
+            position: absolute;
+            width: 100%;
+
+        }
+    }
+    .dot-cont{
+       .icon{
+            color: #ffa0a0;
+            font-size: 24px;
+            right: 4px;
+        }
+    }
+    .p_content{
+        color: #121212;;
+        line-height: 23px;
+        font-size: 16px;
+        font-family: 'Conv_Gotham Book Regular';
+        padding: 0;
+        width: 90%;
+    }
+
+    .setting-img
+    {
+        height: 160px;
+        width: 160px;
+        border-radius: 2pt;
+        background-size: contain;
+        margin:auto;
+        // max-width: initial !important;
+    }
+    .toolbar-ios{
+        padding-top: 0px !important;
+    }
+
+    .profile-image {
+        height: 160px;
+        width: 160px;
+        border-radius: 2px;
+        display: inline-block;
+        vertical-align: middle;
+        overflow: hidden;
+        position: relative;
+    }
+   
+}

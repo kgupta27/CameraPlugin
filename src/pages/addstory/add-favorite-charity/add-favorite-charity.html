@@ -1,0 +1,37 @@
+<ion-header no-border>
+  <ion-navbar>
+
+    <ion-buttons left (click)="closeAddLink()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <ion-icon class="icon icon-cross" item-right></ion-icon>
+        <!--<img src="assets/img/icCross@3x.png" />-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="story-outer">
+  <div class="story-cont">
+    <h1>{{ischarityUrl?'Update':'Add'}} a favourite <br/> charity URL</h1>
+  </div>
+  <form [formGroup]="charityUrlForm">
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked>Favourite charity URL</ion-label>
+        <ion-input type="text" autocapitalize="off" [formControl]="charityUrlForm.controls['charityUrl']"></ion-input>
+      </ion-item>
+      <div *ngIf="isSubmit">
+        <div class="error-box" *ngIf="!charityUrlForm.controls['charityUrl'].valid && charityUrlForm.controls['charityUrl'].hasError('required')">
+          Charity Url is required!</div>
+        <div class="error-box" *ngIf="charityUrlForm.controls['charityUrl'].hasError('pattern')">Please enter valid link.</div>
+      </div>
+    </ion-list>
+
+    <button ion-button class="mr-t260 button_color" full color="dark" (click)="addCharityUr(charityUrlForm.value)">{{ischarityUrl?'UPDATE':'ADD'}}</button>
+
+  </form>
+
+
+
+</ion-content>

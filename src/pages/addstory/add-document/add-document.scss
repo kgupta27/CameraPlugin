@@ -1,0 +1,49 @@
+page-add-document {
+    ion-header ion-icon.back-button-icon.icon, 
+    ion-header span.back-button-text.back-button-text-ios , .bar-button{
+    color: #636263;
+    margin-left: 10px !important;
+    }
+     .bar-button-ios{
+        margin-left: 16px !important;
+    }
+     .cross-icn .icon-cross{
+        font-size: 14px
+    }
+.image-form{
+    padding-top: 20px !important;
+}
+.image-outer{
+    height:230px;width:100%;
+    background-color: #f3f3f3;
+    position: relative;
+    margin-top: -15px;
+    .img-icon{
+        position: absolute;
+        text-align: center;
+        left: 0;
+        right: 0;
+        top: 45px;
+        .icon{
+            font-size: 97px;
+            width: 61px;
+            height: 77px;
+        }
+    }
+    p{font-size:16px; color:#1c1b1b; margin:4px 0 0;}
+}
+
+    .image-form-list{
+        margin: -10px 0 16px;
+
+    }
+
+    .image-outer .add-img-center{
+        top: 0;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}

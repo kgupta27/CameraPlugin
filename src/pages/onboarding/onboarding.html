@@ -1,0 +1,19 @@
+<div id="splash-overlay" *ngIf="!isFromSetting" [style.display]="splash ? 'flex': 'none'">  
+  <img src="assets/img/ModURN.gif">
+</div>
+
+<ion-content no-bounce>
+  <ion-slides pager>
+    <ion-slide *ngFor="let slide of slides" [ngStyle]="{'background' : 'url(' + slide.image + ') center center no-repeat'}" class="introslides">
+      <div class="slide-title" [innerHTML]="slide.title"></div>
+      <p [innerHTML]="slide.description"></p>
+      <!--<img [src]="slide.image" class="slide-image"/>-->
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+<ion-footer text-center (click)="getStarted()">
+  <ion-toolbar class="intro-toolbar">
+    <ion-title class="intro-footer">{{isFromSetting ? 'GO BACK' :'GET STARTED'}}</ion-title>
+  </ion-toolbar>
+</ion-footer>

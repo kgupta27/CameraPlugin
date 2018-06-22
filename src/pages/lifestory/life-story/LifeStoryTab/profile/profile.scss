@@ -1,0 +1,114 @@
+page-profile {
+
+    .Txtcolor{
+        color: #636263;
+    }
+    .cross-icn .icon-cross{
+        font-size: 14px
+    }
+    .toolbar {
+        &.toolbar-md { //material design only
+            &.home-nav {
+                position: relative;
+                .title-md { //material design only
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .item-block .item-inner {
+    background: #f9f9f9;
+    margin-bottom: 0px;
+    padding: 0 20px!important;
+    background-image: none!important;
+    border: 0!important;
+        .label{
+            color: #636263; 
+    font-size: 15px;
+        }
+    }
+    .story-outer .story-inner-cont {
+        margin-top: 50px !important;
+    }
+
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+        left: 0;
+        bottom: -5px;
+        background-position: left 0 top -2px;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAHBAMAAADzDtBxAAAAD1BMV…h/TXEAAAAaSURBVAjXYxCEAgY4UIICBmMogMsgFLtAAQCNSwXZKOdPxgAAAABJRU5ErkJggg==);
+        background-repeat: repeat-x;
+    }
+
+    h2 {
+        margin-top: 12.1pt;
+        font-size: 18pt;
+         text-align: center;
+        //color: rgb(18,18,18);
+        width: 236pt;
+        height: 18pt;
+       // font-family: 'Conv_Gotham Book';
+    }
+
+
+    // .item-inner
+    // {
+    //     background: #f9f9f9;
+    //     padding: 0 20px !important;
+    //     background-image: none !important;
+    //     border: 0 !important;
+    
+    // }
+    ion-label
+     {
+         color: rgb(99,98,99) !important;
+     }
+
+     .toolbar-title {
+        font-size: 21px;
+        color: #636263;
+        letter-spacing: 0.5px;
+        font-weight: 300;
+    }
+
+    .health-outer{
+        position: relative;
+        margin-top: 67.5px;
+        margin-left: 5px;
+    }
+
+    .helth-title{
+        font-family: 'Conv_Gotham Light';
+        font-size: 13px;
+        color: rgb(8,14,47);
+        display: inline-block;
+        position: relative;
+        padding-bottom: 8px;
+        &:before{
+            background-color: #080e2f;
+            bottom: 0;
+            content: "";
+            height: 1px;
+            left: 0;
+            position: absolute;
+            width: 40px;
+
+        }
+    }
+
+    .p_content
+    {
+        font-weight: bolder;
+        padding-top: 7px;
+        color: rgb(18,18,18);
+        font-size: 18px;
+    }
+}

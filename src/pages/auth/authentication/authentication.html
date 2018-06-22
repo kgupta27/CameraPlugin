@@ -1,0 +1,63 @@
+<ion-content no-bounce>
+
+  <div class="mar-top">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 class="btnClass" [ngClass]="{'activeClass': isTrue}"><label (click)="signupLogin(true)">Sign up</label>
+          <hr class="authHr" align="center" width="30%">
+        </ion-col>
+        <ion-col col-6 class="btnClass" [ngClass]="{'activeClass': !isTrue}"><label (click)="signupLogin(false)">Sign in</label>
+          <hr class="authHr" align="center" width="30%">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <form [formGroup]="authForm" (ngSubmit)="submitForm(authForm.value,isTrue)">
+    <ion-list>
+
+      <ion-item [ngClass]="{'error-border':!authForm.controls['email'].valid && authForm.controls['email'].touched}">
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="email" value="" [formControl]="authForm.controls['email']" [ngClass]="{'error-border':!authForm.controls['email'].valid && authForm.controls['email'].touched}" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+
+      <div *ngIf="authForm.controls['email'].hasError('required') && authForm.controls['email'].touched" class="error-box"> *Email is required.</div>
+      <div *ngIf="authForm.controls['email'].hasError('pattern') && !authForm.controls['email'].valid" class="error-box"> *Enter valid Email.</div>
+
+      <ion-item [ngClass]="{'error-border':!authForm.controls['password'].valid && authForm.controls['password'].touched}">
+        <ion-label stacked>Password</ion-label>
+        <ion-input clearOnEdit="false" type="{{type}}" (keydown.space)="$event.preventDefault()" value="" [ngClass]="{'error-border':!authForm.controls['password'].valid && authForm.controls['password'].touched}"
+          [formControl]="authForm.controls['password']"></ion-input>
+        <button *ngIf="!showPass && !authForm.controls['password'].hasError('required')" ion-button clear color="dark" type="button"
+          item-right (click)="showPassword()">Show</button>
+        <button *ngIf="showPass && !authForm.controls['password'].hasError('required')" ion-button clear color="dark" type="button"
+          item-right (click)="showPassword()">Hide</button>
+      </ion-item>
+
+      <div class="error-box" *ngIf="authForm.controls['password'].hasError('required') && authForm.controls['password'].touched">* Password is required!</div>
+      <div class="error-box" *ngIf="authForm.controls['password'].hasError('maxlength') && authForm.controls['password'].touched">* Maximum password length is 25!</div>
+      <!--<div class="error-box" *ngIf="!isTrue && authForm.controls['password'].hasError('minlength') && authForm.controls['password'].touched">* Minimum password length is 8!</div>-->
+      <div class="error-box" *ngIf="isTrue && authForm.controls['password'].hasError('pattern') && !authForm.controls['password'].valid && !authForm.controls['password'].hasError('maxlength')">
+        * Password should be of minimum 8 characters, at least one uppercase letter, one lowercase letter and one number.</div>
+    </ion-list>
+
+    <div class="auth-link-ctn" *ngIf="isTrue">
+      <ion-label text-center>By signing up you agree to our <a (click)="termsConditions()">Terms & Conditions</a></ion-label>
+    </div>
+    <div class="auth-link-ctn" *ngIf="!isTrue">
+     <ion-label text-center> <a text-center (click)="forgotPass()">Forgot Password</a></ion-label>
+    </div>
+
+    <div>
+      <button class="button_color" ion-button type="submit" color="dark" block [disabled]="!authForm.valid">{{isTrue?'SIGN UP':'SIGN IN'}}</button>
+    </div>
+  </form>
+
+</ion-content>
+
+<div class="login-error" *ngIf="isLoginError">
+  <!--<p>The password you entered is incorrect.<br>Please try again or click Forgot Password.</p>-->
+  <p>{{erroMsg}}</p>
+  <!-- <p [innerHTML]="erroMsg"></p> -->
+</div>

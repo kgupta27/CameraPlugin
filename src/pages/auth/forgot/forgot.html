@@ -1,0 +1,34 @@
+<ion-header no-border>
+
+  <ion-navbar></ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <div class="forgot-content">
+    <div class="page-heading">
+      <h2 class="forgot-head2">Forgot password</h2>
+      <p text-center>Don't worry, It can happen to anyone. Please enter the email address on your account and we will email you a reset
+        link.</p>
+    </div>
+    <!--<h1 text-center>Forgot password</h1>-->
+    <!--<hr align="center" width="30%">-->
+    <!--<p text-center>Don't worry, It can happen to anyone. Please enter the email address on your account and we will email you a reset link.</p>-->
+    <form [formGroup]="forgotForm" (ngSubmit)="submitForm(forgotForm.value)">
+      <ion-list>
+
+        <ion-item [ngClass]="{'error-border':!forgotForm.controls['email'].valid && forgotForm.controls['email'].touched}">
+          <ion-label stacked>Your email</ion-label>
+          <ion-input type="email" value="" [formControl]="forgotForm.controls['email']" [ngClass]="{'error-border':!forgotForm.controls['email'].valid && forgotForm.controls['email'].touched}" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+        </ion-item>
+
+        <div *ngIf="forgotForm.controls['email'].hasError('required') && forgotForm.controls['email'].touched" class="error-box">
+        *You must enter Email.</div>
+        <div *ngIf="forgotForm.controls['email'].hasError('pattern') && !forgotForm.controls['email'].valid" class="error-box"> *Enter valid Email.</div>
+
+      </ion-list>
+
+      <button class="mr-t180 button_color" type="submit" ion-button full color="dark" [disabled]="!forgotForm.valid">RESET PASSWORD</button>
+    </form>
+  </div>
+</ion-content>

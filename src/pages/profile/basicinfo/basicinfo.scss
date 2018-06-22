@@ -1,0 +1,32 @@
+basicinfo {
+.basicpage-content {
+    padding: 20px 20px;
+     .page-heading{
+		h2{
+			font-size: 24px;
+			color: rgb(99,98,99);
+			position:relative;
+			&:before{
+				content: '';
+				position: absolute;
+				bottom:-10px;
+				left: 0;
+				width: 50px;
+				height: 2pt;
+				background-color: rgb(255, 160, 160)
+			}
+		}
+		p{
+			font-size: 14px;
+			color: rgb(99,98,99);
+			margin: 24px 0 40px;
+
+		}
+
+	}
+}
+error-box2{
+    color: #b40000;
+    font: 12px 'Conv_Gotham Light';
+}
+}

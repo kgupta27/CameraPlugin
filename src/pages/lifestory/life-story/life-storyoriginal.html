@@ -1,0 +1,367 @@
+<ion-header no-border>
+
+  <ion-navbar >
+ <ion-title text-center class="life-title">Life stories</ion-title>     <ion-buttons right class="mar-header-icon">
+      <button class="btnColor" ion-button icon-only (click)="addStories(lifeStoryData.ownerId, lifeStoryData.urnType)">
+        <ion-icon class="icon icon-ic-plus-add-top"></ion-icon>
+        <!--<img src="assets/img/icPlus.png" />-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-grid class="life-story-content">
+    <ion-row>
+      <ion-col col-3 class="pad-0"><img src="{{lifeStoryData.defaultImage?lifeStoryData.defaultImage:'assets/img/defaultHuman.png'}}" class="life-img"/></ion-col>
+      <ion-col col-9 class="life-card">
+        <h2>{{lifeStoryData.ownerName}} {{lifeStoryData.ownerNickName==null?'':'('+lifeStoryData.ownerNickName+')'}}</h2>
+        <p>
+          {{lifeStoryData.role}} | {{lifeStoryData.relationShip}}
+        </p>
+        <p *ngIf="lifeStoryData.dob==null && lifeStoryData.dod==null">Born in {{lifeStoryData.placeOfBirth}}</p>
+        <p *ngIf="lifeStoryData.dob !=null && lifeStoryData.dod !=null">{{lifeStoryData.dob}} - {{lifeStoryData.dod}}</p>
+        <p *ngIf="lifeStoryData.dob !=null && lifeStoryData.dod==null">Born on {{lifeStoryData.dob}} in {{lifeStoryData.placeOfBirth}}</p>
+        <p *ngIf="lifeStoryData.dob ==null && lifeStoryData.dod !=null">Died on {{lifeStoryData.dod}} in {{lifeStoryData.currentLocation}}</p>
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-segment [(ngModel)]="tabs" class="tabSegment">
+    <ion-segment-button value="exptabs">Experiences</ion-segment-button>
+    <ion-segment-button value="mediatabs">Media</ion-segment-button>
+    <ion-segment-button value="profiletabs">Profile</ion-segment-button>
+    <ion-segment-button value="famtabs">Family & Friends</ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="tabs">
+    <div class="comming-soon">Coming soon</div>
+    <div *ngSwitchCase="'exptabs'">
+      <!--<div class="comming-soon">Coming soon</div>-->
+<!--
+      <ion-segment [(ngModel)]="subtabs">
+        <ion-segment-button value="livetabs">
+          <span>Live</span>
+        </ion-segment-button>
+        <ion-segment-button value="pendingtabs">
+          <span>Pending</span>
+        </ion-segment-button>
+      </ion-segment>
+-->
+      <div [ngSwitch]="subtabs">
+        
+        <!--<div *ngSwitchCase="'livetabs'">
+          <ion-card (click)="itemTapped($event, lifeStoryData, '')">
+
+            <ion-item>
+              <h2>Trip to Apollo Bay</h2>
+              <ion-note item-end>
+                <button ion-button icon-only clear>
+                  <ion-icon name="md-more"></ion-icon>
+                </button>
+              </ion-note>
+            </ion-item>
+
+            <img src="assets/img/advance-card-jp.jpg">
+
+            <ion-card-content>
+              <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+            </ion-card-content>
+
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-left clear small>
+                  <ion-icon name="ios-person-outline"></ion-icon>
+                  <div>Milton Boone</div>
+                </button>
+              </ion-col>
+              <ion-col center text-right>
+                <button ion-button icon-left clear small color="danger">
+                  <div>5 </div>
+                  <ion-icon name="ios-heart-outline"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-left clear small>
+                  <ion-icon name="ios-pin-outline"></ion-icon>
+                  <div>Sydney Tower</div>
+                </button>
+              </ion-col>
+              <ion-col center text-right>
+                <button ion-button icon-left clear small color="danger">
+                  <ion-icon name="ios-time-outline"></ion-icon>
+                  <div>24th May, 2001</div>
+                </button>
+              </ion-col>
+            </ion-row>
+
+          </ion-card>
+
+          <ion-card (click)="itemTapped($event, lifeStoryData, '')">
+
+            <ion-item>
+              <h2>Trip to Apollo Bay</h2>
+              <ion-note item-end>
+                <button ion-button icon-only clear>
+                  <ion-icon name="md-more"></ion-icon>
+                </button>
+              </ion-note>
+            </ion-item>
+
+            <img src="assets/img/advance-card-bttf.png">
+
+            <ion-card-content>
+              <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+            </ion-card-content>
+
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-left clear small>
+                  <ion-icon name="ios-person-outline"></ion-icon>
+                  <div>Milton Boone</div>
+                </button>
+              </ion-col>
+              <ion-col align-self-center text-center>
+                <button ion-button icon-left clear small color="danger">
+                  <div>5 </div>
+                  <ion-icon name="ios-heart-outline"></ion-icon>
+                </button>
+              </ion-col>
+              
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-left clear small>
+                  <ion-icon name="ios-pin-outline"></ion-icon>
+                  <div>Sydney Tower</div>
+                </button>
+              </ion-col>
+              <ion-col center text-right>
+                <button ion-button icon-left clear small color="danger">
+                  <ion-icon name="ios-time-outline"></ion-icon>
+                  <div>24th May, 2001</div>
+                </button>
+              </ion-col>
+            </ion-row>
+
+          </ion-card>
+        </div>-->
+
+        <div *ngSwitchCase="'pendingtabs'">
+
+          <!--<ion-card (click)="itemTapped($event, lifeStoryData, 'pending')">
+
+            <ion-item>
+              <h2>Trip to Apollo Bay</h2>
+              <ion-note item-end>
+                <button ion-button icon-only clear>
+                  <ion-icon name="md-more"></ion-icon>
+                </button>
+              </ion-note>
+            </ion-item>
+
+            <img src="assets/img/advance-card-bttf.png">
+
+            <ion-card-content>
+              <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+            </ion-card-content>
+
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-left clear small>
+                  <ion-icon name="ios-person-outline"></ion-icon>
+                  <div>Milton Boone</div>
+                </button>
+              </ion-col>
+              <ion-col center text-right>
+                <button ion-button icon-left clear small color="danger">
+                  <div>5 </div>
+                  <ion-icon name="ios-heart-outline"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-left clear small>
+                  <ion-icon name="ios-pin-outline"></ion-icon>
+                  <div>Sydney Tower</div>
+                </button>
+              </ion-col>
+              <ion-col center text-right>
+                <button ion-button icon-left clear small color="danger">
+                  <ion-icon name="ios-time-outline"></ion-icon>
+                  <div>24th May, 2001</div>
+                </button>
+              </ion-col>
+            </ion-row>
+
+          </ion-card>
+
+          <ion-card (click)="itemTapped($event, lifeStoryData, 'pending')">
+
+            <ion-item>
+              <h2>Trip to Apollo Bay</h2>
+              <ion-note item-end>
+                <button ion-button icon-only clear>
+                  <ion-icon name="md-more"></ion-icon>
+                </button>
+              </ion-note>
+            </ion-item>
+
+            <img src="assets/img/advance-card-jp.jpg">
+
+            <ion-card-content>
+              <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+            </ion-card-content>
+
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-left clear small>
+                  <ion-icon name="ios-person-outline"></ion-icon>
+                  <div>Milton Boone</div>
+                </button>
+              </ion-col>
+              <ion-col center text-right>
+                <button ion-button icon-left clear small color="danger">
+                  <div>5 </div>
+                  <ion-icon name="ios-heart-outline"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-left clear small>
+                  <ion-icon name="ios-pin-outline"></ion-icon>
+                  <div>Sydney Tower</div>
+                </button>
+              </ion-col>
+              <ion-col center text-right>
+                <button ion-button icon-left clear small color="danger">
+                  <ion-icon name="ios-time-outline"></ion-icon>
+                  <div>24th May, 2001</div>
+                </button>
+              </ion-col>
+            </ion-row>
+
+          </ion-card>-->
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mar-top-20" *ngSwitchCase="'mediatabs'">
+      <!--<div class="comming-soon">Coming soon</div>-->
+      <!--<ion-grid>
+        <ion-row>
+          <ion-col col-6 text-center>
+            ALBUM
+          </ion-col>
+          --<ion-col col-6 *ngFor="let pic of images" (click)="showThisImage(pic)">
+            <img class="galleryImg" src="assets/img/{{pic}}" alt="{{pic}}" imageViewer>
+          </ion-col>--
+          <ion-col col-6 *ngFor="let pic of images" (click)="showGallery(images)">
+            <div class="swiper-zoom-container"><img class="galleryImg" src="assets/img/{{pic}}" alt="{{pic}}"></div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <h3>Links</h3>
+      <ion-list>
+        <ion-item (click)="showThisLink('https://en.wikipedia.org/wiki/Delhi')">
+          <p>Trip to London</p>
+          <div><ion-icon name='ios-link-outline' item-start></ion-icon> https://en.wikipedia.org/wiki/London</div>
+          <ion-note item-end>
+            <button ion-button icon-only clear>
+              <ion-icon name="md-more"></ion-icon>
+            </button>
+          </ion-note>
+        </ion-item>
+
+        <ion-item (click)="showThisLink('https://en.wikipedia.org/wiki/Delhi')">
+          <p>Trip to Goa</p>
+          <div><ion-icon name='ios-link-outline' item-start></ion-icon> https://en.wikipedia.org/wiki/Goa</div>
+          <ion-note item-end>
+            <button ion-button icon-only clear>
+              <ion-icon name="md-more"></ion-icon>
+            </button>
+          </ion-note>
+        </ion-item>
+
+        <ion-item (click)="showThisLink('https://en.wikipedia.org/wiki/Delhi')">
+          <p>Trip to Delhi</p>
+          <div><ion-icon name='ios-link-outline' item-start></ion-icon> https://en.wikipedia.org/wiki/Delhi</div>
+          <ion-note item-end>
+            <button ion-button icon-only clear>
+              <ion-icon name="md-more"></ion-icon>
+            </button>
+          </ion-note>
+        </ion-item>
+
+      </ion-list>-->
+    </div>
+
+    <div  *ngSwitchCase="'profiletabs'">
+      <!--<div class="comming-soon">Coming soon</div>-->
+      <!--<div padding> 
+        Current locaiton
+        <hr width="30%" align="left" />
+        <h3>Delhi</h3>
+      </div>
+      <ion-list>
+        <li>
+          <button ion-item>
+            <ion-icon item-right name="ios-arrow-round-forward"></ion-icon>
+            Interests & passions
+          </button>
+        </li>
+        <li>
+          <button ion-item>
+            <ion-icon item-right name="ios-arrow-round-forward"></ion-icon>
+            Career & academics
+          </button>
+        </li>
+        <li>
+          <button ion-item>
+            <ion-icon item-right name="ios-arrow-round-forward"></ion-icon>
+            Health journey
+          </button>
+        </li>
+        <li>
+          <button ion-item>
+            <ion-icon item-right name="ios-arrow-round-forward"></ion-icon>
+            Favourite charity URL
+          </button>
+        </li>
+      </ion-list>-->
+    </div>
+
+    <div *ngSwitchCase="'famtabs'">
+      <!--<div class="comming-soon">Coming soon</div>-->
+      <!--<ion-grid>
+        <ion-row>
+          <ion-col col-6 *ngFor="let pic of images" (click)="showThisImage(pic)">
+            <img class="galleryImg" src="assets/img/{{pic}}" alt="{{pic}}" imageViewer>
+            
+            <ion-card-content>
+              <ion-card-title class="userCardTitle">
+                Jane Feldman (Janey) 
+              </ion-card-title>
+              <p text-center>
+                Caretaker | Caretaker
+              </p>
+            </ion-card-content>
+          </ion-col>
+        </ion-row>
+      </ion-grid>-->
+
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,56 @@
+<ion-content >
+ <ion-grid *ngIf="items.length > 0" class="life-story-content">
+    <ion-row>
+
+      <ion-col tappable col-6 class='userCol' *ngFor="let item of items;let i=index;">
+        <ion-card class='userCard' (tap)="actionExperience(item,i)">
+          <div class="friends_wrapper">
+              <bg-image-with-loader [image]="item.defaultImage"></bg-image-with-loader>
+            </div>
+          <!-- <img src="{{item.defaultThumbImage200?item.defaultThumbImage200:'assets/img/defaultHuman.png'}}" /> -->
+         
+          <ion-card-content class="card-content-story">
+
+            <ion-card-title  class="userCardTitle">
+              <!--<ion-icon *ngIf="item.urnType == 2" class="iconRight icon icon-ic-animal-paw"></ion-icon> -->
+              {{item.name}} {{item.nickName==null?'':'('+item.nickName+')'}}
+            </ion-card-title>
+            
+            <!-- <p *ngIf="item.role !==''" text-center class="life-story-subtitle">
+              {{item.role}} <span *ngIf="item.roleId != 4">|</span> <span *ngIf="lifeStoryData.roleId != 4">{{item.relationship}}</span>
+            </p> -->
+
+            <p *ngIf="item.role !==''" text-center class="life-story-subtitle">
+                {{item.role}} <span *ngIf="lifeStoryData.roleId != 4">| {{item.relationship}}</span>
+              </p>
+
+            <!-- <p *ngIf="item.role=='' && item.roleId ==5" text-center class="life-story-subtitle">
+              Unregistered user <span *ngIf="item.roleId != 4">|</span> <span *ngIf="lifeStoryData.roleId != 4">{{item.relationship}}</span> -->
+
+              <p *ngIf="item.role=='' && item.roleId ==5" text-center class="life-story-subtitle">
+                  Unregistered user <span *ngIf="lifeStoryData.roleId != 4">| {{item.relationship}}</span>
+            </p>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+
+  <!-- <ion-grid *ngIf="items.length == 0" class="life-story-content">
+    <ion-row text-center >
+     <span class="NodataFound">  No Family Member Found</span>
+      
+    </ion-row>
+  </ion-grid> -->
+
+    <ion-grid class="life-story-content1" *ngIf="items.length == 0">
+      No Family Member Found
+    </ion-grid>
+  
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

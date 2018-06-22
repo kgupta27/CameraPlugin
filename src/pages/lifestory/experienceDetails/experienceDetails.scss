@@ -1,0 +1,275 @@
+experience-details {
+    /* Start header transpracy */
+    ion-content {
+        background-size: cover;
+        background-position-x: 50%;
+    }
+    .icon-ic-back-arrow{
+        padding: 0 0.5em !important;
+        font-size: 2rem !important;
+        color: #636263 !important;
+    }
+    .bar-buttons,
+    .toolbar-title {
+        color: #fff;
+    }
+    // .bar-button-ios{
+    //     margin-left: 16px !important;
+    // }
+    .storyContent .scroll-content {
+        padding-top: 0px !important;
+    }
+    /* Close header transpracy */
+    
+    .profileDes {
+        font-weight: 400;
+        font-size: 18px;
+        padding-top: 10px;
+    }
+    .descq {
+        margin: 0 0 2px;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #222;
+        padding-top: 10px
+    }
+    .myHrLine{
+        border-top: 2px solid #2ec95c;
+    }
+    .galleryImg{
+        // width: 100%;
+        // height: 100%;
+        max-width: -webkit-fill-available;
+        width: auto;
+    }
+  .life-story-content {
+    margin-top: 20px;
+    padding-left: 0;
+    padding-right: 0; }
+  .life-story-content .life-story-subtitle {
+    color: #111;
+    font-size: 12px;
+    opacity: 0.5; 
+    font-family: 'Conv_Gotham Light';}
+
+    .userCol {
+        padding: 0 !important; 
+        cursor: pointer; 
+        height: 180px;
+        overflow: hidden;
+        background-color: #a2a2a2;
+        /* border: 1px solid #9b9b9b; */
+        img{
+            top:0;
+            left: 0;
+            margin:auto;
+            position:absolute;
+            right: 0;
+            bottom:0;
+        }
+      }
+  
+  .exp-bg {
+    /* position: absolute; */
+    left: 0;
+    width: 100%;
+    margin-top: 0px;
+    height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+  }
+
+    .my-icon{
+        position: absolute;
+        right: -9px;
+        top: 0px;
+        font-size: 21px;
+    }
+    .health-outer-first{
+        position: relative;
+        margin-top: 14px;
+    }
+    .exp-outer{
+        margin-top: 38px;
+        position: relative;
+    }
+    .health-outer{
+        position: relative;
+        margin-top: 40px;
+    }
+    .helth-title{
+        font-family: 'Conv_Gotham Light';
+        font-size: 13px;
+        color: #111;
+        display: inline-block;
+        position: relative;
+        padding-bottom: 8px;
+        &:before{
+            background-color: #080e2f;
+            bottom: 0;
+            content: "";
+            height: 1px;
+            left: 0;
+            position: absolute;
+            width: 40px;
+
+        }
+    }
+    .p_content{
+        color: #121212;
+        line-height: 23px;
+        font-size: 18px;
+        font-family: 'Conv_Gotham Medium Regular';
+        padding: 10px 0;
+        width: 90%;
+    }
+    .p_content-first{
+        font-family: 'ManusTrial';
+        // font-family: 'mistral';
+        font-size: 36px;
+        color: #4a4a4a;
+        padding: 10px 0;
+        line-height: 32px;
+    }
+    .exp-det-padding{
+        padding: 20px;
+    }
+    .expContent{
+        font-size: 12px;
+        line-height: 19px;
+        text-align: left
+    }
+
+    .exp-details{
+        color: #121212;
+        line-height: 23px;
+        font-size: 18px;
+        font-family: 'Conv_Gotham Medium Regular';
+        width: 90%;
+        display: inline-block;
+        position: relative;
+        padding-bottom: 8px;
+        &:before{
+            background-color: #080e2f;
+            bottom: 0;
+            content: "";
+            height: 1px;
+            left: 0;
+            position: absolute;
+            width: 40px;
+
+        }
+    }
+    .helth-title-exp{
+        font-family: 'Conv_Gotham Light';
+        font-size: 13px;
+        line-height: 21px;
+        color: #111;
+        display: inline-block;
+        position: relative;
+        padding-bottom: 8px;
+        padding: 10px 0;
+        width: 95%;
+    }
+    .album-container{
+        background-color: #4a4a4a !important;
+        height: 200px;
+    }
+    .album-center{
+        position: relative;
+        float: left;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 24px;
+        font-family: 'Conv_Gotham Medium Regular';
+        &:before{
+            background-color: #dedede;
+            top: -7px;
+            content: "";
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            width: 40px;
+            transform: translate(-50%,-50%);
+        }
+        &:after{
+            background-color: #dedede;
+            bottom: -7px;
+            content: "";
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            width: 40px;
+            transform: translate(-50%,-50%);
+        }
+    }
+    .exp-icon .icon{
+        font-size: 20px;
+    }
+    .clearfix{
+        width: 100%;
+        padding: 16px;
+    }
+    .swiper-zoom-container > img, .swiper-zoom-container > svg, .swiper-zoom-container > canvas {
+        object-fit: initial !important;
+    }
+    .header-ios {
+        padding-top: 0 !important;
+    }
+
+    .toolbar-background-md, .toolbar-background-ios{
+        // background: rgba(0, 0, 0, 0.5) !important;
+	object-fit: contain;
+	-webkit-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+    opacity: 0.8;
+    background: none !important;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.86) 59%, #ffffff) !important;
+    }
+
+    .swiper-pagination-bullets{
+        bottom: 15px !important;
+        width: 100%;
+    }
+    .hide, [hidden], template {
+        display: block !important;
+    }
+    .swiper-pagination-bullet {
+        background: rgba(255, 255, 255, 0.6);
+        // box-shadow: 2px 2px 2px #ccc;
+    }
+    .swiper-pagination-bullet-active {
+        background: rgba(255, 255, 255, 1);
+    }
+    .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 3px;
+    }
+    .experienceDetail{
+        height: 194px;
+        // width: 189px;
+        width: 100%;
+        // border-radius: 2px;
+        display: inline-block;
+        vertical-align: middle;
+        overflow: hidden;
+        position: relative;
+    }
+    .exp-detail-header{
+        height: 251px;
+        // height: 360px;
+        width: 100%;
+        // border-radius: 2px;
+        display: inline-block;
+        vertical-align: middle;
+        overflow: hidden;
+        position: relative;
+    }
+    .background-img-main {
+        background-position: top center;
+    }
+}

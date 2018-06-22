@@ -1,0 +1,149 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons left (click)="closeCareerAcademic()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <ion-icon class="icon icon-cross" item-right></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="story-outer">
+  <div *ngIf="!isDataFound">
+    <div class="story-cont">
+      <h1>Academics and Career</h1>
+    </div>
+
+    <!-- {{careerData | json }} -->
+    <div class="health-outer" *ngIf="careerData.schoolsAttendant != null">
+      <div class="helth-title">Schools attended</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-school my-icon" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{careerData.schoolsAttendant}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="careerData.academicAchievement != null">
+      <div class="helth-title">Academic achievements</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-hat my-icon" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{careerData.academicAchievement}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="careerData.publication != null">
+      <div class="helth-title">Publications</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-publications my-icon" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{careerData.publication}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="careerData.accolades != null">
+      <div class="helth-title">Accolades</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-accolades my-icon" item-right></ion-icon>
+      </div>
+      <div class="p_content" *ngIf="careerData.schoolsAttendant != null">
+        {{careerData.accolades}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="careerData.employment != null">
+      <div class="helth-title">Employment</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-employemnt my-icon" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{careerData.employment}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="careerData.workExperience != null">
+      <div class="helth-title">Work story</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-tie my-icon" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{careerData.workExperience}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="careerData.businessesStarted != null">
+      <div class="helth-title">Businesses started</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-business my-icon" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{careerData.businessesStarted}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="careerData.accreditations != null">
+      <div class="helth-title">Accreditations</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-school my-icon" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{careerData.accreditations}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="careerData.mentors != null">
+      <div class="helth-title">Mentors</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-hat my-icon" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{careerData.mentors}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="careerData.domains != null">
+      <div class="helth-title">Domains</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-publications my-icon" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{careerData.domains}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="careerData.skills != null">
+      <div class="helth-title">Skills</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-accolades my-icon" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{careerData.skills}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="careerData.furtherLearning != null">
+      <div class="helth-title">Further Learning</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-employemnt my-icon" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{careerData.furtherLearning}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="careerData.companyWorkedFor != null">
+      <div class="helth-title">Company’s you’ve worked for</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-tie my-icon" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{careerData.companyWorkedFor}}
+      </div>
+    </div>
+    <div class="health-outer" *ngIf="careerData.workRelatedLinks != null">
+      <div class="helth-title">Work related links</div>
+      <div class="dot-cont">
+        <ion-icon class="icon icon-ic-business my-icon" item-right></ion-icon>
+      </div>
+      <div class="p_content">
+        {{careerData.workRelatedLinks}}
+      </div>
+    </div>
+
+  </div>
+  <div *ngIf="isDataFound" class="Nodatafound">
+    <h1 text-center>No data found</h1>
+  </div>
+</ion-content>

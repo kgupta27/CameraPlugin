@@ -1,0 +1,66 @@
+<ion-header no-border>
+
+  <ion-navbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="pet-story-outer">
+  <div class="story-cont">
+    <h1>Let's start</h1>
+  </div>
+  <form [formGroup]="lifeStoryForm">
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked>Name of your pet</ion-label>
+        <ion-input type="text" [formControl]="lifeStoryForm.controls['petName']" [ngClass]="{'error-border':!lifeStoryForm.controls['petName'].valid}" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box" *ngIf="!lifeStoryForm.controls['petName'].valid && lifeStoryForm.controls['petName'].hasError('required')">
+        Name of your pet is required!</div>
+        <div class="error-box"  *ngIf="lifeStoryForm.controls['petName'].hasError('pattern')">Please enter valid text.</div>
+      </div>
+
+      <ion-item>
+        <ion-label stacked>Type of pet</ion-label>
+        <ion-input type="text" [formControl]="lifeStoryForm.controls['top']" [ngClass]="{'error-border':!lifeStoryForm.controls['top'].valid}" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box" *ngIf="!lifeStoryForm.controls['top'].valid && lifeStoryForm.controls['top'].hasError('required')">
+        Type of pet is required!</div>
+        <div class="error-box"  *ngIf="lifeStoryForm.controls['top'].hasError('pattern')">Please enter valid text.</div>
+      </div>
+
+      <ion-item>
+        <ion-label stacked>Pedigree</ion-label>
+        <ion-input type="text" [formControl]="lifeStoryForm.controls['pedigree']" [ngClass]="{'error-border':!lifeStoryForm.controls['pedigree'].valid}" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box" *ngIf="!lifeStoryForm.controls['pedigree'].valid && lifeStoryForm.controls['pedigree'].hasError('required')">
+        Pedigree is required!</div>
+        <div class="error-box"  *ngIf="lifeStoryForm.controls['pedigree'].hasError('pattern')">Please enter valid text.</div>
+      </div>
+
+      <ion-item>
+        <ion-label stacked>Breed</ion-label>
+        <ion-input type="text" [formControl]="lifeStoryForm.controls['breed']" [ngClass]="{'error-border':!lifeStoryForm.controls['breed'].valid}" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box" *ngIf="!lifeStoryForm.controls['breed'].valid && lifeStoryForm.controls['breed'].hasError('required')">
+        Breed is required!</div>
+        <div class="error-box"  *ngIf="lifeStoryForm.controls['breed'].hasError('pattern')">Please enter valid text.</div>
+      </div>
+
+    </ion-list>
+    <button ion-button class="mr-t80 button_color" full color="dark" (click)="openStoryPage4(lifeStoryForm.value)">NEXT</button>
+
+  </form>
+</ion-content>
+<div class="progressbar">
+  <div class="pet-progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+    </div>
+  </div>
+</div>

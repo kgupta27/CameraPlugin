@@ -1,0 +1,41 @@
+<ion-header no-border>
+
+  <ion-navbar></ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <div class="basicpage-content">
+    <div class="page-heading">
+      <h2 style="font-size: 24px;">What's your name?</h2>
+    </div>
+    <br/>
+    <form [formGroup]="signupForm" (ngSubmit)="submitForm(signupForm.value)">
+      <ion-list>
+        <ion-item [ngClass]="{'error-border':!signupForm.controls['fullname'].valid  && signupForm.controls['fullname'].touched}">
+          <ion-label stacked>Full name</ion-label>
+          <ion-input (keyup)="checkKeyup(signupForm.value.fullname)" type="text" value="" [formControl]="signupForm.controls['fullname']" [ngClass]="{'error-border':!signupForm.controls['fullname'].valid  && signupForm.controls['fullname'].touched}" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+        </ion-item>
+      <div *ngIf="isSubmit">
+        <div class="error-box" *ngIf="!signupForm.controls['fullname'].valid && signupForm.controls['fullname'].hasError('required') ">* Full Name is required!</div>
+        <div style="color: #b40000;font: 12px 'Conv_Gotham Light';" *ngIf="signupForm.controls['fullname'].hasError('pattern')">* Please enter valid characters.</div>
+        <div class="error-box" *ngIf="signupForm.controls['fullname'].hasError('maxlength') && signupForm.controls['fullname'].touched && !signupForm.controls['fullname'].hasError('pattern')">* Maximum length is 30!</div>
+        <!--<div style="color: #b40000;font: 12px 'Conv_Gotham Light';" class="error-box2" *ngIf="spaceErreor && !signupForm.controls['fullname'].hasError('pattern') && !signupForm.controls['fullname'].hasError('required')">* Please enter valid characters.</div>-->
+        </div>
+        <ion-item [ngClass]="{'error-border':!signupForm.controls['nicename'].valid  && signupForm.controls['nicename'].touched}">
+          <ion-label stacked>Nickname - "Your loved ones call you"</ion-label>
+          <ion-input type="text" (keyup)="checkKeyup(signupForm.value.nicename)" value="" [formControl]="signupForm.controls['nicename']" [ngClass]="{'error-border':!signupForm.controls['nicename'].valid  && signupForm.controls['nicename'].touched}" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+        </ion-item>
+      <div *ngIf="isSubmit">
+        <div class="error-box" *ngIf="!signupForm.controls['nicename'].valid && signupForm.controls['nicename'].hasError('required')">* Nickname is required!</div>
+        <div style="color: #b40000;font: 12px 'Conv_Gotham Light';" *ngIf="signupForm.controls['nicename'].hasError('pattern')">* Please enter valid characters.</div>
+        <div class="error-box" *ngIf="signupForm.controls['nicename'].hasError('maxlength') && signupForm.controls['nicename'].touched && !signupForm.controls['nicename'].hasError('pattern')">* Maximum length is 30!</div>
+        <!--<div style="color: #b40000;font: 12px 'Conv_Gotham Light';" class="error-box2" *ngIf="spaceErreor && !signupForm.controls['nicename'].hasError('pattern') && !signupForm.controls['nicename'].hasError('required')">* Please enter valid characters.</div>-->
+      </div>
+      </ion-list>
+      <div class="mr-t100">
+        <button class="button_color" type="submit" ion-button color="dark" block >NEXT</button>
+      </div>
+    </form>
+  </div>
+</ion-content>

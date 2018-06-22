@@ -1,0 +1,137 @@
+<ion-header no-border>
+  <ion-navbar>
+
+    <ion-buttons left (click)="closeAddExp()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <ion-icon class="icon icon-cross" item-right></ion-icon>
+        <!--<img src="assets/img/icCross@3x.png" />-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+Let’s create an experience
+<ion-content padding class="story-outer">
+  <div class="story-cont">
+    <h1 class="{{urnType == 1 ? 'human-follow':'pet-follow'}}">{{isExp?'Update':'Let’s create'}} an experience</h1>
+  </div>
+  <form [formGroup]="addExpForm">
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked>Experience title</ion-label>
+        <ion-input type="text" [formControl]="addExpForm.controls['title']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isSubmit">
+        <div class="error-box" *ngIf="!addExpForm.controls['title'].valid && addExpForm.controls['title'].hasError('required')">
+          Experience title is required!</div>
+          <div class="error-box"  *ngIf="addExpForm.controls['title'].hasError('pattern')">Please enter valid title.</div>
+          <div class="error-box" *ngIf="addExpForm.controls['title'].hasError('maxlength')">* Maximum length is 30!</div>
+      </div>
+      <ion-item>
+        <ion-label stacked>Where did this happen?</ion-label>
+        <ion-input type="text" [formControl]="addExpForm.controls['whHappen']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isSubmit">
+        <div class="error-box" *ngIf="!addExpForm.controls['whHappen'].valid && addExpForm.controls['whHappen'].hasError('required')">
+          Where did this happen is required!</div>
+          <div class="error-box"  *ngIf="addExpForm.controls['whHappen'].hasError('pattern')">Please enter valid text.</div>
+          <div class="error-box" *ngIf="addExpForm.controls['whHappen'].hasError('maxlength')">* Maximum length is 30!</div>
+          
+      </div>
+      <!--<ion-item>
+        <ion-label stacked>When did this happen?</ion-label>
+        <ion-input type="text" [formControl]="addExpForm.controls['wnHappen']"></ion-input>
+      </ion-item>
+      <div *ngIf="isSubmit">
+        <div class="error-box" *ngIf="!addExpForm.controls['wnHappen'].valid && addExpForm.controls['wnHappen'].hasError('required')">
+        When did this happen is required!</div>
+      </div>-->
+
+      <ion-item class="item-input">
+        <ion-label stacked>When did this happen?</ion-label>
+        <!--<ion-icon class="icon icon-ic-calander" item-right></ion-icon>-->
+
+        <ion-input style="display:none" [formControl]="addExpForm.controls['wnHappen']" class="hotfix"></ion-input>
+        <ion-datetime class="dobCal" displayFormat="DD-MM-YYYY" pickerFormat="DD MMM YYYY" [formControl]="addExpForm.controls['wnHappen']"
+          [class.invalid]="!addExpForm.controls.wnHappen.valid && (addExpForm.controls.wnHappen.dirty)"></ion-datetime>
+      </ion-item>
+      <div *ngIf="isSubmit">
+        <!-- <div class="error-box" *ngIf="!addExpForm.controls['wnHappen'].valid"> When did this happen is required!</div> -->
+        <div class="error-box" *ngIf="isValidDate"> Please select valid date!</div>
+      </div>
+
+      <ion-item>
+        <ion-label stacked>Who was with you?</ion-label>
+        <ion-input type="text" [formControl]="addExpForm.controls['withYou']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isSubmit">
+        <div class="error-box" *ngIf="!addExpForm.controls['withYou'].valid && addExpForm.controls['withYou'].hasError('required')">
+          Who was with you is required!</div>
+        <div class="error-box"  *ngIf="addExpForm.controls['withYou'].hasError('pattern')">Please enter valid text.</div>
+        <div class="error-box" *ngIf="addExpForm.controls['withYou'].hasError('maxlength')">* Maximum length is 30!</div>
+      </div>
+      <ion-item>
+        <ion-label stacked>Experience details</ion-label>
+        <ion-input type="text" [formControl]="addExpForm.controls['expDetails']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isSubmit">
+        <div class="error-box" *ngIf="!addExpForm.controls['expDetails'].valid && addExpForm.controls['expDetails'].hasError('required')">
+          Experience details is required!</div>
+         <div class="error-box"  *ngIf="addExpForm.controls['expDetails'].hasError('pattern')">Please enter valid text.</div>
+         <div class="error-box" *ngIf="addExpForm.controls['withYou'].hasError('maxlength')">* Maximum length is 150!</div>
+      </div>
+    </ion-list>
+    <ion-label class="imgLable" stacked>Images</ion-label>
+    <ion-grid class="photo-m imgLeft">
+
+      <ion-row>
+        <ion-col col-3>
+          <div class="addpic" tappable (click)="addPicture(1)">
+            <img src="{{chosenPicture1}}" />
+          </div>
+        </ion-col>
+        <ion-col col-3>
+          <div class="addpic" tappable (click)="addPicture(2)">
+            <img src="{{chosenPicture2}}" />
+          </div>
+        </ion-col>
+        <ion-col col-3>
+          <div class="addpic" tappable (click)="addPicture(3)">
+            <img src="{{chosenPicture3}}" />
+          </div>
+        </ion-col>
+        <ion-col col-3>
+          <div class="addpic" tappable (click)="addPicture(4)">
+            <img src="{{chosenPicture4}}" />
+          </div>
+        </ion-col>
+        <ion-col col-3>
+          <div class="addpic" tappable (click)="addPicture(5)">
+            <img src="{{chosenPicture5}}" />
+          </div>
+        </ion-col>
+        <ion-col col-3>
+          <div class="addpic" tappable (click)="addPicture(6)">
+            <img src="{{chosenPicture6}}" />
+          </div>
+        </ion-col>
+        <ion-col col-3>
+          <div class="addpic" tappable (click)="addPicture(7)">
+            <img src="{{chosenPicture7}}" />
+          </div>
+        </ion-col>
+        <ion-col col-3>
+          <div class="addpic" tappable (click)="addPicture(8)">
+            <img src="{{chosenPicture8}}" />
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <button ion-button class="mr-t80 button_color" full color="dark" (click)="addExp(addExpForm.value)">{{isExp?'UPDATE':'ADD'}}</button>
+
+  </form>
+
+
+
+</ion-content>

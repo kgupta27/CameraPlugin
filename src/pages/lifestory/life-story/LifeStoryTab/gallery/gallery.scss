@@ -1,0 +1,138 @@
+page-gallery {
+    /*ion-scroll {
+        width: 100%;
+        height: 100%;
+    }
+
+    .bot-slider{
+        position: fixed;
+        left: 0px;
+        bottom: 0px;
+        height: 20%;
+        width: 100%;
+    }
+    .zoom-slider{
+        width: 100%;
+        height: 80%;
+        background-color: #000;
+    }
+    */
+    .scroll-content {
+        // background: #1e1e1e;
+    }
+    .gallery-content {
+        padding-top: 70px !important;
+    }
+    ion-header ion-icon.back-button-icon.icon,
+    ion-header span.back-button-text.back-button-text-ios,
+    .bar-button {
+        color: #636263;
+        margin-left: 0px !important;
+    }
+    .bar-button-ios {
+        margin-left: 5px !important;
+    }
+    .Txtcolor {
+        color: #636263;
+    }
+    .toolbar {
+        &.toolbar-md {
+            //material design only
+            &.home-nav {
+                position: relative;
+                .title-md {
+                    //material design only
+                    /*position: absolute;*/
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .gallary-title,
+    .toolbar-title {
+        font-size: 21px !important;
+        color: #636263 !important;
+        font-weight: normal !important;
+    }
+    .swiper-zoom-container {
+        height: 495px;
+        border: 1px solid #f4f4f4;
+        img {
+            /*height: 495px !important;*/
+            object-fit: cover;
+        }
+    }
+    .gal-caption {
+        color: #636262;
+        font-size: 16px;
+        padding: 15px 5px;
+        font-family: 'Conv_Gotham Book Regular';
+        white-space: nowrap;
+        width: 97%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+    }
+    ion-navbar .toolbar-background {
+        background: rgba(0, 0, 0, 0.3);
+    }
+    ion-content .scroll-content {
+        margin-top: 60px !important;
+    }
+    .pinch-zoom-container {
+        position: relative;
+        overflow: hidden;
+        height: 75%;
+        width: 100%;
+    }
+    .pinch-zoom-image {
+        position: absolute;
+        top: 50%;
+        /* position the top  edge of the element at the middle of the parent */
+        left: 50%;
+        /* position the left edge of the element at the middle of the parent */
+        transform: translate(-50%, -50%);
+        /* This is a shorthand of
+                                         translateX(-50%) and translateY(-50%) */
+        width: 100%;
+    }
+    .bot-slider {
+        position: absolute;
+        bottom: 0;
+    }
+    .bot-slider .swiper-slide {
+        margin: 0 !important;
+        width: 40px !important;
+    }
+    .bot-slider .swiper-slide img {
+        height: 40px !important;
+    }
+    //   .slide-zoom{
+    //     width: 40px!important;
+    //     height: 40px!important;
+    //   }
+    .header {
+        top: 0px !important;
+    }
+    .icon-ic-back-arrow {
+        padding: 0 0.5em !important;
+        font-size: 2rem !important;
+        color: #636263 !important;
+    }
+    .exp-icon .icon {
+        font-size: 20px;
+    }
+    .gallery {
+        height: 360px;
+        width: 100%; // border-radius: 2px;
+        display: inline-block;
+        vertical-align: middle;
+        overflow: hidden;
+        position: relative;
+        margin-top: 30px;
+    }
+}

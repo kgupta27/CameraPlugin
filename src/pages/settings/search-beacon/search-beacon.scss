@@ -1,0 +1,152 @@
+page-search-beacon {
+/*.sigContain {
+  background:transparent; 
+  overflow:hidden; 
+  width:100%; height:100vh; 
+}
+.sigContain, .signal {
+  overflow: hidden;
+  position: absolute;
+  top: 0;  bottom: 0;  left: 0;  right: 0;
+}
+.signal {
+    border:30px solid #ae6527;
+    border-radius:50%;
+    top:30%; width:100px; height:100px;
+    margin:0 auto;
+    opacity:0;
+    position:absolute;
+}
+.s1 {animation: pulsate 4s ease-out 1s infinite;}
+.s2 {animation: pulsate 4s ease-out 2s infinite;}
+.s3 {animation: pulsate 4s ease-out 3s infinite;}
+.s4 {animation: pulsate 4s ease-out 4s infinite;}
+ 
+  @keyframes pulsate {
+    0% { transform:scale(0.1); opacity: 0.8;}
+    20% { opacity:0.6;}
+    50% { opacity:0.2;}
+    80% { opacity:0;}
+    100% { transform:scale(4); opacity:0;}
+  }*/
+  
+  .beacon-wrapper{
+    position: relative;
+    
+    
+.ProximityImmediate0 {
+  top: 60%;
+  left: 45%;
+}
+
+.ProximityImmediate1 {
+  top: 30%;
+  left: 35%;
+}
+
+.ProximityImmediate2 {
+  top: 45%;
+  left: 64%;
+}
+
+.ProximityImmediate3 {
+  top: 50%;
+  left: 10%;
+}
+
+.person4 {
+  top: 30%;
+  left: 60%;
+}
+
+.ProximityNear0 {
+  top: 15%;
+  left: 2%;
+}
+
+.ProximityNear1 {
+  top: 10%;
+  left: 45%;
+}
+
+.ProximityNear2 {
+  top: 75%;
+  left: 20%;
+}
+
+.ProximityNear3 {
+  top: 75%;
+  left: 55%;
+}
+
+
+    .beacon-person{
+      position: absolute;
+      text-align: center;
+      .img-ctn{
+        display: inline-block;
+        background-color: #fff;
+        padding:2px;
+        height: 55px;
+        width: 55px;
+        border-radius: 4px;
+        z-index: 1;
+        position: relative;
+        img{
+          border-radius: 4px;
+          width: 100%;
+        }		
+      }
+      .person-name{
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+        background-color: #fff;
+        margin:0;
+        margin-top:-6px;
+        padding:8px;
+        border-radius: 4px;
+        max-width: 140px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 10px;
+      }
+    }
+  }
+
+  .no-scroll .scroll-content{
+    overflow: hidden;
+  }
+
+  .skip-btn {
+    position: absolute;
+    text-align: center;
+    top: 0;
+    right: 0;
+    button{
+      color: #636263 !important;
+      font-size: 16px;
+    }
+  }
+
+  .content-ios .skip-btn {
+    top: 10px !important;
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) { 
+    .beacon-wrapper{
+      img{
+        min-width: 100%;
+        margin: -130px 0 0;
+      }
+    }
+  }
+}
+
+.ios{
+	page-search-beacon {
+		.scroll-content{
+			padding-top: 20px !important;
+      padding-top: calc(20px + constant(safe-area-inset-top)) !important;
+		}
+	}	
+}

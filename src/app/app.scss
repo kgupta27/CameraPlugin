@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,3 +12,468 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@mixin respond-to($media) {
+	@if $media==small-screens {
+		@media only screen and (max-width: 320px) {
+			@content;
+		}
+	}
+	@else if $media==medium-screens {
+		@media only screen and (min-width: 321px) and (max-width: 1024px) {
+			@content;
+		}
+	}
+	@else if $media==wide-screens {
+		@media only screen and (min-width: 1024px) {
+			@content;
+		}
+	}
+}
+
+ion-app {
+	font-family: 'Conv_Gotham Book Regular' !important;
+}
+
+body{
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+}
+
+.button {
+	height: 45px;
+	font-size: 1.6rem
+}
+.button-md{
+	text-transform:none;
+}
+.back-button{
+    margin: 0 1px;
+    min-width: 44px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+	.back-button-icon{
+		font-size:3.4rem
+	}
+	
+}
+
+.mr-t100{
+    margin-top:100px;
+
+}
+.mr-t260{
+	margin-top: 260px;
+}
+.mr-t180{
+    margin-top:160px;
+}
+.mr-t50{
+    margin-top:50px;
+}
+.mr-t34{
+    margin-top:34px;
+}
+.mr-t80{
+    margin-top:80px;
+}
+.mr-t166{
+	margin-top:166px;
+}
+
+
+.mr-t10{
+	margin-top:25px;
+}
+
+.mr-t20{
+    margin-top:20px;
+}
+.color4a4a4a{
+	color: #4a4a4a !important;
+}
+.page-content{
+    padding:50px 20px;
+	.page-heading{
+		h2{
+			font-size: 32px;
+			color: rgb(99,98,99);
+			position:relative;
+			&:before{
+				content: '';
+				position: absolute;
+				bottom:-10px;
+				left: 0;
+				width: 50px;
+				height: 2pt;
+				background-color: rgb(255, 160, 160)
+			}
+		}
+		p{
+			font-size: 14px;
+			color: rgb(99,98,99);
+			margin: 20px 0 40px;
+
+		}
+
+	}
+}
+
+.forgot-content{
+    padding:20px 20px;
+	.page-heading{
+		h2{
+			font-size: 32px;
+			color: rgb(99,98,99);
+			position:relative;
+			&:before{
+				content: '';
+				position: absolute;
+				bottom: -10px;
+				left: 0;
+				width: 50px;
+				height: 2px;
+				background-color: #ffa0a0;
+				right: 0;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		p{
+			font-size: 14px;
+			color: rgb(99,98,99);
+			margin: 40px 0;
+			line-height: 20px;
+		}
+	}
+}
+
+.list {
+	.item-input {
+		padding-left: 0;
+		padding-top: 40px;
+		&:first-child {
+			border-top: 0;
+		}
+		&:last-child {
+			border-bottom: 0;
+			.item-inner {
+				border-bottom: 1px solid rgba(0, 0, 0, .2);
+			}
+		}
+		.item-inner {
+			border-bottom-color: rgba(0, 0, 0, .2) important;
+			.label {
+				color: rgb(28, 27, 27);
+				font-family: 'Conv_Gotham Light';
+			}
+			.item-button {
+				margin-top: 30px;
+				color: rgba(28, 27, 27, .4);
+			}
+		}
+		&.item-input-has-focus .item-inner,
+		&.input-has-focus .item-inner {
+			box-shadow: none !important;
+			border-bottom: 1px solid rgba(0, 0, 0, .2);
+		}
+		&.input-has-focus:last-child{
+			border-bottom-color: rgba(0, 0, 0, .2);
+			box-shadow: none;
+		}
+		&.error-border {
+			.item-inner {
+				border-bottom-color: rgba(180,0,0,.3);
+				.label {
+					color: rgb(180,0,0);
+				}
+			}
+            &:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+				box-shadow: none !important;
+			}
+		}
+	}
+	.item-input.error-border + .error-box{
+				color: rgb(180,0,0);
+				font:12px 'Conv_Gotham Light';
+			}
+}
+ 	// .error-border{	.item-inner {
+	// 			border-bottom-color: rgba(180,0,0,.3);
+	// 			.label {
+	// 				color: rgb(180,0,0);
+	// 			}
+	// 		}
+    //  }
+//platform-ios
+
+.header-color{
+    color: rgb(99, 98, 99);
+    font-size: 16px;
+}
+.button_color{
+	background-color: rgb(74,74,74);
+	border-radius: 4px;
+}
+
+.header-ios{
+	padding-top:20px;
+}
+.ion-header{
+	 top: 8px !important;
+}
+.header{
+	/*top: 8px !important;*/
+}
+.toolbar-background-md, .toolbar-background-ios{
+//   border-color: transparent !important;
+//   background: transparent !important;
+border-color: #fff !important;
+background: #fff !important;
+}
+
+.back-button-icon:before{
+	font-family: "modurn" !important;
+    content: '\66';
+    font-size: 20px;
+	color: #636263;
+}
+.my-alert .alert-wrapper{
+
+	border-radius: 10px;
+	max-width: 335px;
+	max-height: 338pt;
+	background-color: rgb(255,255,255);
+	display: block;
+	margin: 171pt 20pt 158pt;
+
+	.cong-msg{
+		background: url(../assets/img/icTick.png) no-repeat 50% 50%;
+		height: 100px;
+	}
+	.pet-follow {
+    	background: url(../assets/img/icTickPet.png) no-repeat 50% 50% !important;
+		height: 100px;
+	}
+	.alert-head
+	{
+
+		h1 {
+			margin-top: 2rem;
+			color: rgb(99,98,99);
+			font-size: 24px;
+			font-family: 'Conv_Gotham Medium Regular';
+			font-weight: 550;
+			text-align: center;
+			letter-spacing: -0.4pt;
+			width: auto;
+			height: auto;
+		}
+		span{
+			font-family: 'Conv_Gotham Book Regular';
+    		font-size: 14px;
+			color: #626362;
+			font-weight: 600;
+		}
+	
+		.alert-sub-title {
+			
+			text-align: center;
+			line-height: 14pt;
+			font-weight: lighter;
+			
+			font: 14pt Gotham-Book, Sans-serif;
+			//font-family: 'Gotham-Book' !important;
+			color: rgb(3,3,3);
+			// width: 290.3pt;
+			// height: 60pt;
+		}
+			
+		#alert-subhdr-0
+		{
+			font-weight:lighter; 
+		}
+	}		
+	
+		.alert-button-group {
+			margin: 15pt;
+			border-radius: 4pt;
+			overflow: hidden;
+			-ms-flex: 1 1 auto;
+			flex: 1 1 auto;
+			max-width: 305pt;
+			background-color: rgb(74,74,74);
+		}
+
+	.button-inner
+	{
+		color: rgb(255,255,255) !important;
+		font-family: 'Conv_Gotham Book Regular';
+		font-size: 16px;
+	}
+
+}
+
+.my-alert .alert-wrapper .alert-button-group {
+	background-color: rgb(74,74,74);
+	text-align: center;
+}
+
+
+.my-alert .alert-wrapper .alert-button-group button {
+	width: 100%;
+	.button-inner{
+		justify-content: center !important;
+	}
+}
+.pet-clr{
+    color: #5eb5e4 !important;
+}
+.error-box {
+	color: #b40000;
+	font: 12px 'Conv_Gotham Light';
+}
+ .message5-box{
+        color: rgb(182, 0, 0);
+        background-color: rgb(233, 178, 178);
+        text-align: center;
+        padding: 5px;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+
+
+ion-backdrop { opacity: 0.6; }
+
+.toolbar-ios{
+  /*padding: 20px 16px 20px 0px;*/
+}
+.has-refresher > .scroll-content {
+    border-top: 0px solid #ddd;
+}
+
+.beaconConfirmation-Alert
+{
+    .alert-wrapper
+    {
+        // width: 335px;
+        // border-radius: 10px;
+		// height: 146.8px;
+		width: 100%;
+        border-radius: 10px;
+        max-width: 335px;
+        padding-bottom: 18px;
+    }
+
+    .alert-title
+    {
+        font-size: 14px;
+        text-align: center;
+       // color: rgb(74,74,74);
+       color: #636263;
+		//margin-top: -15px;
+		font-family: 'Conv_Gotham Light';
+    }
+
+    .alert-button-group
+    {
+        justify-content: center;
+		padding: 0;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+    }
+
+    .alert-button
+    {
+       background-color: rgb(74,74,74);
+        color: white;
+        text-align: center;
+        width: 140px;
+        border-radius: 2px;
+        text-transform: none;
+        min-width: inherit!important;
+        text-align: center;
+        -webkit-flex: inherit!important;
+        flex: inherit!important;
+        margin: 0 8px 0 0!important;
+		font-family: 'Conv_Gotham Medium Regular';
+		-webkit-box-flex: inherit !important;
+	}
+	
+	.alert-md .alert-head {
+        //text-align: left;
+		text-align: start;
+		padding: 24px 24px 20px;
+       // padding: 14px 24px 20px;
+    }    
+    
+}
+
+.story-outer{
+	.story-cont{
+		padding-top: 24px;
+		h1.pet-follow{
+			font-size: 24px;
+			position: relative;
+			color: #636263;
+			padding-bottom: 12px;
+			&:before{
+				background-color: #5eb5e4 !important;
+		bottom: 0;
+		content: "";
+		height: 2px;
+		left: 0;
+		position: absolute;
+		width: 50px;
+			}
+		}
+		
+		h1.human-follow{
+			font-size: 24px;
+			position: relative;
+			color: #636263;
+			padding-bottom: 12px;
+			&:before{
+				background-color: #ffa0a0 !important;
+		bottom: 0;
+		content: "";
+		height: 2px;
+		left: 0;
+		position: absolute;
+		width: 50px;
+			}
+		}
+		p{
+			font-size: 14px;
+		color: #1c1b1b;
+		font-weight: normal;
+		margin-top: 26px;
+			margin-bottom: 0px;
+		font-family: 'Conv_Gotham Light';
+		}
+	
+		}
+		li{
+			margin: 0 -16px;
+			margin-bottom: 10px;
+			button{padding-left: 0;}
+		}
+	
+		.story-inner-cont{margin-top: 50px!important;}
+		.icon {
+			color: #ffa0a0;
+			font-size: 24px;
+		}
+	}
+
+	.my-alert{
+		ion-backdrop
+		{
+			opacity: 0.8 !important;
+		}       
+	}
+	.Nodatafound
+	{
+		margin-top: 50%;	
+	}

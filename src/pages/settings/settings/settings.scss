@@ -1,0 +1,160 @@
+page-settings {
+    ion-header ion-icon.back-button-icon.icon, 
+    ion-header span.back-button-text.back-button-text-ios , .bar-button{
+        color: #636263;
+        margin-left: 10px !important;
+    }
+    .bar-button-ios{
+        margin-left: 16px !important;
+    }
+    .Txtcolor{
+        color: #636263;
+    }
+    .cross-icn .icon-cross{
+        font-size: 14px
+    }
+    .toolbar {
+        &.toolbar-md { //material design only
+            &.home-nav {
+                position: relative;
+                .title-md { //material design only
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    //change
+
+    h2 {
+        margin-top: 10.1px;
+        font-size: 18px;
+         text-align: center;
+        //color: rgb(18,18,18);
+        width: 236px;
+        height: 18px;
+        min-width: 100%;
+        // font-family: 'Conv_Gotham Book';
+    }
+
+
+    .item-inner
+    {
+        background: #f9f9f9;
+        padding: 0 20px !important;
+        background-image: none !important;
+        border: 0 !important;
+    
+    }
+    ion-label
+     {
+         color: rgb(99,98,99) !important;
+     }
+
+     .toolbar-title {
+        font-size: 21px;
+        color: #636263;
+        letter-spacing: 0.5px;
+        font-weight: 300;
+    }
+
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+        left: 0;
+        bottom: -5px;
+        background-position: left 0 top -2px;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAHBAMAAADzDtBxAAAAD1BMV…h/TXEAAAAaSURBVAjXYxCEAgY4UIICBmMogMsgFLtAAQCNSwXZKOdPxgAAAABJRU5ErkJggg==);
+        background-repeat: repeat-x;
+        // content: "";
+    }
+    
+    .setting-img
+    {
+        height: 110px;
+        width: auto;
+        border-radius: 2px;
+    }
+    
+    .back-img {
+        // background-image: url(https://s3-ap-southeast-2.amazonaws.com/modurnapp-staging-bucket-resized/small/226/d69f7e9….jpg);
+        height: 110px;
+        width: 110px;
+        border-radius: 2px;
+        // background-size: cover;
+        // background-position: center;
+        background-size: contain;
+        background-position: center;
+        margin:auto;
+        // text-align: center;
+    }
+
+    .profile-image {
+        height: 110px;
+        width: 110px;
+        border-radius: 2px;
+        display: inline-block;
+        vertical-align: middle;
+        overflow: hidden;
+        position: relative;
+    }
+}
+
+.LogOut-Alert
+{
+    .alert-wrapper
+    {
+        width: 100%;
+        border-radius: 10px;
+        max-width: 335px;
+        padding-bottom: 18px;
+    }
+
+    .alert-message
+    {
+        font-size: 14px;
+        text-align: center;
+       // color: rgb(74,74,74);
+       color: #636263;
+       // margin-top: -15px;
+        font-family: 'Conv_Gotham Light';
+    }
+
+    .alert-button-group
+    {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .alert-button
+    {
+        background-color: rgb(74,74,74);
+        color: white;
+        text-align: center;
+        width: 140px;
+        border-radius: 2px;
+        text-transform: none;
+        min-width: inherit!important;
+        text-align: center;
+        -webkit-flex: inherit!important;
+        flex: inherit!important;
+        margin: 0 8px 0 0!important;
+        font-family: 'Conv_Gotham Medium Regular';
+    }
+    
+    
+    .alert-md .alert-head {
+        text-align: left;
+        text-align: start;
+        padding: 14px 24px 20px;
+    }    
+    .scroll-content {
+        padding-top: 3px !important;
+    }
+}

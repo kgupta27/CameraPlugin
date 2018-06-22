@@ -1,0 +1,648 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons left (click)="closeInterestPassion()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <ion-icon class="icon icon-cross" item-right></ion-icon>
+        <!--<img src="assets/img/icCross@3x.png" />-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="story-outer">
+  <div padding class="story-cont">
+    <h1 class="{{urnType == 1 ? 'human-follow':'pet-follow'}}">{{urnType == 1 ? 'Interests & passions':'Interests'}}</h1>
+  </div>
+  
+  <form padding [formGroup]="interestForm" >
+
+    <ion-list>
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked>Favourite colour</ion-label>
+        <ion-icon class="icon icon-ic-color {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['favcolor']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 1">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['favcolor'].valid && interestForm.controls['favcolor'].hasError('required')"> -->
+        <!-- Favourite colour is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['favcolor'].hasError('pattern')">Please enter valid text.</div>                                                                                                                                
+      </div>
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Favourite book</ion-label>
+        <ion-icon class="icon icon-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['favbook']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 1">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['favbook'].valid && interestForm.controls['favbook'].hasError('required')"> -->
+        <!-- Favourite book is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['favbook'].hasError('pattern')">Please enter valid text.</div>                                                                                                                        
+      </div>
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked>Favourite Music, Band, Song</ion-label>
+        <ion-icon class="icon icon-ic-music {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['favouriteMusicBandSong']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 1">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['favmusic'].valid && interestForm.controls['favmusic'].hasError('required')"> -->
+        <!-- Favourite music is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['favouriteMusicBandSong'].hasError('pattern')">Please enter valid text.</div>                                                                                                                
+      </div>
+
+
+      <!-- <ion-item *ngIf="urnType == 1">
+        <ion-label stacked>Favourite music</ion-label>
+        <ion-icon class="icon icon-ic-music {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['favmusic']"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 1">
+         <div class="error-box" *ngIf="!interestForm.controls['favmusic'].valid && interestForm.controls['favmusic'].hasError('required')"> 
+         Favourite music is required!</div> 
+        <div class="error-box" *ngIf="interestForm.controls['favmusic'].hasError('pattern')">Please enter valid text.</div>                                                                                                                
+      </div>
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Favourite band</ion-label>
+        <ion-icon class="icon icon-ic-guitar {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['favband']"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 1">
+        <div class="error-box" *ngIf="!interestForm.controls['favband'].valid && interestForm.controls['favband'].hasError('required')">
+        Favourite band is required!</div>
+        <div class="error-box" *ngIf="interestForm.controls['favband'].hasError('pattern')">Please enter valid text.</div>                                                                                                                
+      </div> -->
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked>First Concert</ion-label>
+        <ion-icon class="icon icon-ic-concert {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['favconcert']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 1">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['favconcert'].valid && interestForm.controls['favconcert'].hasError('required')"> -->
+        <!-- First concert is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['favconcert'].hasError('pattern')">Please enter valid text.</div>                                                                                                        
+      </div>
+
+      <ion-item>
+        <ion-label stacked class="desc">Favourite food</ion-label>
+        <ion-icon class="icon icon-ic-food {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['favfoods']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['favfoods'].valid && interestForm.controls['favfoods'].hasError('required')"> -->
+        <!-- Favourite food is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['favfoods'].hasError('pattern')">Please enter valid text.</div>                                                                                                
+      </div>
+
+      <ion-item *ngIf="urnType == 2">
+        <ion-label stacked class="desc">Favourite person</ion-label>
+        <ion-icon class="icon icon-person {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['favperson']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 2">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['favperson'].valid && interestForm.controls['favperson'].hasError('required')"> -->
+        <!-- Favourite person is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['favperson'].hasError('pattern')">Please enter valid text.</div>                                                                                        
+      </div>
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked>Favourite pet or animal</ion-label>
+        <ion-icon class="icon icon-a {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['favpet']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 1">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['favpet'].valid && interestForm.controls['favpet'].hasError('required')"> -->
+        <!-- Favourite pet or animal is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['favpet'].hasError('pattern')">Please enter valid text.</div>                                                                                
+      </div>
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Spirituality</ion-label>
+        <ion-icon class="icon icon-ic-spirituality {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['spirituality']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 1">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['spirituality'].valid && interestForm.controls['spirituality'].hasError('required')"> -->
+        <!-- Spirituality is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['spirituality'].hasError('pattern')">Please enter valid text.</div>                                                                        
+      </div>
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked>Favourite car</ion-label>
+        <ion-icon class="icon icon-car {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['favcar']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 1">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['favcar'].valid && interestForm.controls['favcar'].hasError('required')"> -->
+        <!-- Favourite car is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['favcar'].hasError('pattern')">Please enter valid text.</div>                                                                
+      </div>
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked>Places visited/lived</ion-label>
+        <ion-icon class="icon icon-combined-shape {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['visitedplace']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 1">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['visitedplace'].valid && interestForm.controls['visitedplace'].hasError('required')"> -->
+        <!-- Places visited/lived is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['visitedplace'].hasError('pattern')">Please enter valid text.</div>                                                        
+      </div>
+
+      <ion-item *ngIf="urnType == 2">
+        <ion-label stacked>Places visited/lived</ion-label>
+        <ion-icon class="icon icon-combined-shape {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['visitedplacelive']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 2">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['visitedplacelive'].valid && interestForm.controls['visitedplacelive'].hasError('required')"> -->
+        <!-- Places visited/lived is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['visitedplacelive'].hasError('pattern')">Please enter valid text.</div>                                                
+      </div>
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked>Sports played/enjoyed</ion-label>
+        <ion-icon class="icon icon-ic-sports-played {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['sportsplayed']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 1">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['sportsplayed'].valid && interestForm.controls['sportsplayed'].hasError('required')"> -->
+        <!-- Sport’s played is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['sportsplayed'].hasError('pattern')">Please enter valid text.</div>                                                
+      </div>
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked>Favourite movies</ion-label>
+        <ion-icon class="icon icon-ic-videos {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['favmovies']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 1">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['favmovies'].valid && interestForm.controls['favmovies'].hasError('required')"> -->
+        <!-- Favourite movies is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['favmovies'].hasError('pattern')">Please enter valid text.</div>                                        
+      </div>
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked>Sayings</ion-label>
+        <ion-icon class="icon icon-ic-saying {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['saying']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 1">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['saying'].valid && interestForm.controls['saying'].hasError('required')"> -->
+        <!-- Sayings is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['saying'].hasError('pattern')">Please enter valid text.</div>                                        
+      </div>
+
+      <ion-item>
+        <ion-label stacked>Happiness means</ion-label>
+        <ion-icon class="icon icon-ic-relax {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['relax']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['relax'].valid && interestForm.controls['relax'].hasError('required')"> -->
+          <!-- Happiness means is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['relax'].hasError('pattern')">Please enter valid text.</div>                                
+      </div>
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked>Hobbies</ion-label>
+        <ion-icon class="icon icon-ic-hobbies {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['hobbies']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 1">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['hobbies'].valid && interestForm.controls['hobbies'].hasError('required')"> -->
+        <!-- Hobbies is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['hobbies'].hasError('pattern')">Please enter valid text.</div>                        
+      </div>
+
+      <!-- <ion-item>
+        <ion-label stacked>Past times</ion-label>
+        <ion-icon class="icon icon-ic-past-times {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['pastime']"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box" *ngIf="!interestForm.controls['pastime'].valid && interestForm.controls['pastime'].hasError('required')">
+        Past times is required!</div>
+        <div class="error-box" *ngIf="interestForm.controls['pastime'].hasError('pattern')">Please enter valid text.</div>                
+      </div> -->
+
+      <ion-item>
+        <ion-label stacked>People who were an influence</ion-label>
+        <ion-icon class="icon icon-ic-people {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['people']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['people'].valid && interestForm.controls['people'].hasError('required')"> -->
+        <!-- People who were an influence is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['people'].hasError('pattern')">Please enter valid text.</div>        
+       </div>
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked>Lookalike</ion-label>
+        <ion-icon class="icon icon-ic-lookalike {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['lookalike']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 1">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['lookalike'].valid && interestForm.controls['lookalike'].hasError('required')"> -->
+        <!-- Lookalike is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['lookalike'].hasError('pattern')">Please enter valid text.</div>        
+      </div>
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked>Words of wisdom</ion-label>
+        <ion-icon class="icon icon-ic-words-wisdom {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['wisdom']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 1">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['wisdom'].valid && interestForm.controls['wisdom'].hasError('required')"> -->
+        <!-- Words of wisdom is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['wisdom'].hasError('pattern')">Please enter valid text.</div>
+      </div>
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked>Mantra</ion-label>
+        <ion-icon class="icon icon-ic-mantra {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['mantra']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 1">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['mantra'].valid && interestForm.controls['mantra'].hasError('required')"> -->
+        <!-- Mantra is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['mantra'].hasError('pattern')">Please enter valid text.</div>
+      </div>
+
+      
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Sports records & achievements</ion-label>
+        <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['sportsRecord']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['sportsRecord'].hasError('pattern')">Please enter valid text.</div>
+      </div>   
+
+
+    
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">How many Children</ion-label>
+        <ion-icon class="icon icon-ic-color {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['howManyChildren']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['howManyChildren'].hasError('pattern')">Please enter valid text.</div>
+      </div>   
+
+          
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Pets</ion-label>
+        <ion-icon class="icon icon-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['pets']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['pets'].hasError('pattern')">Please enter valid text.</div>
+      </div>   
+
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Best friend/s</ion-label>
+        <ion-icon class="icon icon-ic-music {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['bestFriends']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['bestFriends'].hasError('pattern')">Please enter valid text.</div>
+      </div>   
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Who do you miss</ion-label>
+        <ion-icon class="icon icon-ic-concert {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['whoDoYouMiss']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['whoDoYouMiss'].hasError('pattern')">Please enter valid text.</div>
+      </div>   
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Worst enemy</ion-label>
+        <ion-icon class="icon icon-ic-food {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['worstEnemy']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['worstEnemy'].hasError('pattern')">Please enter valid text.</div>
+      </div>   
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Aspire to be like</ion-label>
+        <ion-icon class="icon icon-person {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['aspireToBeLike']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['aspireToBeLike'].hasError('pattern')">Please enter valid text.</div>
+      </div>   
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Ultimate dinner party guests </ion-label>
+        <ion-icon class="icon icon-a {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['ultimateDinnerPartyGuests']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['ultimateDinnerPartyGuests'].hasError('pattern')">Please enter valid text.</div>
+      </div>   
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Greatest fear</ion-label>
+        <ion-icon class="icon icon-ic-spirituality {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['greatestFear']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['greatestFear'].hasError('pattern')">Please enter valid text.</div>
+      </div>   
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Greatest achievement</ion-label>
+        <ion-icon class="icon icon-car {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['greatestAchievement']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['greatestAchievement'].hasError('pattern')">Please enter valid text.</div>
+      </div>   
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Most proud of</ion-label>
+        <ion-icon class="icon icon-combined-shape {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['mostProudOf']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['mostProudOf'].hasError('pattern')">Please enter valid text.</div>
+      </div>   
+
+      <!-- <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">6 degrees of separation</ion-label>
+        <ion-input type="text" [formControl]="interestForm.controls['degreesOfSeparation']"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box"  *ngIf="interestForm.controls['degreesOfSeparation'].hasError('pattern')">Please enter valid text.</div>
+      </div>    -->
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Best time in life</ion-label>
+        <ion-icon class="icon icon-ic-sports-played {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['bestTimeInLife']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['bestTimeInLife'].hasError('pattern')">Please enter valid text.</div>
+      </div>   
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Worst time in life</ion-label>
+        <ion-icon class="icon icon-ic-videos {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['worstTimeInLife']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['worstTimeInLife'].hasError('pattern')">Please enter valid text.</div>
+      </div>   
+
+      <!-- <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Struggles encountered</ion-label>
+        <ion-input type="text" [formControl]="interestForm.controls['strugglesEncountered']"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box"  *ngIf="interestForm.controls['strugglesEncountered'].hasError('pattern')">Please enter valid text.</div>
+      </div>   -->
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">If you could do it over again</ion-label>
+        <ion-icon class="icon icon-ic-saying {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['ifYouCouldDoItOverAgain']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['ifYouCouldDoItOverAgain'].hasError('pattern')">Please enter valid text.</div>
+      </div>  
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Best advise you received </ion-label>
+        <ion-icon class="icon icon-ic-relax {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['bestAdviseYouReceived']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['bestAdviseYouReceived'].hasError('pattern')">Please enter valid text.</div>
+      </div>  
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">First job</ion-label>
+        <ion-icon class="icon icon-ic-hobbies {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['firstJob']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['firstJob'].hasError('pattern')">Please enter valid text.</div>
+      </div>  
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Worst job</ion-label>
+        <ion-icon class="icon icon-ic-people {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['worstJob']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['worstJob'].hasError('pattern')">Please enter valid text.</div>
+      </div>  
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Best job</ion-label>
+        <ion-icon class="icon icon-ic-lookalike {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['bestJob']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['bestJob'].hasError('pattern')">Please enter valid text.</div>
+      </div>  
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Best holiday</ion-label>
+        <ion-icon class="icon icon-ic-words-wisdom {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['bestHoliday']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['bestHoliday'].hasError('pattern')">Please enter valid text.</div>
+      </div>  
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Best joke I know</ion-label>
+        <ion-icon class="icon icon-ic-mantra {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['bestJokeIKnow']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['bestJokeIKnow'].hasError('pattern')">Please enter valid text.</div>
+      </div>  
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Who makes you laugh</ion-label>
+        <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon>
+        <ion-input type="text" [formControl]="interestForm.controls['whoMakesYouLaugh']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['whoMakesYouLaugh'].hasError('pattern')">Please enter valid text.</div>
+      </div>  
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">What makes you cry</ion-label>
+        <ion-icon class="icon icon-ic-color {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['whatMakesYouCry']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['whatMakesYouCry'].hasError('pattern')">Please enter valid text.</div>
+      </div>  
+
+      <!-- <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Deserted island companion</ion-label>
+        <ion-input type="text" [formControl]="interestForm.controls['desertedIslandCompanion']"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box"  *ngIf="interestForm.controls['desertedIslandCompanion'].hasError('pattern')">Please enter valid text.</div>
+      </div>   -->
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">What would you change about the world</ion-label>
+        <ion-icon class="icon icon-ic-music {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['whatWouldYouChangeAboutTheWorld']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['whatWouldYouChangeAboutTheWorld'].hasError('pattern')">Please enter valid text.</div>
+      </div>  
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">If you could who/what would you come back as</ion-label>
+        <ion-icon class="icon icon-icon {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['ifYouCouldWhatWouldYouComeBackAs']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['ifYouCouldWhatWouldYouComeBackAs'].hasError('pattern')">Please enter valid text.</div>
+      </div>  
+
+      <ion-item *ngIf="urnType == 1">
+        <ion-label stacked class="desc">Best show/theatre performance</ion-label>
+        <ion-icon class="icon icon-ic-music {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-ic-sports-record" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['bestTheatrePerformance']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['achiev'].valid && careerForm.controls['achiev'].hasError('required')"> 
+           Sports records & achievements is required!</div> -->
+        <div class="error-box"  *ngIf="interestForm.controls['bestTheatrePerformance'].hasError('pattern')">Please enter valid text.</div>
+      </div>  
+
+      <ion-item *ngIf="urnType == 2">
+        <ion-label stacked>Fur best friend</ion-label>
+        <ion-icon class="icon icon-ic-concert {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-combined-shape {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['furBestFriend']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 2">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['visitedplacelive'].valid && interestForm.controls['visitedplacelive'].hasError('required')"> -->
+        <!-- Places visited/lived is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['furBestFriend'].hasError('pattern')">Please enter valid text.</div>                                                
+      </div>
+
+      <ion-item *ngIf="urnType == 2">
+        <ion-label stacked>Favourite Park</ion-label>
+        <ion-icon class="icon icon-ic-food {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-combined-shape {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['favouritePark']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 2">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['visitedplacelive'].valid && interestForm.controls['visitedplacelive'].hasError('required')"> -->
+        <!-- Places visited/lived is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['favouritePark'].hasError('pattern')">Please enter valid text.</div>                                                
+      </div>
+
+      <ion-item *ngIf="urnType == 2">
+        <ion-label stacked>Owners</ion-label>
+        <ion-icon class="icon icon-person {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon>
+        <!-- <ion-icon class="icon icon-combined-shape {{urnType == 1 ? '':'pet-clr'}}" item-right></ion-icon> -->
+        <ion-input type="text" [formControl]="interestForm.controls['owners']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid && urnType == 2">
+        <!-- <div class="error-box" *ngIf="!interestForm.controls['visitedplacelive'].valid && interestForm.controls['visitedplacelive'].hasError('required')"> -->
+        <!-- Places visited/lived is required!</div> -->
+        <div class="error-box" *ngIf="interestForm.controls['owners'].hasError('pattern')">Please enter valid text.</div>                                                
+      </div>
+
+      
+
+    </ion-list>
+
+    <button ion-button class="mr-t80 button_color" full color="dark" (click)="addInterestPassion(interestForm.value)">
+        {{isNotEmpty ? 'UPDATE':'ADD'}}
+      </button>
+    
+  </form>
+</ion-content>

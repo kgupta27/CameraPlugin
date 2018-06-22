@@ -1,0 +1,92 @@
+<ion-header no-border>
+  <ion-navbar>
+
+    <ion-buttons left (click)="closeFriendsFamily()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <ion-icon class="icon icon-cross" item-right></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="story-outer">
+  <div padding class="story-cont">
+    <h1  class="{{urnType == 1 ? 'human-follow':'pet-follow'}}">{{isEdit?'Update':'Add'}} family & friends</h1>
+  </div>
+
+  <div class="image-outer" (click)="addPicture('1')">
+    <div *ngIf="chosenPicture1==''" class="img-icon">
+      <ion-icon class="{{urnType == 1 ? 'icon icon-imag':'icon icon-imag pet-clr'}}" item-right></ion-icon>
+      <p>Click to add an image</p>
+    </div>
+    <div *ngIf="chosenPicture1 !=''" style="overflow: hidden;" class="image-outer">
+      <img class="add-img-center" src="{{chosenPicture1}}" alt="">
+    </div>
+  </div>
+
+  <form padding [formGroup]="addFamily">
+    <ion-list>
+
+      <div class="suggetions-upper">
+        <ion-item>
+          <ion-label stacked>Name </ion-label>
+          <ion-input type="text" [disabled]="isEdit" (keyup)="getItems(addFamily.controls['name'].value)" [formControl]="addFamily.controls['name']"></ion-input>
+        </ion-item>
+        <ion-spinner *ngIf="loader" name="dots"></ion-spinner>
+        <ul *ngIf="itemIsShown" style="display:{{itemIsShown?'':'none'}}" class="suggetions">
+          <li (click)="suggetionSelected(item)" *ngFor="let item of items">{{item.name}}</li>
+        </ul>
+      </div>
+      <div *ngIf="isSubmit">
+        <div class="error-box" *ngIf="!addFamily.controls['name'].valid && addFamily.controls['name'].hasError('required')">
+          Name is required!</div>
+        <div class="error-box" *ngIf="addFamily.controls['name'].hasError('pattern')">Please enter valid name.</div>
+      </div>
+      <ion-item  [ngClass]="{'suggestionClass': itemIsShown }">
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="email" [disabled]="disableEmail" [formControl]="addFamily.controls['email']"></ion-input>
+      </ion-item>
+      <div *ngIf="isSubmit">
+        
+        <div class="error-box" *ngIf="!addFamily.controls['email'].valid && addFamily.controls['email'].hasError('required')">
+          Email is required!</div>
+        <div class="error-box" *ngIf="addFamily.controls['email'].hasError('pattern')">Please enter valid email.</div>
+      </div>
+      <ion-item>
+        <ion-label stacked>Nickname</ion-label>
+        <ion-input type="text" [disabled]="isEdit" [formControl]="addFamily.controls['nickName']"></ion-input>
+      </ion-item>
+      <div *ngIf="isSubmit">
+        <div class="error-box" *ngIf="!addFamily.controls['nickName'].valid && addFamily.controls['nickName'].hasError('required')">
+          Nickname is required!</div>
+        <div class="error-box" *ngIf="addFamily.controls['nickName'].hasError('pattern')">Please enter valid nickname.</div>
+      </div>
+      <div style="position:relative; height:104px">
+        <div class="drop-icon" (click)="openRelationship()"><span class="drop"></span></div>
+
+        <ion-item>
+          <ion-label stacked>Relationship</ion-label>
+          <ion-input disabled="true" type="text" (click)="openRelationship()" [formControl]="addFamily.controls['relationship']"></ion-input>
+
+        </ion-item>
+        <div *ngIf="isSubmit" class="rel-err">
+          <div class="error-box" *ngIf="!addFamily.controls['relationship'].valid"> Relationship is required!</div>
+        </div>
+      </div>
+      <ion-item style="margin-top: 10px;">
+        <ion-label stacked>Assign role</ion-label>
+        <ion-select [disabled]="isDisablerole" [formControl]="addFamily.controls['role']" class="family-select" item-right>
+          <ion-option value="2">Caretaker</ion-option>
+          <ion-option value="3">Contributor</ion-option>
+        </ion-select>
+
+      </ion-item>
+      <div *ngIf="isSubmit ">
+        <div class="error-box" *ngIf="!addFamily.controls['role'].valid"> Role is required!</div>
+      </div>
+    </ion-list>
+
+    <button ion-button class="mr-t80 button_color" full color="dark" (click)="addFriendsFamily(addFamily.value)">{{isEdit?'UPDATE':'ADD'}}</button>
+
+  </form>
+
+</ion-content>

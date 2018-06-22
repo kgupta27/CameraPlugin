@@ -1,0 +1,47 @@
+page-terms-conditions {
+    .terms-data p{ text-align: left; line-height: 20px; color:rgb(28,27,27);font-size: 12px;margin-top: 23px;font-family: 'Conv_Gotham Light';}
+    ion-header ion-icon.back-button-icon.icon, 
+    ion-header span.back-button-text.back-button-text-ios , .bar-button{
+    color: #636263;
+    margin-left: 10px !important;
+    }
+    .bar-button-ios{
+        margin-left: 16px !important;
+    }
+    .termpage-content {
+        padding: 34px 20px;
+    }
+
+    .padd-content{
+        padding: 12px 20px;
+    }
+    .content-head2{
+        font-size: 24px !important;
+        font-weight: 400;line-height: 32px;
+    }
+    .cross-icn .icon-cross{
+        font-size: 14px
+    }
+    ol,ul{
+        text-align: left;
+        line-height: 20px;
+        color: #636263;
+        font-size: 12px;
+        padding-left: 20px;
+    }
+    h3{
+        text-align: left;
+        line-height: 20px;
+        color: #636263;
+        font-size: 12px;
+        padding-left: 15px;
+    }
+    span{
+        text-align: center;
+    }
+    // .page-heading h2{
+    //     font-size: 28px ;
+    //     color: #636263;
+    //     position: relative;
+    // }
+}

@@ -1,0 +1,33 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons left (click)="closeFavoriteCharityPage()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <ion-icon class="icon icon-cross" item-right></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="story-outer">
+  <div *ngIf="charityData.charityUrl">
+    <div class="story-cont">
+      <h1>Favourite charity URL</h1>
+    </div>
+
+    <div padding class="links-outer">
+      <div class="links-outer">
+        <div class="link-lft">
+          <ion-icon class="icon icon-ic-attachment" item-start></ion-icon>
+          <span><a (click)="inAppBrowserOpen(charityData.charityUrl)">{{charityData.charityUrl}}</a></span>
+          <!--<button (click)="editCharityUrl()">edit</button>
+          <button (click)="deleteCharityUrl()">Delete</button>-->
+        </div>
+        <ion-icon class="icon icon-ic-three-dots" (click)="actionExperience()"></ion-icon>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!charityData.charityUrl" class="Nodatafound">
+    <h1 text-center>No charity URL found</h1>
+  </div>
+
+</ion-content>

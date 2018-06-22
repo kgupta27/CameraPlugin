@@ -1,0 +1,185 @@
+page-life-story {
+    .left-icon {
+        position: absolute;
+        left: 10px;
+    }
+    .life-title {
+        position: relative;
+        padding: 0 50px 1px 90px;
+    }
+    .segment-button.segment-button h6 {
+        text-transform: none;
+    }
+    .galleryImg {
+        width: 100%;
+        height: auto;
+    }
+    .mar-top-20 {
+        margin-top: 20px;
+    }
+    .userCardTitle {
+        font-size: 1.2em !important;
+        text-align: center;
+    }
+    .btnColor {
+        color: #636263;
+    }
+    .btnColor {
+        .icon {
+            font-size: 23px !important;
+            margin-right: 10px !important;
+        }
+    }
+    .life-story-content {
+        margin-top: 25px;
+        margin-bottom: 32px;
+    }
+    .pad-0 {
+        padding: 0px 0px 0px 8px !important;
+    }
+    .life-img {
+        height: 98px;
+        width: auto;
+    }
+    .life-card {
+        padding: 0 0 0 12px !important;
+        h2 {
+            margin: 0 0 13px !important;
+            font-size: 18px;
+            color: #111111;
+            float: left;
+        }
+        p {
+            color: #111;
+            font-size: 12px;
+            opacity: 0.8;
+            margin: 0 0 8px;
+            font-family: 'Conv_Gotham Light';
+            clear: both;
+        }
+    }
+    .segment-ios .segment-button {
+        padding: 0 13px !important;
+        ;
+    }
+    .tabSegment {
+        .segment-button {
+            border-radius: 0 !important;
+            border: 0;
+            color: #a2a2a2;
+            font-size: 13px;
+            height: auto !important;
+            flex: none;
+            cursor: pointer;
+            width: auto;
+            padding: 0 4%;
+            text-transform: capitalize; // margin: 0 16px;
+            // &:first-of-type{margin-right: 16px!important;}
+        }
+        .segment-activated {
+            background: none !important;
+            color: #ffa0a0 !important;
+            font-family: 'Conv_Gotham Medium Regular';
+            position: relative;
+            &:after {
+                height: 0 !important;
+            }
+        }
+    }
+    .segment-ios .segment-button:active:not(.segment-activated) {
+        background: none;
+    }
+    @media only screen and (max-width:400px) {
+        .segment-button {
+            padding: 0 2% !important;
+        }
+    }
+    .tabs-custom {
+        margin-top: 170px;
+        .tabbar {
+            background: none !important;
+            justify-content: center !important;
+            border-bottom: 1px solid rgba(151, 151, 151, 0.3) !important;
+            &:after {
+                background: none !important;
+                content: "";
+            }
+            .tab-button {
+                border-radius: 0 !important;
+                border: 0;
+                color: #35393a;
+                font-size: 13px;
+                height: auto !important;
+                flex: none;
+                cursor: pointer;
+                width: auto;
+                padding: 0 3.5%;
+                min-height: 42px !important;
+                text-transform: capitalize;
+                display: inline-block;
+            }
+            .tab-button[aria-selected=true] .tab-button-text {
+                -webkit-transform: inherit !important;
+                transform: inherit !important;
+            }
+            .tab-button[aria-selected=true] {
+                background: none !important;
+                color: #080e2f !important;
+                -webkit-transform: inherit !important;
+                transform: inherit !important;
+                font-family: 'Conv_Gotham Medium Regular';
+                position: relative;
+                padding-top: 2px;
+                &:after {
+                    background-color: #ffa0a0;
+                    bottom: 14px !important;
+                    content: "";
+                    height: 2px;
+                    left: 0;
+                    position: absolute;
+                    width: 40px;
+                    margin: auto;
+                    right: 0;
+                }
+            }
+        }
+        .tab-button-text {
+            font-size: 13px !important;
+            transform: none;
+            margin: 0 !important;
+            padding-top: 2px;
+        }
+    }
+    .icon-pet-icon {
+        color: #5eb5e4 !important;
+        padding: 0 0 0 10px;
+        font-size: 22px;
+    }
+    .petColr {
+        .tabbar {
+            .tab-button[aria-selected=true] {
+                &:after {
+                    background-color: #5eb5e4 !important;
+                }
+            }
+        }
+    }
+    .toolbar-ios ion-title {
+        padding: 0 50px 1px 90px !important;
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .life-story-content {
+            [col-3] {
+                max-width: 16% !important;
+            }
+        }
+    }
+}
+
+.comming-soon {
+    width: 100%;
+    padding: 20px 5px;
+    border: 0;
+    text-align: center;
+    font-family: 'Conv_Gotham Book Regular' !important;
+}

@@ -1,0 +1,60 @@
+<ion-content no-bounce class="no-scroll">
+  <!--<div class="sigContain">
+    <div class="signal s1"></div>
+    <div class="signal s2"></div>
+    <div class="signal s3"></div>
+    <div class="signal s4"></div>
+  </div>-->
+  <div class="beacon-wrapper">
+    <img src="assets/img/animation.gif" alt="">
+
+    <div class="skip-btn">
+      <button ion-button clear (click)="closeSearching()">SKIP</button>
+    </div>
+
+	  <div (click)="beaconSelected(beacon)" class=" {{beacon.proximity == 'ProximityNear' ? 'ProximityNear'+in:'ProximityImmediate'+in}} beacon-person" *ngFor="let beacon of beacons; let in=index;">
+	  	<div class="img-ctn">
+          <img src="{{beacon.lifeStoryImage200?beacon.lifeStoryImage200:'assets/img/defaultHuman.png'}}" alt="">
+          
+			 </div>
+			<p class="person-name">{{beacon.lifeStoryName?beacon.lifeStoryName:"New Story"}}</p>
+	  </div>
+
+  </div>
+
+  
+<!--
+  <button ion-button round (click)="checkBeacons()">Check beacons</button>
+  <ion-list no-lines>
+
+    <ion-item *ngFor="let beacon of beacons">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Major</ion-col>
+          <ion-col>{{beacon.major}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Minor</ion-col>
+          <ion-col>{{beacon.minor}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Proximity</ion-col>
+          <ion-col>{{beacon.proximity}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Accuracy</ion-col>
+          <ion-col>{{beacon.accuracy}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>UUID</ion-col>
+          <ion-col>{{beacon.uuid}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>RSSI</ion-col>
+          <ion-col>{{beacon.rssi}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+  </ion-list>-->
+</ion-content>

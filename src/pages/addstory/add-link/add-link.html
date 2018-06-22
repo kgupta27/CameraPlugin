@@ -1,0 +1,47 @@
+<ion-header no-border>
+  <ion-navbar>
+    
+    <ion-buttons left (click)="closeAddLink()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <ion-icon class="icon icon-cross" item-right></ion-icon>
+        <!--<img src="assets/img/icCross@3x.png" />-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="story-outer">
+  <div class="story-cont">
+    <h1  class="{{urnType == 1 ? 'human-follow':'pet-follow'}}">{{isNotEmpty?'Update':'Add'}} a media link</h1>
+  </div>
+  <form [formGroup]="addLinkForm" >
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked>Link title</ion-label>
+        <ion-input type="text" [formControl]="addLinkForm.controls['title']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isSubmit">
+        <div class="error-box" *ngIf="!addLinkForm.controls['title'].valid && addLinkForm.controls['title'].hasError('required')">
+        Link title is required!</div>
+        <div class="error-box"  *ngIf="addLinkForm.controls['title'].hasError('pattern')">Please enter valid title.</div>
+      </div>
+      <ion-item>
+        <ion-label stacked>Enter link</ion-label>
+        <ion-input type="text" autocapitalize="off" [formControl]="addLinkForm.controls['link']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isSubmit">
+        <div class="error-box" *ngIf="!addLinkForm.controls['link'].valid && addLinkForm.controls['link'].hasError('required')">
+        Link is required!</div>
+        <!-- <div class="error-box"  *ngIf="addLinkForm.controls['link'].hasError('pattern')">Please enter valid Link.</div> -->
+      </div>
+        
+    </ion-list>
+    
+        <button ion-button class="mr-t166 button_color" full color="dark" (click)="addLink(addLinkForm.value)">{{isNotEmpty?'UPDATE':'ADD'}}</button>
+
+  </form>
+
+
+
+</ion-content>

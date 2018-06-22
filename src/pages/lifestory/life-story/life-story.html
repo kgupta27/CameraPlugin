@@ -1,0 +1,68 @@
+<ion-header no-border>
+  <ion-navbar hideBackButton="true">
+     
+      <ion-title text-center class="life-title"> <span class="left-icon" tappable (click)="goBack();">
+        <ion-icon class="back-button-icon"></ion-icon>
+      </span>Life stories</ion-title>
+      <ion-buttons right *ngIf="lifeStoryData.roleId != 4" (click)="shareStory()">
+        <button class="btnColor" ion-button icon-only>
+          <ion-icon class="icon icon-share"></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-buttons right class="mar-header-icon" *ngIf="isAddStory">
+      <button class="btnColor" ion-button icon-only (click)="addStories(lifeStoryData.ownerId, lifeStoryData.urnType, lifeStoryData.roleId, lifeStoryData.beaconPaired)">
+        <ion-icon class="icon icon-ic-plus-add-top"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<!-- <ion-header no-border>
+  <ion-navbar>
+    <ion-title text-center class="life-title">Life stories</ion-title>
+
+    
+    <ion-buttons right *ngIf="lifeStoryData.roleId != 4" (click)="shareStory()">
+        <button class="btnColor" ion-button icon-only>
+          <ion-icon class="icon icon-share"></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-buttons right class="mar-header-icon" *ngIf="isAddStory">
+      <button class="btnColor" ion-button icon-only (click)="addStories(lifeStoryData.ownerId, lifeStoryData.urnType, lifeStoryData.roleId, lifeStoryData.beaconPaired)">
+        <ion-icon class="icon icon-ic-plus-add-top"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content >
+  <ion-grid class="life-story-content" *ngIf = "showHeaderContent == true">
+    <ion-row>
+      <ion-col col-3 class="pad-0"><img src="{{lifeStoryData.defaultThumbImage200?lifeStoryData.defaultThumbImage200:'assets/img/defaultHuman.png'}}" class="life-img" /></ion-col>
+      
+      <ion-col col-9 class="life-card">
+        <h2>{{lifeStoryData.ownerName}} {{lifeStoryData.ownerNickName==null?'':'('+lifeStoryData.ownerNickName+')'}} </h2><ion-icon *ngIf="lifeStoryData.urnType == 2" class="icon icon-pet-icon" item-right></ion-icon> 
+        <p>
+          {{lifeStoryData.role}} <span *ngIf="lifeStoryData.roleId != 4">|</span> <span *ngIf="lifeStoryData.roleId != 4">{{lifeStoryData.relationShip}}</span>
+        </p>
+        <p *ngIf="lifeStoryData.urnType == 2">
+          {{lifeStoryData.typeOfPet}} | {{lifeStoryData.breed}}
+        </p>
+        <p *ngIf="lifeStoryData.dob==null && lifeStoryData.dod==null && lifeStoryData.placeOfBirth!=null">Born in {{lifeStoryData.placeOfBirth}}</p>
+        <p *ngIf="lifeStoryData.dob !=null && lifeStoryData.dod !=null">{{lifeStoryData.dob}} - {{lifeStoryData.dod}}</p>
+        <p *ngIf="lifeStoryData.dob !=null && lifeStoryData.dod==null">Born on {{lifeStoryData.dob}} <span *ngIf="lifeStoryData.placeOfBirth != null">in {{lifeStoryData.placeOfBirth}}</span></p>
+        <p *ngIf="lifeStoryData.dob ==null && lifeStoryData.dod !=null">Died on {{lifeStoryData.dod}} in {{lifeStoryData.currentLocation}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <div>
+    <ion-tabs #myTabs class="tabs-custom" [ngClass]="{petColr: lifeStoryData.urnType == '2'}">
+      <ion-tab *ngIf="lifeStoryData.roleId != ''" [root]="tab1Root" [rootParams]="lifeStoryData" tabTitle="Experiences" tabsHideOnSubPages="true"></ion-tab>
+      <ion-tab *ngIf="lifeStoryData.roleId != 4" [root]="tab2Root" [rootParams]="lifeStoryData" tabTitle="Media" tabsHideOnSubPages="true"></ion-tab>
+      <ion-tab *ngIf="lifeStoryData.roleId != 4" [root]="tab3Root" [rootParams]="lifeStoryData" tabTitle="Profile" tabsHideOnSubPages="true"></ion-tab>
+      <ion-tab *ngIf="lifeStoryData.roleId != ''" [root]="tab4Root" [rootParams]="lifeStoryData" tabTitle="Family & Friends" tabsHideOnSubPages="true"></ion-tab>
+    </ion-tabs>
+  </div>
+  
+</ion-content>

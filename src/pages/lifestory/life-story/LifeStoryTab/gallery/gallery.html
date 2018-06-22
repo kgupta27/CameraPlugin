@@ -1,0 +1,40 @@
+<ion-header no-border>
+  <ion-navbar transparent>
+    <ion-title text-center class="gallary-title">Images</ion-title>
+    <ion-buttons left (click)="closeGallery()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <ion-icon class="icon icon-ic-back-arrow" item-right></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right class="mar-header-icon">
+      <button class="btnColor" ion-button icon-only (click)="actionDelete()">
+        <ion-icon class="icon icon-ic-three-dots"></ion-icon>
+         </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+<ion-content class="gallery-content">
+  <div class="zoom-slider">
+    <ion-slides #slides (ionSlideDidChange)="onSlideChanged($event)">
+      <ion-slide *ngFor="let img of imagesName;">
+        
+          <div class="swiper-zoom-container gallery">
+              <bg-image-with-loader (click)="showThisImage(img.mediaImage,img.imageTitle)" [image]="img.mediaImage"></bg-image-with-loader>
+          </div>
+
+        <div class="gal-caption" centre>{{img.imageTitle}}</div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div class="bot-slider">
+    <ion-slides slidesPerView="6" spaceBetween="1" #thumbslide (ionSlideDidChange)="onThumbSlideChanged($event)" (ionSlideTap)="slideClick()">
+      <ion-slide *ngFor="let slide of imagesName">
+        <img [src]="slide.mediaImage200" class="slide-image" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>

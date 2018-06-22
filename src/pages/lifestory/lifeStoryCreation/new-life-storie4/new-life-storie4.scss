@@ -1,0 +1,70 @@
+page-new-life-storie4 {
+    .progressbar{width: 100%;}
+    .story-searchbox {
+    border: none;
+    background: none;
+    box-shadow: none;
+        padding-left: 0;
+    }
+
+    .story-searchbox {
+    border: none;
+    background: none;
+    box-shadow: none;
+        padding-left: 0;
+    }
+    .searchbar-input{padding-left: 0!important; position: relative; box-shadow: none !important;}
+      .search-input{padding-left: 0;  padding-top: 40px; }
+    .searchbar-search-icon{display: none;}
+    .search-icon{position: absolute;     bottom: 0;
+    right: 8px;}
+    .icon-location{margin-right: 0!important;}
+    .search-label{    color: #1c1b1b;
+    font-family: 'Conv_Gotham Light'; 
+    font-size: 1.2rem;}
+
+    .search-input ion-label {
+        margin: 13px 8px 0 0;
+    }
+
+    .rel-select .input-wrapper{
+        margin: 10px 10px 0 0;
+    }
+    .option-box{
+        padding-left: 0;
+        
+    }
+    .option-label{  
+            margin: 50px 0 0;
+            color: #1c1b1b;
+    font-family: 'Conv_Gotham Light'; 
+    font-size: 1.2rem;
+     }
+    .life-select{
+        padding-left: 0;
+    }
+    .select-icon{
+            position: absolute!important;
+    right: 70px;
+    }
+    .icon-ic-angel, .icon-ic-heart{padding-top: 10px;}
+    .error-box {
+        color: #b40000;
+        font: 12px 'Conv_Gotham Light';
+    }
+    .icon-ic-calander,.icon-ic-profile,.icon-ic-relationship,.icon-resting{
+    margin-bottom: 0 !important;
+    margin-top: 26px !important;
+    }
+    .dobCal {
+    padding: 15px 15px 0px 4px !important;
+}
+.icon-ic-heart,.icon-ic-angel{
+    margin-bottom: 5px !important;
+    }
+
+    .icon-ic-location{
+        margin-bottom: 0 !important;
+        margin-top: 26px !important;
+    }
+}

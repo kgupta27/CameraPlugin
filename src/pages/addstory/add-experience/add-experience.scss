@@ -1,0 +1,32 @@
+page-add-experience {
+    
+    ion-header ion-icon.back-button-icon.icon, 
+    ion-header span.back-button-text.back-button-text-ios , .bar-button{
+    color: #636263;
+    margin-left: 16px !important;
+    }
+     .cross-icn .icon-cross{
+        font-size: 14px
+    }
+     .addpic{padding-bottom:100%; background-color:#f4f4f4; position:relative;overflow:hidden;border-radius: 2px;}
+    .addpic img{
+        top:0;
+        left: 0;
+        margin:auto;
+        position:absolute;
+        right: 0;
+        bottom:0;
+    }
+    .label, .label-md{
+        color: #636263;
+    }
+    .imgLeft{
+    padding: 0px;
+    margin-left: -6px;
+    }
+.imgLable{
+    margin-top: 52px;
+    margin-bottom: 10px !important;
+    font-family: 'Conv_Gotham Light';
+}
+}

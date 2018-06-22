@@ -1,0 +1,110 @@
+page-samples {
+    font-family: 'Conv_Gotham Light';
+    .intro-footer .toolbar-title {
+        font-size: 16px;
+        color: rgba(74, 74, 74, 0.85);
+        font-weight: 800;
+    }
+    .intro-toolbar {
+        height: 50px !important;
+    }
+    .introslides {
+        background-size: cover !important;
+    }
+    #splash-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 100000;
+        width: 100%;
+        background-color: white;
+        animation: fadeOutAnimation 7s;
+    }
+    .splash {
+        height: 100%;
+        width: 100%;
+        /*animation: bg 4s;*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    @keyframes fadeOutAnimation {
+        0% {
+            opacity: 1;
+        }
+        80% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0.5;
+        }
+    }
+    .toolbar-background {
+        background: rgba(255, 255, 255, 0.16);
+        border-color: transparent;
+    }
+    .slide-zoom {
+        height: 100%;
+    }
+    .slide-title {
+        color: #fff;
+        font-size: 24px;
+        text-align: center;
+        letter-spacing: 0.6pt;
+        margin: 33pt 15.5pt 0;
+    }
+    p {
+        font-size: 16px;
+        line-height: 21px;
+        color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        margin: 11.5px 44px;
+    }
+    .swiper-pagination-bullet {
+        background: rgba(255, 255, 255, 0.6);
+        // box-shadow: 2px 2px 2px #ccc;
+    }
+    .swiper-pagination-bullet-active {
+        background: rgba(255, 255, 255, 1);
+    }
+    .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 3px;
+    }
+    ion-slide {
+        .slide-title {
+            font-size: 44.1px;
+            line-height: 1.0;
+            color: rgb(28, 27, 27);
+            font-family: 'ManusTrial';
+            text-align: left;
+        }
+        p {
+            color: rgb(28, 27, 27);
+            font-size: 13.3px; // line-height: 21.1pt;
+            font-family: 'Conv_Gotham Medium Regular';
+            margin: 0;
+            margin-left: 20.6px;
+            margin-right: 25px;
+            text-align: left;
+            line-height: 1.59;
+            letter-spacing: 0
+        }
+    }
+    .slide-title.title1 {
+        margin-top: 189px;
+    }
+    .slide-title.title2 {
+        margin-top: 225px;
+    }
+    .slide-title.title3 {
+        margin-top: 225px;
+    }
+    .slide-title.title4 {
+        margin-top: 225px;
+    }
+    .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets{
+        bottom: 25px;
+    }
+}

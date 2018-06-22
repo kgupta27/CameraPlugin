@@ -1,0 +1,186 @@
+page-experience {
+    .segment-button.segment-button h6 {
+        text-transform: none;
+    }
+    .segment-ios .segment-button {
+        padding: 2px 13px !important;
+        ;
+    }
+    .exp-img {
+        margin-bottom: 18px;
+        min-height: 200px;
+    }
+    .tabSegment {
+        margin: 20px 0;
+        .segment-button {
+            border-radius: 0 !important;
+            border: 0;
+            color: #a2a2a2;
+            font-size: 13px;
+            height: auto !important;
+            flex: none;
+            cursor: pointer;
+            margin-top: 2px;
+            width: auto; // padding: 0 4%;
+            text-transform: capitalize;
+            padding: 0px 40px !important;
+            line-height: inherit;
+            border-right: 1px solid #9b9b9b; // margin: 0 16px;
+            // &:first-of-type{margin-right: 16px!important;}
+            &:last-child {
+                border-right: 0;
+            }
+        }
+        .segment-activated {
+            background: none !important;
+            color: #ffa0a0 !important;
+            font-family: 'Conv_Gotham Medium Regular';
+            position: relative;
+            padding-top: 2px !important;
+            border-color: #9b9b9b !important;
+            &:after {
+                height: 0 !important;
+            }
+        }
+    }
+    .segment-ios .segment-button:active:not(.segment-activated) {
+        background: none;
+    }
+    @media only screen and (max-width:400px) {
+        .segment-button {
+            padding: 0 2% !important;
+        }
+    }
+    .life-tab {
+        .icon {
+            float: left;
+            margin-right: 3px;
+        }
+        .icon {
+            font-size: 14px;
+        }
+        p {
+            float: left;
+            margin-right: 2px;
+            font-size: 13px;
+            color: #111;
+            font-family: 'Conv_Gotham Light';
+            line-height: inherit;
+        }
+        .col-red {
+            color: #ffa0a0;
+            font-size: 14px;
+        }
+    }
+    .icon-ic-three-dots {
+        color: #4a4a4a;
+        font-size: 14px;
+    }
+    .f-right {
+        float: right;
+        .icon-heart-filled {
+            color: #ffa0a0;
+        }
+    }
+    .exp-card {
+        box-shadow: none !important;
+        margin: 0 !important;
+        width: 100% !important;
+        margin-top: 20px;
+        .row {
+            padding: 0 10px !important;
+        }
+    }
+    .withuoverflow {
+        width: 140px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .namewithoverflow {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .info-content {
+        border-radius: 10px !important;
+        max-width: 271px;
+        max-height: 130px;
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        padding: 24.5px 16.3px 10px 17px;
+        bottom: 32px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: none;
+        .tooltip-content {
+            font-family: 'Conv_Gotham Book Regular';
+            font-size: 14px;
+            color: rgb(168, 168, 168);
+            line-height: 19px;
+        }
+        .tooltip-header {
+            img {
+                width: 49px;
+                height: 61px;
+                margin-right: 7px;
+                vertical-align: middle;
+                float: left;
+                margin-top: 4px;
+            }
+        }
+        .button {
+            color: rgb(21, 38, 79);
+            font-size: 12px;
+            float: right; // margin-right: 20px;
+            top: 10px;
+            font-family: 'Conv_Gotham Book Regular';
+            bottom: 10px;
+        }
+    }
+    .info-content:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 12px solid #fff;
+        left: 46%;
+        text-align: center;
+        display: inline-block;
+        top: -12px;
+    }
+    .coachmark {
+        position: relative;
+    }
+    .exp-card:first-child .info-content {
+        display: block;
+    }
+
+    .tap_icon{
+        width: 30px;
+	    height: 30px;
+    	object-fit: contain;
+        right: 20px;
+        position: absolute;
+        bottom: 0px;
+        z-index: 100;
+    }
+
+    .experience_wrapper{
+        height: 251px;
+        // height: 360px;
+        width: 100%;
+        // border-radius: 2px;
+        display: inline-block;
+        vertical-align: middle;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .background-img-main {
+        background-position: top center;
+    }
+}

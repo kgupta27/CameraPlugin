@@ -1,0 +1,133 @@
+page-add-friends-family {
+ ion-header ion-icon.back-button-icon.icon, 
+    ion-header span.back-button-text.back-button-text-ios , .bar-button{
+    color: #636263;
+    margin-left: 10px !important;
+    }
+     .bar-button-ios{
+        margin-left: 16px !important;
+    }
+     .cross-icn .icon-cross{
+        font-size: 14px
+    }
+.image-form{
+    padding-top: 20px !important;
+}
+.image-outer{
+    height:230px;width:100%;  background-color: #f3f3f3;;position: relative;margin-top: -15px;
+    .img-icon{
+        position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 45px;
+    .icon{
+        font-size: 97px;
+    }
+    }
+    p{font-size:16px; color:#1c1b1b; margin:-4px 0 0;}
+}
+ .family-select{
+        margin-bottom: 0px !important;
+    }
+    .drop-icon{
+       position: absolute;
+    width: 12px;
+    height: 19px;
+    z-index: 1;
+    right: 5%;
+    top: 73%;
+    .drop{
+left: 5px;
+    top: 50%;
+    margin-top: -3px;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 5px solid;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    color: #cccccc;
+    pointer-events: none;
+
+    }
+    }
+
+    .select-icon{
+        .select-icon-inner{
+            color: #ccc !important;
+        }
+    }
+    
+    .rel-err{
+        position: absolute !important;
+        z-index: 1 !important;
+    }
+    .list {
+	 .item-select {
+		padding-left: 0;
+		padding-top: 40px;
+		&:first-child {
+			border-top: 0;
+		}
+		&:last-child {
+			border-bottom: 0;
+			.item-inner {
+				border-bottom: 1px solid rgba(0, 0, 0, .2);
+			}
+		}
+		.item-inner {
+			border-bottom-color: rgba(0, 0, 0, .2) important;
+			.label {
+				color: rgb(28, 27, 27);
+				font-family: 'Conv_Gotham Light';
+			}
+			.item-button {
+				margin-top: 30px;
+				color: rgba(28, 27, 27, .4);
+			}
+		}
+		&.item-input-has-focus .item-inner,
+		&.input-has-focus .item-inner {
+			box-shadow: none !important;
+			border-bottom: 1px solid rgba(0, 0, 0, .2);
+		}
+		&.input-has-focus:last-child{
+			border-bottom-color: rgba(0, 0, 0, .2);
+			box-shadow: none;
+		}
+		&.error-border {
+			.item-inner {
+				border-bottom-color: rgba(180,0,0,.3);
+				.label {
+					color: rgb(180,0,0);
+				}
+			}
+            &:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+				box-shadow: none !important;
+			}
+		}
+	}
+	.item-input.error-border + .error-box{
+				color: rgb(180,0,0);
+				font:12px 'Conv_Gotham Light';
+			}
+    }
+
+    .image-outer .add-img-center{
+        top: 0;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    .suggetions-upper{position: relative;z-index:11;
+        .suggetions{position: absolute; width: 100%; top: 89%; left: 0; height: 100px; overflow: auto; border-radius: 2px; z-index: 11; padding-top: 12px; background-color: #ececec; opacity: .8;} 
+        }
+ 
+    .suggestionClass{
+        margin-top: 50px;
+    }
+}

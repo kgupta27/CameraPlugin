@@ -1,0 +1,185 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons left (click)="closeCareerAcademic()">
+      <button class="btnColor cross-icn" ion-button icon-only>
+        <ion-icon class="icon icon-cross" item-right></ion-icon>
+        <!--<img src="assets/img/icCross@3x.png" />-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="story-outer">
+  <div padding class="story-cont">
+    <h1>Academics and Career</h1>
+  </div>
+
+  <form padding [formGroup]="careerForm" >
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked>Schools attended</ion-label>
+        <ion-icon class="icon icon-ic-school" item-right></ion-icon>
+        <ion-input type="text" [formControl]="careerForm.controls['school']"  spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+          <div class="error-box"  *ngIf="careerForm.controls['school'].hasError('pattern')">Please enter valid text.</div>
+        <!-- <div class="error-box">Please enter valid text.</div> -->
+      </div>
+
+      <ion-item>
+        <ion-label stacked class="desc">Academic achievements</ion-label>
+        <ion-icon class="icon icon-hat" item-right></ion-icon>
+        <ion-input type="text" [formControl]="careerForm.controls['academic']"  spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid ">
+        <div class="error-box"  *ngIf="careerForm.controls['academic'].hasError('pattern')">Please enter valid text.</div>
+        <!-- <div class="error-box">Please enter valid text.</div> -->
+      </div>
+
+      <ion-item>
+        <ion-label stacked>Publications</ion-label>
+        <ion-icon class="icon icon-ic-publications" item-right></ion-icon>
+        <ion-input type="text" [formControl]="careerForm.controls['publications']"  spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid ">
+        <div class="error-box"  *ngIf="careerForm.controls['publications'].hasError('pattern')">Please enter valid text.</div>
+        <!-- <div class="error-box">Please enter valid text.</div> -->
+      </div>
+
+      <ion-item>
+        <ion-label stacked class="desc">Accolades</ion-label>
+        <ion-icon class="icon icon-ic-accolades" item-right></ion-icon>
+        <ion-input type="text" [formControl]="careerForm.controls['accolades']"  spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box"  *ngIf="careerForm.controls['accolades'].hasError('pattern')">Please enter valid text.</div>
+        <!-- <div class="error-box">Please enter valid text.</div> -->
+      </div>
+
+      <ion-item>
+        <ion-label stacked>Employment</ion-label>
+        <ion-icon class="icon icon-ic-employemnt" item-right></ion-icon>
+        <ion-input type="text" [formControl]="careerForm.controls['employemnt']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['employemnt'].valid && careerForm.controls['employemnt'].hasError('required')"> -->
+          <!-- Employment is required!</div> -->
+        <div class="error-box"  *ngIf="careerForm.controls['employemnt'].hasError('pattern')">Please enter valid text.</div>
+        <!-- <div class="error-box">Please enter valid text.</div> -->
+      </div>
+
+      <ion-item>
+        <ion-label stacked class="desc">Work story</ion-label>
+        <ion-icon class="icon icon-ic-tie" item-right></ion-icon>
+        <ion-input type="text" [formControl]="careerForm.controls['workstory']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['workstory'].valid && careerForm.controls['workstory'].hasError('required')"> -->
+          <!-- Work story is required!</div> -->
+        <div class="error-box"  *ngIf="careerForm.controls['workstory'].hasError('pattern')">Please enter valid text.</div>
+        <!-- <div class="error-box">Please enter valid text.</div> -->
+      </div>
+
+      <ion-item>
+        <ion-label stacked>Businesses started</ion-label>
+        <ion-icon class="icon icon-ic-business" item-right></ion-icon>
+        <ion-input type="text" [formControl]="careerForm.controls['business']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <!-- <div class="error-box" *ngIf="!careerForm.controls['business'].valid && careerForm.controls['business'].hasError('required')"> -->
+          <!-- Businesses started is required!</div> -->
+        <div class="error-box"  *ngIf="careerForm.controls['business'].hasError('pattern')">Please enter valid text.</div>
+        <!-- <div class="error-box">Please enter valid text.</div> -->
+      </div>      
+
+      <ion-item>
+        <ion-label stacked>Accreditations</ion-label>
+        <ion-icon class="icon icon-ic-school" item-right></ion-icon>
+         <!-- <ion-icon class="icon icon-ic-business" item-right></ion-icon>  -->
+        <ion-input type="text" [formControl]="careerForm.controls['accreditations']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box"  *ngIf="careerForm.controls['accreditations'].hasError('pattern')">Please enter valid text.</div>
+        <!-- <div class="error-box">Please enter valid text.</div> -->
+      </div>      
+
+      <ion-item>
+        <ion-label stacked>Industry experience</ion-label>
+        <ion-icon class="icon icon-hat" item-right></ion-icon>
+         <!-- <ion-icon class="icon icon-ic-business" item-right></ion-icon>  -->
+        <ion-input type="text" [formControl]="careerForm.controls['industryExperience']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box"  *ngIf="careerForm.controls['industryExperience'].hasError('pattern')">Please enter valid text.</div>
+        <!-- <div class="error-box">Please enter valid text.</div> -->
+      </div>      
+
+      <ion-item>
+        <ion-label stacked>Mentors</ion-label>
+        <ion-icon class="icon icon-ic-publications" item-right></ion-icon>
+        <ion-input type="text" [formControl]="careerForm.controls['mentors']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box"  *ngIf="careerForm.controls['mentors'].hasError('pattern')">Please enter valid text.</div>
+        <!-- <div class="error-box">Please enter valid text.</div> -->
+      </div>      
+
+      <ion-item>
+        <ion-label stacked>Domains</ion-label>
+         <ion-icon class="icon icon-ic-accolades" item-right></ion-icon>
+        <ion-input type="text" [formControl]="careerForm.controls['domains']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box"  *ngIf="careerForm.controls['domains'].hasError('pattern')">Please enter valid text.</div>
+        <!-- <div class="error-box">Please enter valid text.</div> -->
+      </div>  
+
+      <ion-item>
+        <ion-label stacked>Skills</ion-label>
+        <ion-icon class="icon icon-ic-employemnt" item-right></ion-icon>
+        <ion-input type="text" [formControl]="careerForm.controls['skills']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box"  *ngIf="careerForm.controls['skills'].hasError('pattern')">Please enter valid text.</div>
+        <!-- <div class="error-box">Please enter valid text.</div> -->
+      </div>  
+
+      <ion-item>
+        <ion-label stacked>Further Learning </ion-label>
+        <ion-icon class="icon icon-ic-tie" item-right></ion-icon>
+        <ion-input type="text" [formControl]="careerForm.controls['furtherLearning']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box"  *ngIf="careerForm.controls['furtherLearning'].hasError('pattern')">Please enter valid text.</div>
+        <!-- <div class="error-box">Please enter valid text.</div> -->
+      </div>  
+
+      <ion-item>
+        <ion-label stacked>Company’s you’ve worked for</ion-label>
+        <ion-icon class="icon icon-ic-business" item-right></ion-icon>
+        <ion-input type="text" [formControl]="careerForm.controls['companyWorkedFor']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box"  *ngIf="careerForm.controls['companyWorkedFor'].hasError('pattern')">Please enter valid text.</div>
+        <!-- <div class="error-box">Please enter valid text.</div> -->
+      </div>  
+
+      <ion-item>
+        <ion-label stacked>Work related links</ion-label>
+        <ion-icon class="icon icon-ic-school" item-right></ion-icon>
+        <ion-input type="text" [formControl]="careerForm.controls['workRelatedLinks']" spellcheck="true" autoComplete="true" autocorrect="true"></ion-input>
+      </ion-item>
+      <div *ngIf="isValid">
+        <div class="error-box"  *ngIf="careerForm.controls['workRelatedLinks'].hasError('pattern')">Please enter valid text.</div>
+        <!-- <div class="error-box">Please enter valid text.</div> -->
+      </div>  
+
+
+    </ion-list>
+
+    <button ion-button class="mr-t80 button_color" full color="dark" (click)="addCareerAcademic(careerForm.value)">{{isNotEmpty?'UPDATE':'ADD'}}</button>
+    
+  </form>
+</ion-content>

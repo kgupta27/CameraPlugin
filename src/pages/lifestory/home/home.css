@@ -1,0 +1,81 @@
+/* line 2, /Users/yogenderpanwar/Desktop/ionic/modurn-ionic/src/pages/lifestory/home/home.scss */
+page-home .userCol {
+  padding: 0px 11px 0 0 !important; }
+  /* line 4, /Users/yogenderpanwar/Desktop/ionic/modurn-ionic/src/pages/lifestory/home/home.scss */
+  page-home .userCol:nth-of-type(even) {
+    padding-right: 0 !important; }
+
+/* line 6, /Users/yogenderpanwar/Desktop/ionic/modurn-ionic/src/pages/lifestory/home/home.scss */
+page-home .userCard {
+  margin: 0px 0 10px 0 !important;
+  width: calc(100% - 0px) !important;
+  box-shadow: none; }
+  /* line 10, /Users/yogenderpanwar/Desktop/ionic/modurn-ionic/src/pages/lifestory/home/home.scss */
+  page-home .userCard img {
+    height: 182px; }
+
+/* line 12, /Users/yogenderpanwar/Desktop/ionic/modurn-ionic/src/pages/lifestory/home/home.scss */
+page-home .userCardTitle {
+  font-size: 13px !important;
+  text-align: center;
+  color: #111;
+  padding: 5px 0 4px; }
+
+/* line 18, /Users/yogenderpanwar/Desktop/ionic/modurn-ionic/src/pages/lifestory/home/home.scss */
+page-home ion-header ion-icon.back-button-icon.icon,
+page-home ion-header span.back-button-text.back-button-text-ios {
+  color: #636263; }
+
+/* line 22, /Users/yogenderpanwar/Desktop/ionic/modurn-ionic/src/pages/lifestory/home/home.scss */
+page-home .btnColor {
+  color: #636263; }
+
+/* line 25, /Users/yogenderpanwar/Desktop/ionic/modurn-ionic/src/pages/lifestory/home/home.scss */
+page-home .btnColor img {
+  width: 23px;
+  height: 23px; }
+
+/* line 26, /Users/yogenderpanwar/Desktop/ionic/modurn-ionic/src/pages/lifestory/home/home.scss */
+page-home .add-arrow img {
+  width: 50%; }
+
+/* line 29, /Users/yogenderpanwar/Desktop/ionic/modurn-ionic/src/pages/lifestory/home/home.scss */
+page-home .margin-top {
+  margin-top: 11%; }
+
+/* line 32, /Users/yogenderpanwar/Desktop/ionic/modurn-ionic/src/pages/lifestory/home/home.scss */
+page-home .mar-header-icon {
+  margin: 0 0.9rem !important; }
+
+/* line 34, /Users/yogenderpanwar/Desktop/ionic/modurn-ionic/src/pages/lifestory/home/home.scss */
+.life-story-content {
+  margin-top: 15px;
+  padding-left: 0;
+  padding-right: 0; }
+  /* line 38, /Users/yogenderpanwar/Desktop/ionic/modurn-ionic/src/pages/lifestory/home/home.scss */
+  .life-story-content .life-story-subtitle {
+    color: #111;
+    font-size: 12px;
+    opacity: 0.5; }
+
+/* line 45, /Users/yogenderpanwar/Desktop/ionic/modurn-ionic/src/pages/lifestory/home/home.scss */
+.life-title .toolbar-title {
+  font-size: 21px;
+  color: #636263;
+  letter-spacing: 0.5px;
+  font-weight: 300; }
+
+/* line 52, /Users/yogenderpanwar/Desktop/ionic/modurn-ionic/src/pages/lifestory/home/home.scss */
+.add-story-txt {
+  text-align: center;
+  width: 100%; }
+  /* line 55, /Users/yogenderpanwar/Desktop/ionic/modurn-ionic/src/pages/lifestory/home/home.scss */
+  .add-story-txt h3 {
+    font-size: 36px;
+    color: #4a4a4a; }
+  /* line 59, /Users/yogenderpanwar/Desktop/ionic/modurn-ionic/src/pages/lifestory/home/home.scss */
+  .add-story-txt p {
+    color: #1c1b1b;
+    font-size: 14px; }
+
+/*# sourceMappingURL=home.css.map */

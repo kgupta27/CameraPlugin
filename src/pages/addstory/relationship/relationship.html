@@ -1,0 +1,14 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-title text-center>Relationship</ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngIf="relationData">
+    <ion-item *ngFor="let item of relationData" (click)="selectData(item)">
+      {{ item.relationshipType }}
+    </ion-item>
+  </ion-list>
+</ion-content>
